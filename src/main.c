@@ -7,9 +7,9 @@
 #include <stdbool.h>
 
 #include <math.h>
+#include <omp.h>
 
 #include "utils.h"
-
 
 /// @brief Returns a 2D array containing each region in order (from left to right)
 /// @param sudoku_grid
@@ -134,9 +134,9 @@ int ***create_sudoku_columns(int **sudoku_grid)
 }
 
 /**
- * @brief Frees memory from each line and the sudoku grid itself 
- * 
- * @param sudoku_grid 
+ * @brief Frees memory from each line and the sudoku grid itself
+ *
+ * @param sudoku_grid
  */
 void sudoku_free(int **sudoku_grid)
 {
@@ -152,9 +152,9 @@ void sudoku_free(int **sudoku_grid)
 }
 
 /**
- * @brief Frees memory from each line and the sudoku grid itself 
- * 
- * @param sudoku_grid 
+ * @brief Frees memory from each line and the sudoku grid itself
+ *
+ * @param sudoku_grid
  */
 void sudoku_free_pointers(int ***sudoku_grid)
 {
@@ -180,22 +180,26 @@ void sudoku_free_pointers(int ***sudoku_grid)
 /// @return the total amount of constraints violated in the given sudoku for the given cell
 int sudoku_cell_constraints(int nb, int start_l, int start_c, int **lines, int ***columns, int ***regions)
 {
-    if(nb == 0) return 0;
+    if (nb == 0)
+        return 0;
     int sum = 0;
     int start_r = (start_l / 3) * 3 + (start_c / 3); // gets the specific region to check inside
     for (int j = 0; j < SUDOKU_SIZE; j++)
     {
-        //if (lines[start_l][j] == nb || (*columns[start_c][j]) == nb || (*regions[start_r][j]) == nb)
+        // if (lines[start_l][j] == nb || (*columns[start_c][j]) == nb || (*regions[start_r][j]) == nb)
         //{ // check the content of the line, column and region
-        //    sum++;
-        //}
-        if(lines[start_l][j] == nb) {
+        //     sum++;
+        // }
+        if (lines[start_l][j] == nb)
+        {
             sum++;
         }
-        if(*columns[start_c][j] == nb) {
+        if (*columns[start_c][j] == nb)
+        {
             sum++;
         }
-        if(*regions[start_r][j] == nb) {
+        if (*regions[start_r][j] == nb)
+        {
             sum++;
         }
     }
@@ -217,7 +221,7 @@ int sudoku_constraints(int **lines, int ***columns, int ***regions)
             sum += sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
         }
     }
-    return sum/2;
+    return sum / 2;
 }
 
 /// @brief Chooses a random cell from the sudoku grid. If i or j != -1 then the random cell chosen needs to be different
@@ -252,7 +256,7 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Use: %s file puzzle\n", argv[0]);
         fprintf(stderr, "Where :\n");
         fprintf(stderr, "  file   : The file containing the sudoku puzzles\n");
-        fprintf(stderr, "  puzzle : (optional)The hash of the puzzle\n");
+        fprintf(stderr, "  puzzle : The hash of the puzzle to solve\n");
         exit(EXIT_FAILURE);
     }
 
@@ -268,7 +272,6 @@ int main(int argc, char *argv[])
 
     // make a deep copy of the original grid with lines and have the regions and columns point to it
     int **lines = create_sudoku_lines(original_grid);
-    
 
     // create a 2D array of pointers where each array is a region of the grid(from left to right)
     int ***regions = create_sudoku_region(lines);
@@ -279,12 +282,12 @@ int main(int argc, char *argv[])
     int cost = 0;
     cost = sudoku_constraints(lines, columns, regions);
     printf(">> Current cost : %d\n", cost);
-    //tests for the sudoku cell constraints function on fixed cells
-    //printf(">> cost %d: %d\n", lines[0][1], sudoku_cell_constraints(lines[0][1], 0, 1, lines, columns, regions));
-    //printf(">> cost %d: %d\n", lines[1][2], sudoku_cell_constraints(lines[1][2], 1, 2, lines, columns, regions));
-    //printf(">> cost %d: %d\n", lines[7][5], sudoku_cell_constraints(lines[7][5], 7, 5, lines, columns, regions));
-    //printf(">> cost %d: %d\n", lines[7][1], sudoku_cell_constraints(lines[7][1], 7, 1, lines, columns, regions));
-    //printf(">> cost %d: %d\n", lines[6][8], sudoku_cell_constraints(lines[6][8], 6, 8, lines, columns, regions));
+    // tests for the sudoku cell constraints function on fixed cells
+    // printf(">> cost %d: %d\n", lines[0][1], sudoku_cell_constraints(lines[0][1], 0, 1, lines, columns, regions));
+    // printf(">> cost %d: %d\n", lines[1][2], sudoku_cell_constraints(lines[1][2], 1, 2, lines, columns, regions));
+    // printf(">> cost %d: %d\n", lines[7][5], sudoku_cell_constraints(lines[7][5], 7, 5, lines, columns, regions));
+    // printf(">> cost %d: %d\n", lines[7][1], sudoku_cell_constraints(lines[7][1], 7, 1, lines, columns, regions));
+    // printf(">> cost %d: %d\n", lines[6][8], sudoku_cell_constraints(lines[6][8], 6, 8, lines, columns, regions));
 
 //  randomly all of the cells of the grid with values from 1 to 9, except the ones already placed
     unsigned int seed = (unsigned int)time(NULL);
@@ -301,29 +304,31 @@ int main(int argc, char *argv[])
 
     // calculate cost of the random grid
     cost = sudoku_constraints(lines, columns, regions);
+//
 
-//Setup main loop and current timestamp
+// Setup main loop and current timestamp
     int tries;
     char date_buffer[FILE_SIZE];
 #if _DEBUG_
     char debug_buffer[DEBUG_SIZE];
 #endif
     time_t timestamp = time(NULL);
-    strftime(date_buffer, FILE_SIZE, "(%H-%M-%S)", localtime(&timestamp));
+    strftime(date_buffer, FILE_SIZE, "%d/%m/%Y-(%H-%M-%S)", localtime(&timestamp));
 //
 
-//define recuit algorithm variables
+// define recuit algorithm variables
     int k, u, cost_one, cost_two, cost_comp, temp, new;
-    int lowest_cost_found = cost;
+    int lowest_cost_found = (int)INFINITY;
+    double start_time, end_time, CPU_time;
 //
-
+    start_time = omp_get_wtime();
     for (tries = 0; tries < MAX_TRIES; tries++)
     {
         printf("\n===========================\n");
         print_sudoku(lines);
         printf(">> Current cost : %d\n", cost);
 
-        //log the stats of the recuit solver
+        // log the stats of the recuit solver
         sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
 
         // Step 2: Setup the contants
@@ -363,7 +368,8 @@ int main(int argc, char *argv[])
                 // Step 9: choose random value in [0, 1]
                 u = get_random();
 #if _DEBUG_ && 0
-                if(tries == 1 && k < 2) {
+                if (tries == 1 && k < 2)
+                {
                     snprintf(debug_buffer, DEBUG_SIZE, "\nFirst iterations of the second try of the algorithm ->{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d}\n", cost, cost_one, cost_two, cost_comp);
                     sudoku_debug_output(puzzle_hash, debug_buffer, date_buffer);
                 }
@@ -378,7 +384,8 @@ int main(int argc, char *argv[])
                     lines[i][j] = temp;
                 }
                 // Stop the k loop if the cost of the grid is 0
-                if (cost == 0) {
+                if (cost == 0)
+                {
                     printf("\n>>> [NULL 0 cost solution found]\n");
                     solved = true;
                     break;
@@ -390,13 +397,17 @@ int main(int argc, char *argv[])
 #endif
             // Step k: reduce the temperature
             temperature = temperature / (1 + (log(1 + sigma) / ep + 1) * temperature);
-            //temperature = 0.5 / 81 * log(9) - log(1 - sigma);
+            // temperature = 0.5 / 81 * log(9) - log(1 - sigma);
         }
         lowest_cost_found = (lowest_cost_found > cost) ? cost : lowest_cost_found;
     }
+    end_time = omp_get_wtime();
 
-/////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////
+    //calculate the CPU execution time of the sudoku solving algorithm
+    CPU_time = end_time - start_time;
+
+    /////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////
 
     printf("\n===========================\n");
     printf("\nResults of the simulation: \n");
@@ -410,19 +421,20 @@ int main(int argc, char *argv[])
     printf("\n===========================\n");
     printf("From: ");
     printf("\n===========================\n");
-    
+
     print_sudoku(original_grid);
 
     printf("\n===========================\n");
     printf("To: ");
     printf("\n===========================\n");
-    
+
     print_sudoku(lines);
     printf(">> Current cost : %d\n", cost);
     printf(">> Best solution found (lowest cost) during the execution of the simulation : %d\n", lowest_cost_found);
+    printf(">> CPU Execution time of the sudoku solving simulation : %f\n", CPU_time);
 
-/////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////
 
     // Free allocated memory of the various grids used
     sudoku_free_pointers(regions);
