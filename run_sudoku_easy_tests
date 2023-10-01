@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+declare -a easy_sudoku_puzzles
+#some easy puzzles to test
+easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0000183b305c"
+easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0001d5d6314e"
+easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="000212406270"
+easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="00023580f347"
+easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="00031006ebf1"
+easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0003af4e2943"
+easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004125f628d"
+easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004464633b4"
+easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004686971dc"
+easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004bab224ce"
+#make compile main sudoku solving C program
+make clean && make
+#try the easy puzzles
+for i in "${easy_sudoku_puzzles[@]}"
+do
+    ./bin/main "easy.txt" "$i"
+done

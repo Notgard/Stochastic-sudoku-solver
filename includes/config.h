@@ -7,6 +7,9 @@
 #define sudoku_cells(SIZE) (SIZE * SIZE)
 #define PUZZLE_SIZE sudoku_cells(SUDOKU_SIZE)
 
+#define CLR_GRN "\033[0;32;32m"
+#define CLR_RESET "\033[0m"
+
 // configuration information of stuff in sudoku file
 #define HASH_SIZE 12
 #define LINE_SIZE 100

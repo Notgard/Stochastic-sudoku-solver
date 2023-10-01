@@ -69,7 +69,7 @@ int **read_sudoku_file(char *filename, size_t sudoku_dimension, char *puzzle_has
         {
             line_buffer[pos] = '\0';
 
-            printf("%s\n", line_buffer);
+            //printf("%s\n", line_buffer);
             if (sscanf(line_buffer, "%s %s %lf", hash, puzzle, &difficulty) != 3)
             {
                 fprintf(stderr, "ERROR: invalid input line %s|\n|", line_buffer);

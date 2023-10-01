@@ -253,21 +253,27 @@ int main(int argc, char *argv[])
 {
     if (argc < 2)
     {
-        fprintf(stderr, "Use: %s file puzzle\n", argv[0]);
+        fprintf(stderr, "Use: %s Flags file puzzle\n", argv[0]);
         fprintf(stderr, "Where :\n");
         fprintf(stderr, "  file   : The file containing the sudoku puzzles\n");
         fprintf(stderr, "  puzzle : The hash of the puzzle to solve\n");
+        fprintf(stderr, "Flags :\n");
+        fprintf(stderr, "  -v : Program verbose output\n");
         exit(EXIT_FAILURE);
     }
 
     // retrieve the starting grid from the sudoku file
-    char *puzzle_hash = (argc == 3) ? argv[2] : (char *)NULL;
+    bool verbose = (argc == 4) ? true : false;
+    char *puzzle_hash = (argc == 3) ? argv[2] : argv[3];
+    char * file = (argc == 3) ? argv[1] : argv[2];
     char filename[FILE_SIZE] = SUDOKU_DIR;
+    strcat(filename, file);
 
-    strcat(filename, argv[1]);
+    printf("%sCurrently Solved file [%s]%s\n", CLR_GRN, puzzle_hash, CLR_RESET);
 
     int **original_grid = read_sudoku_file(filename, SUDOKU_SIZE, puzzle_hash);
-    print_sudoku(original_grid);
+    if(verbose)
+        print_sudoku(original_grid);
     // seperate the region, lines and columns of the grid into 3 variables
 
     // make a deep copy of the original grid with lines and have the regions and columns point to it
@@ -281,7 +287,8 @@ int main(int argc, char *argv[])
 
     int cost = 0;
     cost = sudoku_constraints(lines, columns, regions);
-    printf(">> Current cost : %d\n", cost);
+    if(verbose)
+        printf(">> Current cost : %d\n", cost);
     // tests for the sudoku cell constraints function on fixed cells
     // printf(">> cost %d: %d\n", lines[0][1], sudoku_cell_constraints(lines[0][1], 0, 1, lines, columns, regions));
     // printf(">> cost %d: %d\n", lines[1][2], sudoku_cell_constraints(lines[1][2], 1, 2, lines, columns, regions));
@@ -313,7 +320,7 @@ int main(int argc, char *argv[])
     char debug_buffer[DEBUG_SIZE];
 #endif
     time_t timestamp = time(NULL);
-    strftime(date_buffer, FILE_SIZE, "%d/%m/%Y-(%H-%M-%S)", localtime(&timestamp));
+    strftime(date_buffer, FILE_SIZE, "%d-%m-%Y-(%H-%M-%S)", localtime(&timestamp));
 //
 
 // define recuit algorithm variables
@@ -324,9 +331,11 @@ int main(int argc, char *argv[])
     start_time = omp_get_wtime();
     for (tries = 0; tries < MAX_TRIES; tries++)
     {
-        printf("\n===========================\n");
-        print_sudoku(lines);
-        printf(">> Current cost : %d\n", cost);
+        if(verbose) {
+            printf("\n===========================\n");
+            print_sudoku(lines);
+            printf(">> Current cost : %d\n", cost);
+        }
 
         // log the stats of the recuit solver
         sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
@@ -386,7 +395,8 @@ int main(int argc, char *argv[])
                 // Stop the k loop if the cost of the grid is 0
                 if (cost == 0)
                 {
-                    printf("\n>>> [NULL 0 cost solution found]\n");
+                    if(verbose)
+                        printf("\n>>> [NULL 0 cost solution found]\n");
                     solved = true;
                     break;
                 }
@@ -408,27 +418,33 @@ int main(int argc, char *argv[])
 
     /////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////
+    if(verbose) {
+        printf("\n===========================\n");
+        printf("\nResults of the simulation: \n");
+        printf("\n===========================\n");
 
-    printf("\n===========================\n");
-    printf("\nResults of the simulation: \n");
-    printf("\n===========================\n");
+        printf("\n---------------------------------------------------------------------------------\n");
+        printf(">>> Last output cost by the annealing algorithm: %d\n", cost);
+    }
 
-    printf("\n---------------------------------------------------------------------------------\n");
-    printf(">>> Last output cost by the annealing algorithm: %d\n", cost);
     // calculate cost of grid
     cost = sudoku_constraints(lines, columns, regions);
 
-    printf("\n===========================\n");
-    printf("From: ");
-    printf("\n===========================\n");
+    if(verbose) {
+        printf("\n===========================\n");
+        printf("From: ");
+        printf("\n===========================\n");
 
-    print_sudoku(original_grid);
+        print_sudoku(original_grid);
+    }
 
-    printf("\n===========================\n");
-    printf("To: ");
-    printf("\n===========================\n");
+    if(verbose) {
+        printf("\n===========================\n");
+        printf("To: ");
+        printf("\n===========================\n");
 
-    print_sudoku(lines);
+        print_sudoku(lines);
+    }
     printf(">> Current cost : %d\n", cost);
     printf(">> Best solution found (lowest cost) during the execution of the simulation : %d\n", lowest_cost_found);
     printf(">> CPU Execution time of the sudoku solving simulation : %f\n", CPU_time);

@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+declare -a hard_sudoku_puzzles
+#some hard pzzules to test
+hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00005f662e09"
+hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00009e4900fa"
+hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0000b2c3fc62"
+hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0000d2fa4f03"
+hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00011fedd787"
+hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00013f7e562a"
+hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="000160237251"
+hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="000175e5f83b"
+hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0001767b888a"
+hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0001786dfc8c"
+#make compile main sudoku solving C program
+make clean && make
+#try the hard puzzles
+for i in "${hard_sudoku_puzzles[@]}"
+do
+    ./bin/main "hard.txt" "$i"
+done

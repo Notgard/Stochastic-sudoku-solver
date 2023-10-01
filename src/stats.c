@@ -81,7 +81,7 @@ void sudoku_plot_multiple_stats(const char *format, ...)
     exit(EXIT_SUCCESS);
 }
 
-int main(void)
+int main(int argc, char * argv[])
 {
     char *file1 = "./data/00005f662e09-(20-30-35).txt";
     char *file2 = "./data/00005f662e09-(20-30-36).txt";
