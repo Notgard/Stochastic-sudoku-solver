@@ -5,6 +5,7 @@
 #include <string.h>
 #include <time.h>
 #include <stdbool.h>
+#include <locale.h>
 
 #include <math.h>
 #include <omp.h>
@@ -269,7 +270,8 @@ int main(int argc, char *argv[])
     char filename[FILE_SIZE] = SUDOKU_DIR;
     strcat(filename, file);
 
-    printf("%sCurrently Solved file [%s]%s\n", CLR_GRN, puzzle_hash, CLR_RESET);
+    printf("%s#File currently being solved [%s]%s\n", CLR_GRN, puzzle_hash, CLR_RESET);
+    printf("%s#Maximum tries : %s[%d]\n", CLR_GRN, CLR_RESET, MAX_TRIES);
 
     int **original_grid = read_sudoku_file(filename, SUDOKU_SIZE, puzzle_hash);
     if(verbose)
@@ -299,18 +301,7 @@ int main(int argc, char *argv[])
 //  randomly all of the cells of the grid with values from 1 to 9, except the ones already placed
     unsigned int seed = (unsigned int)time(NULL);
 
-    // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
-    for (int line = 0; line < SUDOKU_SIZE; line++)
-    {
-        for (int col = 0; col < SUDOKU_SIZE; col++)
-        {
-            if (lines[line][col] == 0)
-                lines[line][col] = get_bound_random(&seed, 1, 9);
-        }
-    }
 
-    // calculate cost of the random grid
-    cost = sudoku_constraints(lines, columns, regions);
 //
 
 // Setup main loop and current timestamp
@@ -324,13 +315,20 @@ int main(int argc, char *argv[])
 //
 
 // define recuit algorithm variables
+    bool solved = false;
     int k, u, cost_one, cost_two, cost_comp, temp, new;
     int lowest_cost_found = (int)INFINITY;
     double start_time, end_time, CPU_time;
 //
     start_time = omp_get_wtime();
-    for (tries = 0; tries < MAX_TRIES; tries++)
+    //for (tries = 0; tries < MAX_TRIES; tries++)
+    tries = 0;
+    while(solved != true)
     {
+        // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
+        sudoku_randomize(&lines, seed);
+        // calculate cost of the random grid
+        cost = sudoku_constraints(lines, columns, regions);
         if(verbose) {
             printf("\n===========================\n");
             print_sudoku(lines);
@@ -338,13 +336,12 @@ int main(int argc, char *argv[])
         }
 
         // log the stats of the recuit solver
-        sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
+        //sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
 
         // Step 2: Setup the contants
-        bool solved = false;
         int i = -1, j = -1;
         float sigma = 0.1;
-        double ep = 1620 / 2;
+        double ep = (1620 / 2) / (tries+1);
         double temperature = ep;
         double e = exp(1);
 
@@ -360,13 +357,8 @@ int main(int argc, char *argv[])
                 temp = lines[i][j];
                 cost_one = sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
 
-                // ignore this
-                //// Step 6: choose another random cell from the grid which isn't fixed
-                // sudoku_get_random_cell(original_grid, &i, &j);
-
                 // Step 6: choose a new different value for the random cell
-                while ((new = get_bound_random(&seed, 1, 9)) == temp)
-                    ;
+                while ((new = get_bound_random(&seed, 1, 9)) == temp);
                 lines[i][j] = new;
 
                 // Step 7: evaluate the cost of the random cell with changed value
@@ -409,7 +401,10 @@ int main(int argc, char *argv[])
             temperature = temperature / (1 + (log(1 + sigma) / ep + 1) * temperature);
             // temperature = 0.5 / 81 * log(9) - log(1 - sigma);
         }
+        //find lowest cost and manage maximum amount of tries
+        tries++;
         lowest_cost_found = (lowest_cost_found > cost) ? cost : lowest_cost_found;
+        if(tries > MAX_TRIES) break;
     }
     end_time = omp_get_wtime();
 
@@ -442,11 +437,10 @@ int main(int argc, char *argv[])
         printf("\n===========================\n");
         printf("To: ");
         printf("\n===========================\n");
-
-        print_sudoku(lines);
     }
-    printf(">> Current cost : %d\n", cost);
-    printf(">> Best solution found (lowest cost) during the execution of the simulation : %d\n", lowest_cost_found);
+    print_sudoku(lines);
+    printf(">> Current cost at the end of the simulation : %d\n", cost);
+    printf(">> Best solution (lowest cost) found during the execution of the simulation : %d\n", lowest_cost_found);
     printf(">> CPU Execution time of the sudoku solving simulation : %f\n", CPU_time);
 
     /////////////////////////////////////////////////////////////////////////////////////

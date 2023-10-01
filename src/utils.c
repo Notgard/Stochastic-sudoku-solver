@@ -165,6 +165,20 @@ void print_sudoku(int **sudoku_grid)
     }
 }
 
+/// @brief Randomize the given sudoku grid with random values between 1 and 9, as long as the cells aren't fixed
+/// @param sudoku_grid the given sudoku grid
+/// @param seed the randomization seed used
+void sudoku_randomize(int ***sudoku_grid, unsigned int seed) {
+    for (int line = 0; line < SUDOKU_SIZE; line++)
+    {
+        for (int col = 0; col < SUDOKU_SIZE; col++)
+        {
+            if ((*sudoku_grid)[line][col] == 0)
+                (*sudoku_grid)[line][col] = get_bound_random(&seed, 1, 9);
+        }
+    }
+}
+
 /// @brief Utility function to append the results obtained from the algorithm to a file
 /// @param filename the file in question, is created if doesn't exist yet. We assume it corresponds to the sudoku hash
 /// @param score the value returned from the cost function in the sudoku solving algorithm
