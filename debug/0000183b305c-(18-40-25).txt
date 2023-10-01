@@ -1,0 +1,2928 @@
+> [{cost: 96, cost_one: 2, cost_two: 2, cost_comp: 96}]
+> [{cost: 74, cost_one: 2, cost_two: 3, cost_comp: 74}]
+> [{cost: 50, cost_one: 2, cost_two: 1, cost_comp: 50}]
+> [{cost: 39, cost_one: 0, cost_two: 3, cost_comp: 42}]
+> [{cost: 34, cost_one: 1, cost_two: 3, cost_comp: 36}]
+> [{cost: 31, cost_one: 1, cost_two: 3, cost_comp: 33}]
+> [{cost: 28, cost_one: 0, cost_two: 3, cost_comp: 31}]
+> [{cost: 28, cost_one: 0, cost_two: 3, cost_comp: 31}]
+> [{cost: 25, cost_one: 1, cost_two: 3, cost_comp: 27}]
+> [{cost: 22, cost_one: 0, cost_two: 3, cost_comp: 25}]
+> [{cost: 22, cost_one: 1, cost_two: 4, cost_comp: 25}]
+> [{cost: 22, cost_one: 0, cost_two: 3, cost_comp: 25}]
+> [{cost: 21, cost_one: 1, cost_two: 3, cost_comp: 23}]
+> [{cost: 21, cost_one: 1, cost_two: 4, cost_comp: 24}]
+> [{cost: 20, cost_one: 0, cost_two: 3, cost_comp: 23}]
+> [{cost: 17, cost_one: 0, cost_two: 2, cost_comp: 19}]
+> [{cost: 17, cost_one: 0, cost_two: 3, cost_comp: 20}]
+> [{cost: 17, cost_one: 1, cost_two: 3, cost_comp: 19}]
+> [{cost: 17, cost_one: 0, cost_two: 3, cost_comp: 20}]
+> [{cost: 17, cost_one: 0, cost_two: 3, cost_comp: 20}]
+> [{cost: 17, cost_one: 0, cost_two: 3, cost_comp: 20}]
+> [{cost: 17, cost_one: 1, cost_two: 5, cost_comp: 21}]
+> [{cost: 17, cost_one: 0, cost_two: 3, cost_comp: 20}]
+> [{cost: 16, cost_one: 0, cost_two: 4, cost_comp: 20}]
+> [{cost: 16, cost_one: 1, cost_two: 2, cost_comp: 17}]
+> [{cost: 16, cost_one: 1, cost_two: 2, cost_comp: 17}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 16, cost_one: 0, cost_two: 5, cost_comp: 21}]
+> [{cost: 16, cost_one: 0, cost_two: 4, cost_comp: 20}]
+> [{cost: 16, cost_one: 1, cost_two: 2, cost_comp: 17}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 1, cost_two: 2, cost_comp: 17}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 0, cost_two: 4, cost_comp: 19}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 2, cost_comp: 16}]
+> [{cost: 14, cost_one: 0, cost_two: 4, cost_comp: 18}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 1, cost_two: 3, cost_comp: 16}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 5, cost_comp: 18}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 0, cost_comp: 13}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 5, cost_comp: 18}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 5, cost_comp: 18}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 5, cost_comp: 18}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 5, cost_comp: 18}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 0, cost_comp: 13}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 5, cost_comp: 18}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 5, cost_comp: 18}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 1, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}
+]
+> [{cost: 88, cost_one: 1, cost_two: 1, cost_comp: 88}]
+> [
+First iteration of the second try of the algorithm ->{cost: 88, cost_one: 3, cost_two: 3, cost_comp: 88}
+]
+> [{cost: 74, cost_one: 2, cost_two: 4, cost_comp: 74}]
+> [
+First iteration of the second try of the algorithm ->{cost: 74, cost_one: 2, cost_two: 0, cost_comp: 72}
+]
+> [{cost: 61, cost_one: 1, cost_two: 2, cost_comp: 61}]
+> [
+First iteration of the second try of the algorithm ->{cost: 61, cost_one: 0, cost_two: 1, cost_comp: 62}
+]
+> [{cost: 46, cost_one: 2, cost_two: 5, cost_comp: 49}]
+> [
+First iteration of the second try of the algorithm ->{cost: 46, cost_one: 1, cost_two: 3, cost_comp: 48}
+]
+> [{cost: 42, cost_one: 0, cost_two: 4, cost_comp: 46}]
+> [
+First iteration of the second try of the algorithm ->{cost: 42, cost_one: 3, cost_two: 4, cost_comp: 43}
+]
+> [{cost: 37, cost_one: 2, cost_two: 3, cost_comp: 38}]
+> [
+First iteration of the second try of the algorithm ->{cost: 37, cost_one: 1, cost_two: 5, cost_comp: 41}
+]
+> [{cost: 36, cost_one: 0, cost_two: 2, cost_comp: 38}]
+> [
+First iteration of the second try of the algorithm ->{cost: 36, cost_one: 2, cost_two: 3, cost_comp: 37}
+]
+> [{cost: 28, cost_one: 2, cost_two: 1, cost_comp: 28}]
+> [
+First iteration of the second try of the algorithm ->{cost: 28, cost_one: 1, cost_two: 3, cost_comp: 30}
+]
+> [{cost: 27, cost_one: 0, cost_two: 2, cost_comp: 29}]
+> [
+First iteration of the second try of the algorithm ->{cost: 27, cost_one: 0, cost_two: 3, cost_comp: 30}
+]
+> [{cost: 24, cost_one: 0, cost_two: 3, cost_comp: 27}]
+> [
+First iteration of the second try of the algorithm ->{cost: 24, cost_one: 0, cost_two: 3, cost_comp: 27}
+]
+> [{cost: 21, cost_one: 2, cost_two: 3, cost_comp: 22}]
+> [
+First iteration of the second try of the algorithm ->{cost: 21, cost_one: 1, cost_two: 3, cost_comp: 23}
+]
+> [{cost: 21, cost_one: 1, cost_two: 3, cost_comp: 23}]
+> [
+First iteration of the second try of the algorithm ->{cost: 21, cost_one: 0, cost_two: 3, cost_comp: 24}
+]
+> [{cost: 20, cost_one: 0, cost_two: 3, cost_comp: 23}]
+> [
+First iteration of the second try of the algorithm ->{cost: 20, cost_one: 0, cost_two: 3, cost_comp: 23}
+]
+> [{cost: 19, cost_one: 1, cost_two: 1, cost_comp: 19}]
+> [
+First iteration of the second try of the algorithm ->{cost: 19, cost_one: 0, cost_two: 3, cost_comp: 22}
+]
+> [{cost: 18, cost_one: 0, cost_two: 3, cost_comp: 21}]
+> [
+First iteration of the second try of the algorithm ->{cost: 18, cost_one: 2, cost_two: 3, cost_comp: 19}
+]
+> [{cost: 18, cost_one: 0, cost_two: 3, cost_comp: 21}]
+> [
+First iteration of the second try of the algorithm ->{cost: 18, cost_one: 0, cost_two: 2, cost_comp: 20}
+]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [
+First iteration of the second try of the algorithm ->{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}
+]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [
+First iteration of the second try of the algorithm ->{cost: 15, cost_one: 0, cost_two: 4, cost_comp: 19}
+]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [
+First iteration of the second try of the algorithm ->{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}
+]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [
+First iteration of the second try of the algorithm ->{cost: 15, cost_one: 0, cost_two: 4, cost_comp: 19}
+]
+> [{cost: 15, cost_one: 0, cost_two: 4, cost_comp: 19}]
+> [
+First iteration of the second try of the algorithm ->{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}
+]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [
+First iteration of the second try of the algorithm ->{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}
+]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [
+First iteration of the second try of the algorithm ->{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}
+]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [
+First iteration of the second try of the algorithm ->{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}
+]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}
+]
+> [{cost: 13, cost_one: 2, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}
+]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}
+]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}
+]
+> [{cost: 13, cost_one: 2, cost_two: 2, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}
+]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}
+]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}
+]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}
+]
+> [{cost: 13, cost_one: 2, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}
+]
+> [{cost: 13, cost_one: 1, cost_two: 1, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}
+]
+> [{cost: 12, cost_one: 1, cost_two: 2, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}
+]
+> [{cost: 12, cost_one: 1, cost_two: 2, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 4, cost_comp: 16}
+]
+> [{cost: 12, cost_one: 0, cost_two: 4, cost_comp: 16}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 12, cost_one: 0, cost_two: 4, cost_comp: 16}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}
+]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}
+]
+> [{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}
+]
+> [{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 1, cost_comp: 13}
+]
+> [{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 4, cost_comp: 16}
+]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}
+]
+> [{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 1, cost_two: 4, cost_comp: 15}
+]
+> [{cost: 12, cost_one: 0, cost_two: 2, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 12, cost_one: 0, cost_two: 4, cost_comp: 16}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}
+]
+> [{cost: 12, cost_one: 2, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 0, cost_comp: 12}
+]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 0, cost_two: 4, cost_comp: 16}
+]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [
+First iteration of the second try of the algorithm ->{cost: 12, cost_one: 1, cost_two: 1, cost_comp: 12}
+]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}
+]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}
+]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}
+]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [
+First iteration of the second try of the algorithm ->{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 1, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 10, cost_one: 1, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}
+]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}
+]
+> [{cost: 9, cost_one: 1, cost_two: 4, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 4, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 4, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 4, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 4, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 4, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 2, cost_comp: 10}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 4, cost_comp: 13}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 2, cost_comp: 11}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}
+]
+> [{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}]
+> [
+First iteration of the second try of the algorithm ->{cost: 9, cost_one: 0, cost_two: 3, cost_comp: 12}
+]
+> [{cost: 9, cost_one: 1, cost_two: 3, cost_comp: 11}]
+> [{cost: 76, cost_one: 1, cost_two: 3, cost_comp: 76}]
+> [{cost: 73, cost_one: 3, cost_two: 1, cost_comp: 73}]
+> [{cost: 48, cost_one: 0, cost_two: 1, cost_comp: 48}]
+> [{cost: 38, cost_one: 0, cost_two: 3, cost_comp: 41}]
+> [{cost: 35, cost_one: 1, cost_two: 3, cost_comp: 37}]
+> [{cost: 31, cost_one: 2, cost_two: 3, cost_comp: 32}]
+> [{cost: 29, cost_one: 0, cost_two: 3, cost_comp: 32}]
+> [{cost: 28, cost_one: 1, cost_two: 3, cost_comp: 30}]
+> [{cost: 28, cost_one: 2, cost_two: 2, cost_comp: 28}]
+> [{cost: 27, cost_one: 0, cost_two: 3, cost_comp: 30}]
+> [{cost: 25, cost_one: 0, cost_two: 4, cost_comp: 29}]
+> [{cost: 24, cost_one: 1, cost_two: 4, cost_comp: 27}]
+> [{cost: 24, cost_one: 0, cost_two: 3, cost_comp: 27}]
+> [{cost: 22, cost_one: 0, cost_two: 2, cost_comp: 24}]
+> [{cost: 22, cost_one: 0, cost_two: 3, cost_comp: 25}]
+> [{cost: 21, cost_one: 1, cost_two: 1, cost_comp: 21}]
+> [{cost: 19, cost_one: 0, cost_two: 1, cost_comp: 20}]
+> [{cost: 19, cost_one: 0, cost_two: 3, cost_comp: 22}]
+> [{cost: 19, cost_one: 1, cost_two: 3, cost_comp: 21}]
+> [{cost: 19, cost_one: 1, cost_two: 3, cost_comp: 21}]
+> [{cost: 16, cost_one: 1, cost_two: 3, cost_comp: 18}]
+> [{cost: 16, cost_one: 0, cost_two: 4, cost_comp: 20}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 0, cost_two: 2, cost_comp: 18}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 0, cost_two: 1, cost_comp: 16}]
+> [{cost: 14, cost_one: 1, cost_two: 2, cost_comp: 15}]
+> [{cost: 14, cost_one: 0, cost_two: 5, cost_comp: 19}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 1, cost_two: 4, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 2, cost_comp: 16}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 1, cost_two: 3, cost_comp: 16}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 1, cost_two: 5, cost_comp: 18}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}]
+> [{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 1, cost_two: 4, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 1, cost_two: 2, cost_comp: 13}]
+> [{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 4, cost_comp: 16}]
+> [{cost: 12, cost_one: 0, cost_two: 2, cost_comp: 14}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 1, cost_two: 3, cost_comp: 14}]
+> [{cost: 12, cost_one: 1, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 4, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 4, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 4, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 4, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 4, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 4, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 2, cost_comp: 12}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 88, cost_one: 2, cost_two: 3, cost_comp: 88}]
+> [{cost: 75, cost_one: 3, cost_two: 2, cost_comp: 75}]
+> [{cost: 48, cost_one: 3, cost_two: 1, cost_comp: 48}]
+> [{cost: 41, cost_one: 0, cost_two: 2, cost_comp: 43}]
+> [{cost: 36, cost_one: 1, cost_two: 2, cost_comp: 37}]
+> [{cost: 31, cost_one: 0, cost_two: 2, cost_comp: 33}]
+> [{cost: 30, cost_one: 0, cost_two: 3, cost_comp: 33}]
+> [{cost: 28, cost_one: 1, cost_two: 2, cost_comp: 29}]
+> [{cost: 26, cost_one: 1, cost_two: 4, cost_comp: 29}]
+> [{cost: 25, cost_one: 1, cost_two: 4, cost_comp: 28}]
+> [{cost: 24, cost_one: 1, cost_two: 4, cost_comp: 27}]
+> [{cost: 23, cost_one: 1, cost_two: 3, cost_comp: 25}]
+> [{cost: 23, cost_one: 1, cost_two: 2, cost_comp: 24}]
+> [{cost: 22, cost_one: 0, cost_two: 3, cost_comp: 25}]
+> [{cost: 21, cost_one: 0, cost_two: 4, cost_comp: 25}]
+> [{cost: 20, cost_one: 1, cost_two: 2, cost_comp: 21}]
+> [{cost: 17, cost_one: 0, cost_two: 3, cost_comp: 20}]
+> [{cost: 17, cost_one: 0, cost_two: 3, cost_comp: 20}]
+> [{cost: 17, cost_one: 0, cost_two: 3, cost_comp: 20}]
+> [{cost: 17, cost_one: 0, cost_two: 3, cost_comp: 20}]
+> [{cost: 17, cost_one: 1, cost_two: 3, cost_comp: 19}]
+> [{cost: 17, cost_one: 1, cost_two: 3, cost_comp: 19}]
+> [{cost: 17, cost_one: 1, cost_two: 2, cost_comp: 18}]
+> [{cost: 17, cost_one: 0, cost_two: 4, cost_comp: 21}]
+> [{cost: 17, cost_one: 0, cost_two: 3, cost_comp: 20}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 0, cost_two: 2, cost_comp: 18}]
+> [{cost: 16, cost_one: 0, cost_two: 4, cost_comp: 20}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 0, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 0, cost_two: 4, cost_comp: 20}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 0, cost_two: 2, cost_comp: 17}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 0, cost_two: 2, cost_comp: 17}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 1, cost_two: 3, cost_comp: 16}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 1, cost_two: 2, cost_comp: 15}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 1, cost_two: 3, cost_comp: 16}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 1, cost_two: 4, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 1, cost_comp: 15}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 12, cost_one: 0, cost_two: 3, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 4, cost_comp: 15}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 0, cost_two: 3, cost_comp: 14}]
+> [{cost: 11, cost_one: 1, cost_two: 3, cost_comp: 13}]
+> [{cost: 11, cost_one: 0, cost_two: 2, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 5, cost_comp: 15}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 1, cost_comp: 11}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 1, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 5, cost_comp: 15}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 1, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 5, cost_comp: 15}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 1, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 1, cost_two: 2, cost_comp: 11}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 2, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 4, cost_comp: 14}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 10, cost_one: 1, cost_two: 3, cost_comp: 12}]
+> [{cost: 10, cost_one: 0, cost_two: 3, cost_comp: 13}]
+> [{cost: 108, cost_one: 2, cost_two: 1, cost_comp: 108}]
+> [{cost: 70, cost_one: 2, cost_two: 2, cost_comp: 70}]
+> [{cost: 58, cost_one: 3, cost_two: 1, cost_comp: 58}]
+> [{cost: 45, cost_one: 0, cost_two: 2, cost_comp: 47}]
+> [{cost: 41, cost_one: 1, cost_two: 3, cost_comp: 43}]
+> [{cost: 39, cost_one: 1, cost_two: 3, cost_comp: 41}]
+> [{cost: 36, cost_one: 1, cost_two: 5, cost_comp: 40}]
+> [{cost: 31, cost_one: 0, cost_two: 3, cost_comp: 34}]
+> [{cost: 28, cost_one: 2, cost_two: 2, cost_comp: 28}]
+> [{cost: 28, cost_one: 2, cost_two: 5, cost_comp: 31}]
+> [{cost: 27, cost_one: 0, cost_two: 4, cost_comp: 31}]
+> [{cost: 25, cost_one: 2, cost_two: 4, cost_comp: 27}]
+> [{cost: 23, cost_one: 1, cost_two: 2, cost_comp: 24}]
+> [{cost: 18, cost_one: 0, cost_two: 4, cost_comp: 22}]
+> [{cost: 18, cost_one: 0, cost_two: 3, cost_comp: 21}]
+> [{cost: 18, cost_one: 2, cost_two: 3, cost_comp: 19}]
+> [{cost: 17, cost_one: 1, cost_two: 3, cost_comp: 19}]
+> [{cost: 16, cost_one: 1, cost_two: 2, cost_comp: 17}]
+> [{cost: 16, cost_one: 0, cost_two: 4, cost_comp: 20}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 0, cost_two: 2, cost_comp: 17}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 1, cost_two: 3, cost_comp: 17}]
+> [{cost: 15, cost_one: 0, cost_two: 2, cost_comp: 17}]
+> [{cost: 15, cost_one: 2, cost_two: 3, cost_comp: 16}]
+> [{cost: 15, cost_one: 0, cost_two: 3, cost_comp: 18}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 1, cost_two: 3, cost_comp: 16}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 14, cost_one: 1, cost_two: 3, cost_comp: 16}]
+> [{cost: 14, cost_one: 0, cost_two: 4, cost_comp: 18}]
+> [{cost: 14, cost_one: 1, cost_two: 3, cost_comp: 16}]
+> [{cost: 14, cost_one: 0, cost_two: 2, cost_comp: 16}]
+> [{cost: 14, cost_one: 0, cost_two: 3, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 6, cost_comp: 19}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 1, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 1, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 1, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 6, cost_comp: 19}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 1, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 4, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 1, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 2, cost_comp: 14}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 0, cost_two: 1, cost_comp: 14}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 4, cost_comp: 17}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 2, cost_comp: 15}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 0, cost_two: 3, cost_comp: 16}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]
+> [{cost: 13, cost_one: 1, cost_two: 3, cost_comp: 15}]

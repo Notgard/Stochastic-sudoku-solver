@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+declare -a files=("https://raw.githubusercontent.com/grantm/sudoku-exchange-puzzle-bank/master/easy.txt" 
+"https://raw.githubusercontent.com/grantm/sudoku-exchange-puzzle-bank/master/medium.txt"
+"https://raw.githubusercontent.com/grantm/sudoku-exchange-puzzle-bank/master/hard.txt"
+"https://raw.githubusercontent.com/grantm/sudoku-exchange-puzzle-bank/master/diabolical.txt")
+DL_DIR='./ressources'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+RESET='\033[0m'
+for i in "${files[@]}"
+do
+    echo -e " >>> $i"
+    echo -e " > ${GREEN}Downloading file ${i##*/} into ${DL_DIR} directory...${RESET}"
+    curl -# --create-dirs -O --output-dir "$DL_DIR" "$i"
+done
