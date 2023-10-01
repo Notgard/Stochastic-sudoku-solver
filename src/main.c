@@ -389,8 +389,8 @@ int main(int argc, char *argv[])
             sudoku_debug_output(puzzle_hash, debug_buffer, date_buffer);
 #endif
             // Step k: reduce the temperature
-            //temperature = temperature / (1 + (log(1 + sigma) / ep + 1) * temperature);
-            temperature = 0.5 / 81 * log(9) - log(1 - sigma);
+            temperature = temperature / (1 + (log(1 + sigma) / ep + 1) * temperature);
+            //temperature = 0.5 / 81 * log(9) - log(1 - sigma);
         }
         lowest_cost_found = (lowest_cost_found > cost) ? cost : lowest_cost_found;
     }
