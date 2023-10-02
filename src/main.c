@@ -318,6 +318,7 @@ int main(int argc, char *argv[])
     int k, u, cost_one, cost_two, cost_comp, temp, new;
     int lowest_cost_found = (int)INFINITY;
     double start_time, end_time, CPU_time;
+    int **best_solution = NULL;
 //
     start_time = omp_get_wtime();
     //for (tries = 0; tries < MAX_TRIES; tries++)
@@ -407,9 +408,24 @@ int main(int argc, char *argv[])
             temperature = temperature / (1 + (log(1 + sigma) / ep + 1) * temperature);
             // temperature = 0.5 / 81 * log(9) - log(1 - sigma);
         }
-        //find lowest cost and manage maximum amount of tries
+        
+        //find lowest cost and manage the best current solution
+        if(cost < lowest_cost_found) { //if we find the current best solution, keep the cost and the grid
+            lowest_cost_found = cost;
+            if(KEEP_BEST) {
+                if(best_solution != NULL) {
+                    sudoku_free(best_solution);
+                    best_solution = NULL;
+                }
+                best_solution = create_sudoku_lines(lines);
+            }
+            
+        } else if(KEEP_BEST) { //if the cost found is inferior, go back to best solution
+            sudoku_copy_content(&lines, best_solution);
+        }
+
+        //increment the number of tries
         tries++;
-        lowest_cost_found = (lowest_cost_found > cost) ? cost : lowest_cost_found;
         if(tries > MAX_TRIES) break;
     }
     end_time = omp_get_wtime();
@@ -459,6 +475,8 @@ int main(int argc, char *argv[])
     sudoku_free_pointers(columns);
     sudoku_free(lines);
     sudoku_free(original_grid);
+    if(best_solution != NULL)
+        sudoku_free(best_solution);
 
     return EXIT_SUCCESS;
 }

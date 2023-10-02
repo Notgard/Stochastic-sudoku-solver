@@ -179,6 +179,19 @@ void sudoku_randomize(int ***sudoku_grid, unsigned int seed) {
     }
 }
 
+/// @brief Copies the content of a sudoku grid into another
+/// @param sudoku_grid the grid to modify the content of
+/// @param content the content to copy
+void sudoku_copy_content(int ***sudoku_grid, int **content) {
+    for (int line = 0; line < SUDOKU_SIZE; line++)
+    {
+        for (int col = 0; col < SUDOKU_SIZE; col++)
+        {
+            (*sudoku_grid)[line][col] = content[line][col];
+        }
+    }
+}
+
 /// @brief Utility function to append the results obtained from the algorithm to a file
 /// @param filename the file in question, is created if doesn't exist yet. We assume it corresponds to the sudoku hash
 /// @param score the value returned from the cost function in the sudoku solving algorithm

@@ -53,6 +53,11 @@ void print_sudoku_pointers(int ***sudoku_grid);
 /// @param seed the randomization seed used
 void sudoku_randomize(int ***sudoku_grid, unsigned int seed);
 
+/// @brief Copies the content of a sudoku grid into another
+/// @param sudoku_grid the grid to modify the content of
+/// @param content the content to copy
+void sudoku_copy_content(int ***sudoku_grid, int **content);
+
 /// @brief Utility function to append the results obtained from the algorithm to a file
 /// @param filename the file in question, is created if doesn't exist yet. We assume it corresponds to the sudoku hash
 /// @param score the value returned from the cost function in the sudoku solving algorithm
