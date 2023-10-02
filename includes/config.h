@@ -19,7 +19,7 @@
 #define DEBUG_SIZE 256
 
 // configuration of the solving algorithm
-#define MAX_TRIES 100
+#define MAX_TRIES 1000
 #define TEMPERATURE_CEILING 0.00273852
 #define PRESUMED_PUZZLE_SIZE PUZZLE_SIZE * 2
 

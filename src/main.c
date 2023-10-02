@@ -301,7 +301,6 @@ int main(int argc, char *argv[])
 //  randomly all of the cells of the grid with values from 1 to 9, except the ones already placed
     unsigned int seed = (unsigned int)time(NULL);
 
-
 //
 
 // Setup main loop and current timestamp
@@ -329,6 +328,7 @@ int main(int argc, char *argv[])
         sudoku_randomize(&lines, seed);
         // calculate cost of the random grid
         cost = sudoku_constraints(lines, columns, regions);
+    
         if(verbose) {
             printf("\n===========================\n");
             print_sudoku(lines);
@@ -341,12 +341,12 @@ int main(int argc, char *argv[])
         // Step 2: Setup the contants
         int i = -1, j = -1;
         float sigma = 0.1;
-        double ep = (1620 / 2);
+        double ep = 1620 / 2;
+        double e = exp(1);
         double temperature = ep;
         //diminution de la temperature de départ à chaque quart d'essaie 
         if(tries != 0 && tries % (MAX_TRIES/4) == 0)
             temperature /= 2;
-        double e = exp(1);
 
         // Step 3: Start the recuit simulation algorithm
         while (temperature >= TEMPERATURE_CEILING && solved != true)
@@ -367,19 +367,22 @@ int main(int argc, char *argv[])
                 // Step 7: evaluate the cost of the random cell with changed value
                 cost_two = sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
 
-                // Step 8: compare the cost between the two random cells
+                // Step 8: compare the cost between the two random cell values
                 cost_comp = cost - cost_one + cost_two;
                 // Step 9: choose random value in [0, 1]
                 u = get_random();
-#if _DEBUG_ && 0
-                if (tries == 1 && k < 2)
+#if _DEBUG_
+                if (tries == 1)
                 {
                     snprintf(debug_buffer, DEBUG_SIZE, "\nFirst iterations of the second try of the algorithm ->{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d}\n", cost, cost_one, cost_two, cost_comp);
                     sudoku_debug_output(puzzle_hash, debug_buffer, date_buffer);
                 }
 #endif
                 // Step 10: probability acceptance
-                if (u <= MIN(1, e - ((cost_comp - cost) / temperature)))
+                if(cost_comp < cost) {
+                    cost = cost_comp;
+                }
+                else if (u <= MIN(1, e - ((cost_comp - cost) / temperature)))
                 { // acceptation
                     cost = cost_comp;
                 }
@@ -388,16 +391,16 @@ int main(int argc, char *argv[])
                     lines[i][j] = temp;
                 }
                 // Stop the k loop if the cost of the grid is 0
-                if (cost == 0)
+                if (cost == 2)
                 {
-                    if(verbose)
-                        printf("\n>>> [NULL 0 cost solution found]\n");
+                    //if(verbose)
+                    printf("\n>>> [NULL 0 cost solution found]\n");
                     solved = true;
                     break;
                 }
             }
 #if _DEBUG_
-            snprintf(debug_buffer, DEBUG_SIZE, "{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d}", cost, cost_one, cost_two, cost_comp);
+            snprintf(debug_buffer, DEBUG_SIZE, "{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d, temperature: %f}", cost, cost_one, cost_two, cost_comp, temperature);
             sudoku_debug_output(puzzle_hash, debug_buffer, date_buffer);
 #endif
             // Step k: reduce the temperature
@@ -443,6 +446,7 @@ int main(int argc, char *argv[])
         
         print_sudoku(lines);
     }
+
     printf(">> Current cost at the end of the simulation : %d\n", cost);
     printf(">> Best solution (lowest cost) found during the execution of the simulation : %d\n", lowest_cost_found);
     printf(">> CPU Execution time of the sudoku solving simulation : %f\n", CPU_time);
