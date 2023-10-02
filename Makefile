@@ -2,7 +2,7 @@
 # MAIN CONFIGURATION
 #
 
-EXEC = main stats
+EXEC = main stats benchmark
 OBJECTS = utils.o
 PROJECT_NAME = SUDOKU_SOLVER
 

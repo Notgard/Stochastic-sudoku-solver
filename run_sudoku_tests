@@ -55,7 +55,7 @@ easy_bench=0.0
 medium_bench=0.0
 hard_bench=0.0
 diabolical_bench=0.0
-benchmark_file="./benchmark/$$.txt"
+benchmark_file="./benchmark/CPU_USAGE-$$.txt"
 #try the easy puzzles
 for i in "${easy_sudoku_puzzles[@]}"
 do
@@ -104,3 +104,4 @@ do
 done
 mean=$(echo "$diabolical_bench / $NB_TRIES" | bc -l)
 printf "diabolical %.3f\n" "$mean" >> "$benchmark_file"
+./bin/benchmark 4 "$benchmark_file"

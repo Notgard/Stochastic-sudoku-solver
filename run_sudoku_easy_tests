@@ -13,8 +13,17 @@ easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004686971dc"
 easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004bab224ce"
 #make compile main sudoku solving C program
 make clean && make
+#set file name
+stats_file="./benchmark/easy/stats-$$.txt"
 #try the easy puzzles
 for i in "${easy_sudoku_puzzles[@]}"
 do
-    ./bin/main "easy.txt" "$i"
+    result=$(./bin/main "easy.txt" "$i")
+    echo -e "$result"
+    #get the execution time for the x axis and the final cost of the algorithm for the y axis
+    exec_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
+    end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
+    echo "$exec_time $end_cost" >> "$stats_file"
 done
+#create benchmark graph
+./bin/benchmark "1" "$stats_file"

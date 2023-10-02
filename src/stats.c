@@ -90,8 +90,9 @@ void sudoku_plot_multiple_stats(const char *format, ...)
     exit(EXIT_SUCCESS);
 }
 
-void sudoku_plot_performance(int nb_tries, const char *filename)
+void sudoku_plot_statistics(int argc, char * argv[])
 {
+    int color = 0;
     char command_buffer[COMMANDE_SIZE + 1];
     char command[COMMANDE_SIZE + 1] = "plot";
 
@@ -102,17 +103,24 @@ void sudoku_plot_performance(int nb_tries, const char *filename)
         exit(EXIT_FAILURE);
     }
 
-    snprintf(command_buffer,
-             FILE_SIZE + 1,
-             " \"%s\" using 2:xtic(1) t 'Moyenne du temps execution' with %s linewidth %d linecolor \"%s\", \"\" \
-             using 2:xtic(1) with histogram title 'Performance' fillstyle pattern 4 linecolor \"green\"",
-             filename, "linespoints", LINE_THICKNESS, "black");
-    strcat(command, command_buffer);
+    for(int i = 1; i < argc; i++) {
+        snprintf(command_buffer,
+                 FILE_SIZE + 1,
+                 " \"%s\" t 'Cost Function' with %s linewidth %d linecolor \"%s\",",
+                 argv[i], LINE_TYPE, LINE_THICKNESS, plot_colors[color]);
+
+        strcat(command, command_buffer);
+        color++;
+        printf("%s\n", argv[i]);
+    }
+    command[strlen(command) - 1] = '\0';
     printf("%s\n", command);
 
-    fprintf(gnuplot, "set title \"%s\" font \"%s\"\n", "Temps d'execution en moyenne de chaque type de sudoku", "Helvetica,18");
-    fprintf(gnuplot, "set xlabel \"Temps d'execution (secondes)\"\n");
-    fprintf(gnuplot, "set ylabel \"Difficulté du sudoku\"\n");
+    fprintf(gnuplot, "set title \"%s\" font \"%s\"\n", "Evolution de la fonction de cout du recuit simmulé", "Helvetica,18");
+    fprintf(gnuplot, "set xlabel \"Redémarrage de l'algorithme\"\n");
+    fprintf(gnuplot, "set ylabel \"Valeur de la fonction de cout\"\n");
+    fprintf(gnuplot, "set xtics 0, %d\n", X_RANGE);
+    // fprintf(gnuplot, "set ytics 0, %d\n", Y_RANGE);
     fprintf(gnuplot, "%s\n", command);
     fflush(gnuplot);
     fprintf(stdout, "Click Ctrl+d to quit...\n");
@@ -133,12 +141,8 @@ int main(int argc, char *argv[])
     char * file7 = "./data/0000183b305c-02-10-2023-(13-53-53).txt";
     printf("[%s, %s, %s, %s, %s, %s, %s]\n", file1, file2, file3, file4, file5, file6, file7);
 
-    sudoku_graph_stats(file5);
-
-    // sudoku_plot_multiple_stats("%s", file5, file6, file7, NULL);
-
-    //const char *file8 = "./benchmark/2866.txt";
-    //sudoku_plot_performance(MAX_TRIES, file8);
+    //sudoku_graph_stats(file5);
+    sudoku_plot_multiple_stats("%s", file5, NULL);
 
     return EXIT_SUCCESS;
 }
