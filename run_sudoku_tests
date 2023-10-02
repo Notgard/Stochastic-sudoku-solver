@@ -49,23 +49,58 @@ diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="000673abbc89"
 diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0006756dc1bd"
 #make compile main sudoku solving C program
 make clean && make
+#prepare benchmark data
+NB_TRIES=${#easy_sudoku_puzzles[@]}
+easy_bench=0.0
+medium_bench=0.0
+hard_bench=0.0
+diabolical_bench=0.0
+benchmark_file="./benchmark/$$.txt"
 #try the easy puzzles
 for i in "${easy_sudoku_puzzles[@]}"
 do
-    ./bin/main "easy.txt" "$i"
+    result=$(./bin/main "easy.txt" "$i")
+    echo -e "$result"
+    bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
+    if [ -n "$bench_time" ]; then
+        easy_bench=$(echo "$easy_bench + $bench_time" | bc -l)
+    fi
 done
+mean=$(echo "$easy_bench / $NB_TRIES" | bc -l)
+printf "easy %.3f\n" "$mean" > "$benchmark_file"
 #try the medium puzzles
 for i in "${medium_sudoku_puzzles[@]}"
 do
-    ./bin/main "medium.txt" "$i"
+    result=$(./bin/main "medium.txt" "$i")
+    echo -e "$result"
+    bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
+    if [ -n "$bench_time" ]; then
+        medium_bench=$(echo "$medium_bench + $bench_time" | bc -l)
+    fi
 done
+mean=$(echo "$medium_bench / $NB_TRIES" | bc -l)
+printf "medium %.3f\n" "$mean" >> "$benchmark_file"
 #try the hard puzzles
 for i in "${hard_sudoku_puzzles[@]}"
 do
-    ./bin/main "hard.txt" "$i"
+    result=$(./bin/main "hard.txt" "$i")
+    echo -e "$result"
+    bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
+    if [ -n "$bench_time" ]; then
+        hard_bench=$(echo "$hard_bench + $bench_time" | bc -l)
+    fi
 done
+mean=$(echo "$hard_bench / $NB_TRIES" | bc -l)
+printf "hard %.3f\n" "$mean" >> "$benchmark_file"
 #try the diabolical puzzles
 for i in "${diabolical_sudoku_puzzles[@]}"
 do
-    ./bin/main "diabolical.txt" "$i"
+    result=$(./bin/main "diabolical.txt" "$i")
+    echo -e "$result"
+    bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
+    if [ -n "$bench_time" ]; then
+        diabolical_bench=$(echo "$diabolical_bench + $bench_time" | bc -l)
+    fi
 done
+mean=$(echo "$diabolical_bench / $NB_TRIES" | bc -l)
+printf "diabolical %.3f\n" "$mean" >> "$benchmark_file"

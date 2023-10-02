@@ -341,8 +341,11 @@ int main(int argc, char *argv[])
         // Step 2: Setup the contants
         int i = -1, j = -1;
         float sigma = 0.1;
-        double ep = (1620 / 2) / (tries+1);
+        double ep = (1620 / 2);
         double temperature = ep;
+        //diminution de la temperature de départ à chaque quart d'essaie 
+        if(tries != 0 && tries % (MAX_TRIES/4) == 0)
+            temperature /= 2;
         double e = exp(1);
 
         // Step 3: Start the recuit simulation algorithm
@@ -437,8 +440,9 @@ int main(int argc, char *argv[])
         printf("\n===========================\n");
         printf("To: ");
         printf("\n===========================\n");
+        
+        print_sudoku(lines);
     }
-    print_sudoku(lines);
     printf(">> Current cost at the end of the simulation : %d\n", cost);
     printf(">> Best solution (lowest cost) found during the execution of the simulation : %d\n", lowest_cost_found);
     printf(">> CPU Execution time of the sudoku solving simulation : %f\n", CPU_time);
