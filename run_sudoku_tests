@@ -68,6 +68,7 @@ do
 done
 mean=$(echo "$easy_bench / $NB_TRIES" | bc -l)
 printf "easy %.3f\n" "$mean" > "$benchmark_file"
+echo -e "------------------------------------------------------------------------------------------"
 #try the medium puzzles
 for i in "${medium_sudoku_puzzles[@]}"
 do
@@ -80,6 +81,7 @@ do
 done
 mean=$(echo "$medium_bench / $NB_TRIES" | bc -l)
 printf "medium %.3f\n" "$mean" >> "$benchmark_file"
+echo -e "------------------------------------------------------------------------------------------"
 #try the hard puzzles
 for i in "${hard_sudoku_puzzles[@]}"
 do
@@ -92,6 +94,7 @@ do
 done
 mean=$(echo "$hard_bench / $NB_TRIES" | bc -l)
 printf "hard %.3f\n" "$mean" >> "$benchmark_file"
+echo -e "------------------------------------------------------------------------------------------"
 #try the diabolical puzzles
 for i in "${diabolical_sudoku_puzzles[@]}"
 do
@@ -104,4 +107,5 @@ do
 done
 mean=$(echo "$diabolical_bench / $NB_TRIES" | bc -l)
 printf "diabolical %.3f\n" "$mean" >> "$benchmark_file"
+echo -e "------------------------------------------------------------------------------------------"
 ./bin/benchmark 4 "$benchmark_file"

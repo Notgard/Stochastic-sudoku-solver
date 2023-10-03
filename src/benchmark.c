@@ -5,13 +5,17 @@
 
 #include "config.h"
 
-const char plot_colors[6][10] = {
+const char plot_colors[10][10] = {
+    "black",
     "red",
     "green",
     "blue",
     "yellow",
     "purple",
-    "cyan"
+    "cyan",
+    "pink",
+    "orange",
+    "violet"
 };
 
 /// @brief Dessine une courbe et un histogramme montrant le temps d'execution en moyenne de chaque niveau de difficulté de sudoku 
@@ -52,8 +56,11 @@ void sudoku_plot_performance(int nb_tries, const char *filename)
 void sudoku_plot_difficulty_benchmark(int argc, char *argv[], const char *difficulty)
 {
     int color = 0;
+    //double m = atof(argv[3]);
+    //double b = atof(argv[4]);
     char command_buffer[COMMANDE_SIZE + 1];
     char command[COMMANDE_SIZE + 1] = "plot";
+    char * filename = argv[2];
 
     FILE *gnuplot = popen("gnuplot", "w");
     if (!gnuplot)
@@ -62,25 +69,25 @@ void sudoku_plot_difficulty_benchmark(int argc, char *argv[], const char *diffic
         exit(EXIT_FAILURE);
     }
 
-    for (int i = 2; i < argc; i++)
-    {
-        snprintf(command_buffer,
-                 FILE_SIZE + 1,
-                 " \"%s\" using 1:2 with histeps title '%s' linecolor \"%s\",",
-                 argv[i], "fréquence", plot_colors[color]);
+    snprintf(command_buffer,
+             FILE_SIZE + 1,
+             " \"%s\" using 1:2 with %s lc rgb \"%s\" title '%s',",// '%s' using 1:($1 * %f + %f) smooth unique with lines title \"%s\"
+             filename, "points pointtype 7 pointsize 2", plot_colors[color], "Données (execution/cout algo)"/* , 
+             filename, m, b, "regression linéaire" */);
 
-        strcat(command, command_buffer);
-        color++;
-        printf("%s\n", argv[i]);
-    }
+    strcat(command, command_buffer);
+    printf("%s\n", filename);
+
     command[strlen(command) - 1] = '\0';
     printf("%s\n", command);
 
     fprintf(gnuplot, "set title \"Résultats des tests de l\'algorithme pour des sudoku %s\" font \"%s\"\n", difficulty, "Helvetica,18");
     fprintf(gnuplot, "set xlabel \"Temps d'execution du test (en secondes)\"\n");
     fprintf(gnuplot, "set ylabel \"Meilleur coût obtenu\"\n");
-    fprintf(gnuplot, "set xrange [0:0.15]\n");
-    fprintf(gnuplot, "%s\n", command);
+    fprintf(gnuplot, "set grid\n");
+    fprintf(gnuplot, "f(x) = m*x + b\n");
+    fprintf(gnuplot, "fit f(x) '%s' using 1:2 via m,b\n", filename);
+    fprintf(gnuplot, "%s, f(x) title 'Regression linéaire'\n", command);
     fflush(gnuplot);
     fprintf(stdout, "Click Ctrl+d to quit...\n");
     getchar();

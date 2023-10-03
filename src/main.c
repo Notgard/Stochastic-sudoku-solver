@@ -325,11 +325,12 @@ int main(int argc, char *argv[])
     tries = 0;
     while(solved != true)
     {
+    
         // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
         sudoku_randomize(&lines, seed);
         // calculate cost of the random grid
         cost = sudoku_constraints(lines, columns, regions);
-    
+
         if(verbose) {
             printf("\n===========================\n");
             print_sudoku(lines);
@@ -342,11 +343,11 @@ int main(int argc, char *argv[])
         // Step 2: Setup the contants
         int i = -1, j = -1;
         float sigma = 0.1;
-        double ep = 1620 / 2;
+        double ep = START_TEMPERATURE;
         double e = exp(1);
         double temperature = ep;
-        //diminution de la temperature de départ à chaque quart d'essaie 
-        if(tries != 0 && tries % (MAX_TRIES/4) == 0)
+        //diminution/augmentation de la temperature de départ à chaque quart d'essaie 
+        if(tries != 0 && tries % (MAX_TRIES/TEMP_STEP) == 0)
             temperature /= 2;
 
         // Step 3: Start the recuit simulation algorithm
@@ -391,8 +392,8 @@ int main(int argc, char *argv[])
                 { // rejet
                     lines[i][j] = temp;
                 }
-                // Stop the k loop if the cost of the grid is 0
-                if (cost == 2)
+                // Stop the algorithm if the cost of the grid is 0
+                if (cost == 0)
                 {
                     //if(verbose)
                     printf("\n>>> [NULL 0 cost solution found]\n");

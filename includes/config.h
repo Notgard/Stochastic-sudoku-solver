@@ -19,17 +19,19 @@
 #define DEBUG_SIZE 256
 
 // configuration of the solving algorithm
-#define MAX_TRIES 10
-#define KEEP_BEST 0
+#define MAX_TRIES 1000
+#define KEEP_BEST 1
+#define TEMP_STEP 10
+#define START_TEMPERATURE (1620 / 2)
 #define TEMPERATURE_CEILING 0.00273852
-#define PRESUMED_PUZZLE_SIZE PUZZLE_SIZE * 4
+#define PRESUMED_PUZZLE_SIZE PUZZLE_SIZE
 
 // gnuplot configuration
-#define COMMANDE_SIZE 1024
+#define COMMANDE_SIZE 4086
 #define LINE_THICKNESS 2
 #define LINE_TYPE "lines"
 #define X_RANGE 5
 #define Y_RANGE 10
-extern const char plot_colors[6][10];
+extern const char plot_colors[10][10];
 
 #endif
