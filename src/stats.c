@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <string.h>
-
 #include "config.h"
+
+#include "stats.h"
 
 const char plot_colors[10][10] = {
     "black",
@@ -18,7 +15,9 @@ const char plot_colors[10][10] = {
     "violet"
 };
 
-void sudoku_graph_stats(char *filename)
+/// @brief Plot sudoku solving statistics from given file
+/// @param filename given file
+void sudoku_plot_stats(char *filename)
 {
     FILE *gnuplot = popen("gnuplot", "w");
     if (!gnuplot)
@@ -29,6 +28,10 @@ void sudoku_graph_stats(char *filename)
 
     int color = 0;
 
+    if(GET_OUTPUT) {
+        fprintf(gnuplot, "set terminal pngcairo\n");
+        fprintf(gnuplot, "set output './output/annealing_plot.png'\n");
+    }
     fprintf(gnuplot, "set title \"%s\" font \"%s\"\n", "Evolution de la fonction de cout du recuit simmulé", "Helvetica,18");
     fprintf(gnuplot, "set xlabel \"Redémarrage de l'algorithme\"\n");
     fprintf(gnuplot, "set ylabel \"Valeur de la fonction de cout\"\n");
@@ -45,6 +48,9 @@ void sudoku_graph_stats(char *filename)
     exit(EXIT_SUCCESS);
 }
 
+/// @brief Plot multiple sudoku solving statistics from the given file names
+/// @param format all the files to plot as line graph
+/// @param  
 void sudoku_plot_multiple_stats(const char *format, ...)
 {
     va_list args;
@@ -81,6 +87,12 @@ void sudoku_plot_multiple_stats(const char *format, ...)
     printf("%s\n", command);
 
     va_end(args);
+
+    if(GET_OUTPUT) {
+        fprintf(gnuplot, "set terminal pngcairo\n");
+        fprintf(gnuplot, "set output './output/annealing_plots.png'\n");
+    }
+
     fprintf(gnuplot, "set title \"%s\" font \"%s\"\n", "Evolution de la fonction de cout du recuit simmulé", "Helvetica,18");
     fprintf(gnuplot, "set xlabel \"Redémarrage de l'algorithme\"\n");
     fprintf(gnuplot, "set ylabel \"Valeur de la fonction de cout\"\n");
@@ -95,6 +107,9 @@ void sudoku_plot_multiple_stats(const char *format, ...)
     exit(EXIT_SUCCESS);
 }
 
+/// @brief Plot multiple sudoku solving statistics from given file using the program arguments
+/// @param argc number of arguments
+/// @param argv arrar of arguments
 void sudoku_plot_statistics(int argc, char *argv[])
 {
     int color = 0;
@@ -122,6 +137,11 @@ void sudoku_plot_statistics(int argc, char *argv[])
     command[strlen(command) - 1] = '\0';
     printf("%s\n", command);
 
+    if(GET_OUTPUT) {
+        fprintf(gnuplot, "set terminal pngcairo\n");
+        fprintf(gnuplot, "set output './output/annealing_plots.png'\n");
+    }
+
     fprintf(gnuplot, "set title \"%s\" font \"%s\"\n", "Evolution de la fonction de cout du recuit simmulé", "Helvetica,18");
     fprintf(gnuplot, "set xlabel \"Redémarrage de l'algorithme\"\n");
     fprintf(gnuplot, "set ylabel \"Valeur de la fonction de cout\"\n");
@@ -138,29 +158,11 @@ void sudoku_plot_statistics(int argc, char *argv[])
 
 int main(int argc, char *argv[])
 {
-    char *file1 = "data/0004bab224ce-03-10-2023-(21-56-46).txt";
-    char *file2 = "data/0004686971dc-03-10-2023-(21-56-34).txt";
-    char *file3 = "data/0004464633b4-03-10-2023-(21-56-24).txt";
-    char *file4 = "data/0004125f628d-03-10-2023-(21-56-13).txt";
-    char *file5 = "data/0003af4e2943-03-10-2023-(21-56-03).txt";
-    char *file6 = "data/00031006ebf1-03-10-2023-(21-55-53).txt";
-    char *file7 = "data/00023580f347-03-10-2023-(21-55-43).txt";
-    char *file8 = "data/000212406270-03-10-2023-(21-55-33).txt";
-    char *file9 = "data/0001d5d6314e-03-10-2023-(21-55-23).txt";
-    char *file10 = "data/0000183b305c-03-10-2023-(21-55-13).txt";
+    char * file4 = "./data/0000183b305c-05-10-2023-(17-22-31).txt"; //with keep best strategy
+    char * file5 = "./data/0000183b305c-05-10-2023-(17-22-53).txt"; //without keep best strategy
 
-    printf("[%s, %s, %s, %s, %s, %s, %s]\n", file1, file2, file3, file4, file5, file6, file7);
-
-    // sudoku_graph_stats(file5);
-    sudoku_plot_multiple_stats("%s", file1, file2,
-                               file3,
-                               file4,
-                               file5,
-                               file6,
-                               file7,
-                               file8,
-                               file9,
-                               file10, NULL);
+    sudoku_plot_multiple_stats("%s", file4, file5,
+                                NULL);
 
     return EXIT_SUCCESS;
 }

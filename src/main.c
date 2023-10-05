@@ -4,7 +4,6 @@
 #include <fcntl.h>
 #include <string.h>
 #include <time.h>
-#include <stdbool.h>
 #include <locale.h>
 
 #include <math.h>
@@ -273,6 +272,9 @@ int main(int argc, char *argv[])
     printf("%s#File currently being solved [%s]%s\n", CLR_GRN, puzzle_hash, CLR_RESET);
     printf("%s#Maximum tries : %s[%d]\n", CLR_GRN, CLR_RESET, MAX_TRIES);
 
+    //print the current solving configuration
+    if(PRINT_CONFIG) print_config();
+
     int **original_grid = read_sudoku_file(filename, SUDOKU_SIZE, puzzle_hash);
     if(verbose)
         print_sudoku(original_grid);
@@ -301,6 +303,12 @@ int main(int argc, char *argv[])
 //  randomly all of the cells of the grid with values from 1 to 9, except the ones already placed
     unsigned int seed = (unsigned int)time(NULL);
 
+    if(!RANDOMIZE_SUDOKU) { //randomize the sudoku only once at the start
+        // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
+        sudoku_randomize(&lines, seed);
+        // calculate cost of the random grid
+        cost = sudoku_constraints(lines, columns, regions);
+    }
 //
 
 // Setup main loop and current timestamp
@@ -325,11 +333,12 @@ int main(int argc, char *argv[])
     tries = 0;
     while(solved != true)
     {
-    
-        // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
-        sudoku_randomize(&lines, seed);
-        // calculate cost of the random grid
-        cost = sudoku_constraints(lines, columns, regions);
+        if(RANDOMIZE_SUDOKU) {// randomize the sudoku each try
+            // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
+            sudoku_randomize(&lines, seed);
+            // calculate cost of the random grid
+            cost = sudoku_constraints(lines, columns, regions);
+        }
 
         if(verbose) {
             printf("\n===========================\n");
@@ -338,7 +347,7 @@ int main(int argc, char *argv[])
         }
 
         // log the stats of the recuit solver
-        //sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
+        sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
 
         // Step 2: Setup the contants
         int i = -1, j = -1;
@@ -395,7 +404,6 @@ int main(int argc, char *argv[])
                 // Stop the algorithm if the cost of the grid is 0
                 if (cost == 0)
                 {
-                    //if(verbose)
                     printf("\n>>> [NULL 0 cost solution found]\n");
                     solved = true;
                     break;
@@ -427,7 +435,7 @@ int main(int argc, char *argv[])
 
         //increment the number of tries
         tries++;
-        if(tries > MAX_TRIES) break;
+        if(tries > MAX_TRIES && !KEEP_TRYING) break;
     }
     end_time = omp_get_wtime();
 

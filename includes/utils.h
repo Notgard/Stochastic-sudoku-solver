@@ -71,4 +71,7 @@ void sudoku_write_stats(char * filename, int score, int n_try, char * date);
 /// @param date 
 void sudoku_debug_output(char * filename, char * info, char * date);
 
+/// @brief Prints the current configuration of the sudoku solving alogrithm
+void print_config();
+
 #endif

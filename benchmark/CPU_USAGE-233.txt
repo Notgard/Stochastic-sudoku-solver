@@ -1,0 +1,3 @@
+easy 0.329
+medium 0.328
+hard 0.319

@@ -234,3 +234,18 @@ void sudoku_debug_output(char * filename, char * info, char * date) {
 
     fclose(fp);
 }
+
+/// @brief Prints the current configuration of the sudoku solving alogrithm
+void print_config() {
+    printf("Current configuration: \n");
+    if(KEEP_BEST) printf("  %s>[KEEP_BEST]Keep best sudoku found:%s %sON%s\n", CLR_YEL, CLR_RESET, CLR_GRN, CLR_RESET);
+    else printf("  %s>[KEEP_BEST]Keep best sudoku found:%s %sOFF%s\n", CLR_YEL, CLR_RESET, CLR_RED, CLR_RESET);
+
+    if(KEEP_TRYING) printf("  %s>[KEEP_TRYING]Keep trying until the sudoku is solved:%s %sON%s\n", CLR_YEL, CLR_RESET, CLR_GRN, CLR_RESET);
+    else printf("  %s>[KEEP_TRYING]Keep trying until the sudoku is solved:%s %sOFF%s\n", CLR_YEL, CLR_RESET, CLR_RED, CLR_RESET);
+
+    if(RANDOMIZE_SUDOKU) printf("  %s>[RANDOMIZE_SUDOKU]Randomize the sudoku each try:%s %sON%s\n", CLR_YEL, CLR_RESET, CLR_GRN, CLR_RESET);
+    else printf("  %s>[RANDOMIZE_SUDOKU]Randomize the sudoku each try:%s %sOFF%s\n", CLR_YEL, CLR_RESET, CLR_RED, CLR_RESET);
+
+    printf("  %s>[START_TEMPERATURE]Starting temperature:%s %f\n", CLR_YEL, CLR_RESET, START_TEMPERATURE);
+}
