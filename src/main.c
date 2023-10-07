@@ -347,7 +347,7 @@ int main(int argc, char *argv[])
         }
 
         // log the stats of the recuit solver
-        sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
+        if(GET_STATS) sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
 
         // Step 2: Setup the contants
         int i = -1, j = -1;
@@ -356,7 +356,7 @@ int main(int argc, char *argv[])
         double e = exp(1);
         double temperature = ep;
         //diminution/augmentation de la temperature de départ à chaque quart d'essaie 
-        if(tries != 0 && tries % (MAX_TRIES/TEMP_STEP) == 0)
+        if(tries != 0 && tries % (MAX_TRIES/TEMP_STEP) == 0 && !KEEP_TRYING)
             temperature /= 2;
 
         // Step 3: Start the recuit simulation algorithm
@@ -402,10 +402,12 @@ int main(int argc, char *argv[])
                     lines[i][j] = temp;
                 }
                 // Stop the algorithm if the cost of the grid is 0
-                if (cost == 0)
+                if (cost <= SOLUTION_COST)
                 {
                     printf("\n>>> [NULL 0 cost solution found]\n");
                     solved = true;
+                    // log the stats of the recuit solver
+                    if(GET_STATS) sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
                     break;
                 }
             }

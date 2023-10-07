@@ -27,18 +27,23 @@
 #define DEBUG_SIZE 256
 
 // configuration of the solving algorithm
-#define MAX_TRIES 500
+#define MAX_TRIES 5000
 
 #define RANDOMIZE_SUDOKU true
-#define KEEP_BEST false
+
+#define KEEP_BEST true
+
 #define KEEP_TRYING false
 
 #define PRINT_CONFIG true
 
 #define TEMP_STEP 10 //the temperature is divided by two each step (depends on the numbers of tries)
+#define SOLUTION_COST 2 // the cost of the wanted solution of the sudoku
 #define START_TEMPERATURE ((double)(1620 / 2))
 #define TEMPERATURE_CEILING 0.00273852
-#define PRESUMED_PUZZLE_SIZE PUZZLE_SIZE * 2
+#define PRESUMED_PUZZLE_SIZE PUZZLE_SIZE
+
+#define GET_STATS false
 
 // gnuplot configuration
 #define COMMANDE_SIZE 4086

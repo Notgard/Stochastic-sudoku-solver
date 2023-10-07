@@ -358,3 +358,178 @@ correlation matrix of the fit parameters:
                 m      b      
 m               1.000 
 b              -1.000  1.000 
+
+
+*******************************************************************************
+Sat Oct  7 14:10:21 2023
+
+
+FIT:    data read from './benchmark/easy/stats-488.txt' using 1:2
+        format = x:z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 3.7661607995e+02   0.00e+00  6.61e+00    1.000000e+00   1.000000e+00
+   5 2.8587135976e+00  -1.99e-01  6.61e-05   -1.061582e+00   1.406280e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 2.85871
+rel. change during last iteration : -1.99327e-06
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.597779
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.357339
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = -1.06158         +/- 0.7371       (69.43%)
+b               = 14.0628          +/- 6.85         (48.71%)
+
+correlation matrix of the fit parameters:
+                m      b      
+m               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Sat Oct  7 14:21:17 2023
+
+
+FIT:    data read from './benchmark/easy/stats-623.txt' using 1:2
+        format = x:z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 2.2913757283e+04   0.00e+00  3.56e+01    1.000000e+00   1.000000e+00
+   5 2.6810378871e+00  -1.43e-03  3.56e-04    3.072585e-02   1.911518e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 2.68104
+rel. change during last iteration : -1.42775e-08
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.578904
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.33513
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 0.0307259        +/- 0.01357      (44.15%)
+b               = 1.91152          +/- 0.6822       (35.69%)
+
+correlation matrix of the fit parameters:
+                m      b      
+m               1.000 
+b              -0.963  1.000 
+
+
+*******************************************************************************
+Sat Oct  7 14:41:58 2023
+
+
+FIT:    data read from './benchmark/easy/stats-7720.txt' using 1:2
+        format = x:z
+        #datapoints = 2
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 2.8308984884e+02   0.00e+00  1.06e+01    1.000000e+00   1.000000e+00
+  20 4.0636197380e-27   0.00e+00  1.06e+01    1.359482e-13   4.000000e+00
+
+After 20 iterations the fit converged.
+final sum of squares of residuals : 4.06362e-27
+rel. change during last iteration : 0
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 1.35948e-13    
+b               = 4              
+
+
+*******************************************************************************
+Sat Oct  7 14:46:29 2023
+
+
+FIT:    data read from './benchmark/easy/stats-7794.txt' using 1:2
+        format = x:z
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 1.3716051592e+03   0.00e+00  1.02e+01    1.000000e+00   1.000000e+00
+   5 1.7110904819e+00  -3.66e-08  1.02e-04    1.326173e-01   1.769604e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.71109
+rel. change during last iteration : -3.66465e-13
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.462478
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.213886
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 0.132617         +/- 0.0374       (28.2%)
+b               = 1.7696           +/- 0.5366       (30.32%)
+
+correlation matrix of the fit parameters:
+                m      b      
+m               1.000 
+b              -0.962  1.000 
+
+
+*******************************************************************************
+Sat Oct  7 14:49:51 2023
+
+
+FIT:    data read from './benchmark/easy/stats-8058.txt' using 1:2
+        format = x:z
+        #datapoints = 2
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 2.7700175457e+02   0.00e+00  1.05e+01    1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Sat Oct  7 14:51:13 2023
+
+
+FIT:    data read from './benchmark/medium/stats-8127.txt' using 1:2
+        format = x:z
+        #datapoints = 2
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 2.5226676307e+02   0.00e+00  1.01e+01    1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Invert_RtR

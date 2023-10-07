@@ -1,16 +1,23 @@
 #!/usr/bin/bash
+#check for n_sudokus argument
+if [[ $# -lt 1 || $# -gt 1 ]] ; then
+	echo 'Wrong arguments provided'
+	exit 1
+fi
 declare -a hard_sudoku_puzzles
-#some hard pzzules to test
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00005f662e09"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00009e4900fa"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0000b2c3fc62"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0000d2fa4f03"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00011fedd787"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00013f7e562a"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="000160237251"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="000175e5f83b"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0001767b888a"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0001786dfc8c"
+input="./ressources/hard.txt"
+n_sudokus=$1
+n=0
+#some hard puzzles (n_sudokus) to test from the file
+while IFS= read -r line
+do
+  hash=$(echo "$line" | awk '{print $1}')
+  hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="$hash"
+  ((n++))
+  if [[ n -eq n_sudokus ]]; then
+    break;
+  fi
+done < "$input"
 #make compile main sudoku solving C program
 make clean && make
 #set variables

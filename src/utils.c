@@ -247,5 +247,10 @@ void print_config() {
     if(RANDOMIZE_SUDOKU) printf("  %s>[RANDOMIZE_SUDOKU]Randomize the sudoku each try:%s %sON%s\n", CLR_YEL, CLR_RESET, CLR_GRN, CLR_RESET);
     else printf("  %s>[RANDOMIZE_SUDOKU]Randomize the sudoku each try:%s %sOFF%s\n", CLR_YEL, CLR_RESET, CLR_RED, CLR_RESET);
 
-    printf("  %s>[START_TEMPERATURE]Starting temperature:%s %f\n", CLR_YEL, CLR_RESET, START_TEMPERATURE);
+    if(GET_STATS) printf("  %s>[GET_STATS]Getting statistics of each try of the algorithm:%s %sON%s\n", CLR_YEL, CLR_RESET, CLR_GRN, CLR_RESET);
+    else printf("  %s>[GET_STATS]Getting statistics of each try of the algorithm:%s %sOFF%s\n", CLR_YEL, CLR_RESET, CLR_RED, CLR_RESET);
+
+    printf("  %s>[SOLUTION_COST]The cost for the sudoku to be considered solved:%s %d\n", CLR_YEL, CLR_RESET, SOLUTION_COST);
+
+    printf("  %s>[START_TEMPERATURE]Starting temperature:%s %s%f%s\n", CLR_YEL, CLR_RESET, CLR_RED, START_TEMPERATURE, CLR_RESET);
 }

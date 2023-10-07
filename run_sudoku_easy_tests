@@ -1,16 +1,23 @@
 #!/usr/bin/bash
+#check for n_sudokus argument
+if [[ $# -lt 1 || $# -gt 1 ]] ; then
+	echo 'Wrong arguments provided'
+	exit 1
+fi
 declare -a easy_sudoku_puzzles
-#some easy puzzles to test
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0000183b305c"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0001d5d6314e"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="000212406270"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="00023580f347"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="00031006ebf1"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0003af4e2943"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004125f628d"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004464633b4"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004686971dc"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004bab224ce"
+input="./ressources/easy.txt"
+n_sudokus=$1
+n=0
+#some easy puzzles (n_sudokus) to test from the file
+while IFS= read -r line
+do
+  hash=$(echo "$line" | awk '{print $1}')
+  easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="$hash"
+  ((n++))
+  if [[ n -eq n_sudokus ]]; then
+    break;
+  fi
+done < "$input"
 #make compile main sudoku solving C program
 make clean && make
 #set variables
