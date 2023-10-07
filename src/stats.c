@@ -161,8 +161,9 @@ int main(int argc, char *argv[])
     char * file4 = "./data/0000183b305c-05-10-2023-(17-22-31).txt"; //with keep best strategy
     char * file5 = "./data/0000183b305c-05-10-2023-(17-22-53).txt"; //without keep best strategy
 
-    sudoku_plot_multiple_stats("%s", file4, file5,
-                                NULL);
+    sudoku_plot_multiple_stats("%s", file4, file5, NULL);
+    //sudoku_plot_multiple_stats("%s", "./data/0000183b305c-07-10-2023-(15-09-25).txt",NULL);
+    //sudoku_plot_multiple_stats("%s", "./data/0000183b305c-07-10-2023-(15-18-15).txt",NULL);
 
     return EXIT_SUCCESS;
 }

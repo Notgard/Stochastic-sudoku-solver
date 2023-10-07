@@ -1,0 +1,4 @@
+easy 3.058
+medium 3.010
+hard 2.807
+diabolical 2.726

@@ -533,3 +533,110 @@ fitted parameters initialized with current variable values
 iter      chisq       delta/lim  lambda   m             b            
    0 2.5226676307e+02   0.00e+00  1.01e+01    1.000000e+00   1.000000e+00
 BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Sat Oct  7 16:39:13 2023
+
+
+FIT:    data read from './benchmark/easy/stats-34.txt' using 1:2
+        format = x:z
+        #datapoints = 30
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 3.7195752550e+02   0.00e+00  3.00e+00    1.000000e+00   1.000000e+00
+   4 7.0670086113e+01  -5.66e-08  3.00e-04   -3.494468e-01   5.385170e+00
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 70.6701
+rel. change during last iteration : -5.65658e-13
+
+degrees of freedom    (FIT_NDF)                        : 28
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.58869
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.52393
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = -0.349447        +/- 0.1237       (35.41%)
+b               = 5.38517          +/- 0.5101       (9.473%)
+
+correlation matrix of the fit parameters:
+                m      b      
+m               1.000 
+b              -0.823  1.000 
+
+
+*******************************************************************************
+Sat Oct  7 16:42:49 2023
+
+
+FIT:    data read from './benchmark/medium/stats-320.txt' using 1:2
+        format = x:z
+        #datapoints = 20
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 2.3294018743e+02   0.00e+00  4.46e+00    1.000000e+00   1.000000e+00
+   4 5.3440356726e+00  -3.25e-02  4.46e-04    2.858982e-01   2.086817e+00
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 5.34404
+rel. change during last iteration : -3.25197e-07
+
+degrees of freedom    (FIT_NDF)                        : 18
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.544877
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.296891
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 0.285898         +/- 0.1419       (49.62%)
+b               = 2.08682          +/- 0.8833       (42.33%)
+
+correlation matrix of the fit parameters:
+                m      b      
+m               1.000 
+b              -0.990  1.000 
+
+
+*******************************************************************************
+Sat Oct  7 16:45:51 2023
+
+
+FIT:    data read from './benchmark/hard/stats-606.txt' using 1:2
+        format = x:z
+        #datapoints = 20
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 2.1708445948e+02   0.00e+00  4.42e+00    1.000000e+00   1.000000e+00
+   4 6.3029262148e+00  -6.80e-04  4.42e-04    3.155035e-01   2.025714e+00
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 6.30293
+rel. change during last iteration : -6.80327e-09
+
+degrees of freedom    (FIT_NDF)                        : 18
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.591745
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.350163
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 0.315503         +/- 0.07963      (25.24%)
+b               = 2.02571          +/- 0.4912       (24.25%)
+
+correlation matrix of the fit parameters:
+                m      b      
+m               1.000 
+b              -0.963  1.000 

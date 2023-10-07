@@ -27,7 +27,7 @@
 #define DEBUG_SIZE 256
 
 // configuration of the solving algorithm
-#define MAX_TRIES 5000
+#define MAX_TRIES 500
 
 #define RANDOMIZE_SUDOKU true
 
@@ -35,7 +35,7 @@
 
 #define KEEP_TRYING false
 
-#define PRINT_CONFIG true
+#define PRINT_CONFIG false
 
 #define TEMP_STEP 10 //the temperature is divided by two each step (depends on the numbers of tries)
 #define SOLUTION_COST 2 // the cost of the wanted solution of the sudoku
