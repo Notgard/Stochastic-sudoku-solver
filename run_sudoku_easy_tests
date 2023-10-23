@@ -22,11 +22,6 @@ done < "$input"
 make clean && make
 #set variables
 stats_file="./benchmark/easy/stats-$$.txt"
-sum_exec=0.0
-sum_cost=0
-sum_pow_exec=0.0
-sum_exec_cost=0.0
-n=0
 #try the easy puzzles
 for i in "${easy_sudoku_puzzles[@]}"
 do
@@ -35,12 +30,8 @@ do
     #get the execution time for the x axis and the final cost of the algorithm for the y axis
     exec_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
-    echo "$exec_time $end_cost" >> "$stats_file"
-    #sum_exec=$(echo "$sum_exec + $exec_time" | bc -l)
-    #sum_cost=$(echo "$sum_cost + $end_cost" | bc -l)
-    #sum_pow_exec=$(echo "$sum_pow_exec + $exec_time^2" | bc -l)
-    #sum_exec_cost=$(echo "$sum_exec_cost + $exec_time * $end_cost" | bc -l)
-    #n+=1
+    tries=$(echo "$result" | grep ">> Numbers of tries taken : " | awk 'NF>1{print $NF}')
+    echo "$exec_time $end_cost $tries" >> "$stats_file"
 done
 #calculate m and b for standard curve
 #https://www.statisticshowto.com/probability-and-statistics/regression-analysis/find-a-linear-regression-equation/

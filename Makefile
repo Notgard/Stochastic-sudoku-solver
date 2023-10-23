@@ -2,7 +2,7 @@
 # MAIN CONFIGURATION
 #
 
-EXEC = main stats benchmark
+EXEC = main stats benchmark test
 OBJECTS = utils.o
 PROJECT_NAME = SUDOKU_SOLVER
 
@@ -29,10 +29,11 @@ OBJECTS_O = $(OBJECTS) $(EXEC_O)
 #
 
 CC = gcc
-CCFLAGS_STD = -Wall -O3 -Werror -fopenmp
+CCFLAGS_STD = -Wall -O3 -fopenmp
 CCFLAGS_DEBUG = -D _DEBUG_
+CCFLAGS_CUSTOM = _SHOW_
 CCFLAGS = $(CCFLAGS_STD)
-CCLIBS = -fopenmp -lm
+CCLIBS = -fopenmp -lm -lncurses
 
 #
 # RULES (must not change it)
@@ -50,6 +51,9 @@ msg:
 
 debug: CCFLAGS = $(CCFLAGS_STD) $(CCFLAGS_DEBUG)
 debug: all
+
+show: CCFLAGS = $(CCFLAGS_STD) $(CCFLAGS_CUSTOM)
+show: all
 
 #
 # DEFAULT RULES (must not change it)

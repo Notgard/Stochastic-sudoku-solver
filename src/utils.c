@@ -1,12 +1,10 @@
-
 #include "utils.h"
 
 /// @brief Get a random double from 0 to 1 [0;1]
 /// @return
-double get_random()
+double get_random(unsigned int * seed)
 {
-    unsigned int seed = (unsigned int)time(NULL);
-    double r = (double)rand_r(&seed) / (double)RAND_MAX;
+    double r = (double)rand_r(seed) / (double)RAND_MAX;
     return r;
 }
 
@@ -165,16 +163,39 @@ void print_sudoku(int **sudoku_grid)
     }
 }
 
+/// @brief Prints a sudoku grid from a 2D array, assuming the 2D grid is structured with lines and columns
+/// @param sudoku_grid
+void print_sudoku_grid(int sudoku_grid[][SUDOKU_SIZE])
+{
+    int i, j;
+    printf("╭-------+-------+-------╮\n");
+    for (i = 0; i < SUDOKU_SIZE; i++)
+    {
+        for (j = 0; j < SUDOKU_SIZE; j++)
+        {
+            if (j == 0)
+                printf("| ");
+            printf("%d ", sudoku_grid[i][j]);
+            if ((j + 1) % 3 == 0)
+                printf("| ");
+        }
+        printf("\n");
+        if ((i + 1) % 3 == 0)
+            printf("├-------+-------+-------┤\n");
+    }
+}
+
 /// @brief Randomize the given sudoku grid with random values between 1 and 9, as long as the cells aren't fixed
 /// @param sudoku_grid the given sudoku grid
 /// @param seed the randomization seed used
-void sudoku_randomize(int ***sudoku_grid, unsigned int seed) {
+void sudoku_randomize(int ***sudoku_grid, int ** original_grid, unsigned int * seed) {
     for (int line = 0; line < SUDOKU_SIZE; line++)
     {
         for (int col = 0; col < SUDOKU_SIZE; col++)
         {
-            if ((*sudoku_grid)[line][col] == 0)
-                (*sudoku_grid)[line][col] = get_bound_random(&seed, 1, 9);
+            if (original_grid[line][col] == 0) {
+                (*sudoku_grid)[line][col] = get_bound_random(seed, 1, 9);
+            }
         }
     }
 }
@@ -238,6 +259,9 @@ void sudoku_debug_output(char * filename, char * info, char * date) {
 /// @brief Prints the current configuration of the sudoku solving alogrithm
 void print_config() {
     printf("Current configuration: \n");
+    if(KEEP_START) printf("  %s>[KEEP_START]Keep starting sudoku each try:%s %sON%s\n", CLR_YEL, CLR_RESET, CLR_GRN, CLR_RESET);
+    else printf("  %s>[KEEP_START]Keep starting sudoku each try:%s %sOFF%s\n", CLR_YEL, CLR_RESET, CLR_RED, CLR_RESET);
+
     if(KEEP_BEST) printf("  %s>[KEEP_BEST]Keep best sudoku found:%s %sON%s\n", CLR_YEL, CLR_RESET, CLR_GRN, CLR_RESET);
     else printf("  %s>[KEEP_BEST]Keep best sudoku found:%s %sOFF%s\n", CLR_YEL, CLR_RESET, CLR_RED, CLR_RESET);
 

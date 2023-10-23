@@ -4,6 +4,8 @@
 #define ROWS 3
 #define COLS 4
 
+#if 0
+
 int** transpose2DArray(int** original, int rows, int cols) {
     int** transposed = (int**)malloc(cols * sizeof(int*));
     if (transposed == NULL) {
@@ -30,7 +32,7 @@ int** transpose2DArray(int** original, int rows, int cols) {
     return transposed;
 }
 
-int main() {
+int test() {
     int** original = (int**)malloc(ROWS * sizeof(int*));
     for (int i = 0; i < ROWS; i++) {
         original[i] = (int*)malloc(COLS * sizeof(int));
@@ -73,6 +75,35 @@ int main() {
         free(transposed[i]);
     }
     free(transposed);
+
+    return 0;
+}
+#endif
+
+int get_bound_randomm(unsigned int *seed, unsigned int lBound, unsigned int uBound)
+{
+    int r = (int)rand_r(seed) % (uBound - lBound + 1) + lBound;
+    return r;
+}
+
+int main(void) {
+    unsigned int seed = 123456;
+
+    printf("Series of 20 random numbers: \n");
+
+    for(int i = 0; i < 20; i++) {
+        printf("%d ", get_bound_randomm(&seed, 1, 10));
+    }
+
+    printf("\n");
+
+    int rand_val;
+    for(int i = 0; i < 20; i++) {
+        rand_val = (int)rand_r(&seed)%(9)+1;
+        printf("%d ", rand_val);
+    }
+
+    printf("\n");
 
     return 0;
 }

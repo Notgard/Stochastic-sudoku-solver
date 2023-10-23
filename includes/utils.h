@@ -18,7 +18,7 @@
 
 /// @brief Get a random double from 0 to 1 [0;1]
 /// @return
-double get_random();
+double get_random(unsigned int * seed);
 
 /// @brief Get a random integer bounded from lower bound lBound to upper bound  uBound
 /// @param seed the reference of the seed used in the pseudo random number generator
@@ -51,7 +51,7 @@ void print_sudoku_pointers(int ***sudoku_grid);
 /// @brief Randomize the given sudoku grid with random values between 1 and 9, as long as the cells aren't fixed
 /// @param sudoku_grid the given sudoku grid
 /// @param seed the randomization seed used
-void sudoku_randomize(int ***sudoku_grid, unsigned int seed);
+void sudoku_randomize(int ***sudoku_grid, int ** original_grid, unsigned int * seed);
 
 /// @brief Copies the content of a sudoku grid into another
 /// @param sudoku_grid the grid to modify the content of
@@ -73,5 +73,7 @@ void sudoku_debug_output(char * filename, char * info, char * date);
 
 /// @brief Prints the current configuration of the sudoku solving alogrithm
 void print_config();
+
+void print_sudoku_grid(int sudoku_grid[][SUDOKU_SIZE]);
 
 #endif

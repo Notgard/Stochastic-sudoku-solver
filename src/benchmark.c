@@ -77,9 +77,9 @@ void sudoku_plot_difficulty_benchmark(int argc, char *argv[], const char *diffic
 
     snprintf(command_buffer,
              FILE_SIZE + 1,
-             " \"%s\" using 1:2 with %s lc rgb \"%s\" title '%s',",// '%s' using 1:($1 * %f + %f) smooth unique with lines title \"%s\"
-             filename, "points pointtype 7 pointsize 2", plot_colors[color], "Données (execution/cout algo)"/* , 
-             filename, m, b, "regression linéaire" */);
+             " \"%s\" using 1:2 with %s lc rgb \"%s\" title '%s',%s",// '%s' using 1:($1 * %f + %f) smooth unique with lines title \"%s\"
+             filename, "points pointtype 7 pointsize 2", plot_colors[color], "Données (execution/cout algo)",
+             "'' with labels center offset 3.6,.5 notitle");
 
     strcat(command, command_buffer);
     printf("%s\n", filename);
@@ -170,6 +170,9 @@ int main(int argc, char *argv[])
         break;
     case 5: //stats for all of them
         sudoku_plot_cost_per_difficulty(argv[2]);
+        break;
+    case 6: // diabolical sudoku
+        sudoku_plot_difficulty_benchmark(argc, argv, "diabolical");
         break;
     }
 

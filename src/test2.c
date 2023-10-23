@@ -5,7 +5,6 @@
 #include <string.h>
 #include <time.h>
 #include <locale.h>
-#include <sys/stat.h>
 
 #include <math.h>
 #include <omp.h>
@@ -204,7 +203,6 @@ int sudoku_cell_constraints(int nb, int start_l, int start_c, int **lines, int *
             sum++;
         }
     }
-
     return sum - 3;
 }
 
@@ -213,42 +211,7 @@ int sudoku_cell_constraints(int nb, int start_l, int start_c, int **lines, int *
 /// @param columns 2D array containing each column of the sudoku grid
 /// @param regions 2D array containing each region of the sudoku grid
 /// @return the total amount of constraints violated in the given sudoku
-int sudoku_constraints(int **original_grid, int **lines, int ***columns, int ***regions)
-{
-    int sum = 0;
-#if _DEBUG_
-    int constraints[9][9];
-    for (int i = 0; i < SUDOKU_SIZE; i++)
-    {
-        for (int j = 0; j < SUDOKU_SIZE; j++)
-        {
-            constraints[i][j] = 0;
-        }
-    }
-#endif
-    for (int i = 0; i < SUDOKU_SIZE; i++)
-    {
-        for (int j = 0; j < SUDOKU_SIZE; j++)
-        {
-            if (original_grid[i][j] == 0)
-            {
-                sum += sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
-#if _DEBUG_
-                constraints[i][j] = sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
-#endif
-            }
-        }
-    }
-#if _DEBUG_
-    printf("-------------------[\n");
-    print_sudoku_grid(constraints);
-    printf("]-------------------\n");
-#endif
-    return sum;
-    // return sum / 2;
-}
-
-int sudoku_constraints_old(int **original_grid, int **lines, int ***columns, int ***regions)
+int sudoku_constraints(int **lines, int ***columns, int ***regions)
 {
     int sum = 0;
     for (int i = 0; i < SUDOKU_SIZE; i++)
@@ -302,18 +265,19 @@ int main(int argc, char *argv[])
     // retrieve the starting grid from the sudoku file
     bool verbose = (argc == 4) ? true : false;
     char *puzzle_hash = (argc == 3) ? argv[2] : argv[3];
-    char *file = (argc == 3) ? argv[1] : argv[2];
+    char * file = (argc == 3) ? argv[1] : argv[2];
     char filename[FILE_SIZE] = SUDOKU_DIR;
     strcat(filename, file);
 
     printf("%s#File currently being solved [%s]%s\n", CLR_GRN, puzzle_hash, CLR_RESET);
     printf("%s#Maximum tries : %s[%d]\n", CLR_GRN, CLR_RESET, MAX_TRIES);
 
-    // print the current solving configuration
-    if (PRINT_CONFIG)
-        print_config();
+    //print the current solving configuration
+    if(PRINT_CONFIG) print_config();
 
     int **original_grid = read_sudoku_file(filename, SUDOKU_SIZE, puzzle_hash);
+    if(verbose)
+        print_sudoku(original_grid);
     // seperate the region, lines and columns of the grid into 3 variables
 
     // make a deep copy of the original grid with lines and have the regions and columns point to it
@@ -326,43 +290,28 @@ int main(int argc, char *argv[])
     // print_sudoku_pointers(columns);
 
     int cost = 0;
-    if(OLD) cost = sudoku_constraints_old(original_grid, lines, columns, regions);
-    else cost = sudoku_constraints(original_grid, lines, columns, regions);
-
+    cost = sudoku_constraints(lines, columns, regions);
     if(verbose)
         printf(">> Current cost : %d\n", cost);
+    // tests for the sudoku cell constraints function on fixed cells
+    // printf(">> cost %d: %d\n", lines[0][1], sudoku_cell_constraints(lines[0][1], 0, 1, lines, columns, regions));
+    // printf(">> cost %d: %d\n", lines[1][2], sudoku_cell_constraints(lines[1][2], 1, 2, lines, columns, regions));
+    // printf(">> cost %d: %d\n", lines[7][5], sudoku_cell_constraints(lines[7][5], 7, 5, lines, columns, regions));
+    // printf(">> cost %d: %d\n", lines[7][1], sudoku_cell_constraints(lines[7][1], 7, 1, lines, columns, regions));
+    // printf(">> cost %d: %d\n", lines[6][8], sudoku_cell_constraints(lines[6][8], 6, 8, lines, columns, regions));
 
-#if _SHOW_
-    // create and open data visualization pipe
-    if (mkfifo(DATA_PIPE, S_IRUSR | S_IWUSR) == -1)
-    {
-        fprintf(stderr, "Error creating named pipe '%s'", PIPE_NAME);
-        perror("");
-        exit(EXIT_FAILURE);
-    }
-
-    if ((fd = open(PIPE_NAME, O_WRONLY)) == -1)
-    {
-        perror("Error opening pipe");
-        exit(EXIT_FAILURE);
-    }
-#endif
-
-    //  randomly all of the cells of the grid with values from 1 to 9, except the ones already placed
+//  randomly all of the cells of the grid with values from 1 to 9, except the ones already placed
     unsigned int seed = (unsigned int)time(NULL);
 
-    if (!RANDOMIZE_SUDOKU)
-    { // randomize the sudoku only once at the start
+    if(!RANDOMIZE_SUDOKU) { //randomize the sudoku only once at the start
         // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
-        sudoku_randomize(&lines, original_grid, &seed);
+        sudoku_randomize(&lines, seed);
         // calculate cost of the random grid
-        if (OLD)
-            cost = sudoku_constraints_old(original_grid, lines, columns, regions);
-        else
-            cost = sudoku_constraints(original_grid, lines, columns, regions);
+        cost = sudoku_constraints(lines, columns, regions);
     }
+//
 
-    // Setup main loop and current timestamp
+// Setup main loop and current timestamp
     int tries;
     char date_buffer[FILE_SIZE];
 #if _DEBUG_
@@ -370,55 +319,35 @@ int main(int argc, char *argv[])
 #endif
     time_t timestamp = time(NULL);
     strftime(date_buffer, FILE_SIZE, "%d-%m-%Y-(%H-%M-%S)", localtime(&timestamp));
-    //
+//
 
-    // define recuit algorithm variables
+// define recuit algorithm variables
     bool solved = false;
-    int k, cost_one, cost_two, cost_comp, temp, new;
+    int k, u, cost_one, cost_two, cost_comp, temp, new;
     int lowest_cost_found = (int)INFINITY;
     double start_time, end_time, CPU_time;
-    double u;
     int **best_solution = NULL;
-    //
+//
     start_time = omp_get_wtime();
+    //for (tries = 0; tries < MAX_TRIES; tries++)
     tries = 0;
-
-    while (solved != true)
+    while(solved != true)
     {
-        if (KEEP_START)
-        {
-            sudoku_copy_content(&lines, original_grid);
-        }
-
-        if (verbose)
-        {
-            printf("\n===========================\n");
-            print_sudoku(lines);
-            printf(">> Current cost : %d\n", cost);
-        }
-
-        if (RANDOMIZE_SUDOKU)
-        { // randomize only on the first try
+        if(RANDOMIZE_SUDOKU) {// randomize the sudoku each try
             // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
-            sudoku_randomize(&lines, original_grid, &seed);
-            if (OLD)
-                cost = sudoku_constraints_old(original_grid, lines, columns, regions);
-            else
-                cost = sudoku_constraints(original_grid, lines, columns, regions);
-            //print_sudoku(lines);
-            //printf("Cost after randomization : %d\n", cost);
+            sudoku_randomize(&lines, seed);
+            // calculate cost of the random grid
+            cost = sudoku_constraints(lines, columns, regions);
         }
 
-        if (verbose)
-        {
+        if(verbose) {
             printf("\n===========================\n");
             print_sudoku(lines);
             printf(">> Current cost : %d\n", cost);
         }
 
         // log the stats of the recuit solver
-        if (GET_STATS)
-            sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
+        if(GET_STATS) sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
 
         // Step 2: Setup the contants
         int i = -1, j = -1;
@@ -426,10 +355,9 @@ int main(int argc, char *argv[])
         double ep = START_TEMPERATURE;
         double e = exp(1);
         double temperature = ep;
-
-        // diminution/augmentation de la temperature de départ à chaque quart d'essaie
-        if (tries != 0 && tries % (MAX_TRIES / TEMP_STEP) == 0)
-            temperature *= 2;
+        //diminution/augmentation de la temperature de départ à chaque quart d'essaie 
+        if(tries != 0 && tries % (MAX_TRIES/TEMP_STEP) == 0 && !KEEP_TRYING)
+            temperature /= 2;
 
         // Step 3: Start the recuit simulation algorithm
         while (temperature >= TEMPERATURE_CEILING && solved != true)
@@ -444,8 +372,7 @@ int main(int argc, char *argv[])
                 cost_one = sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
 
                 // Step 6: choose a new different value for the random cell
-                while ((new = get_bound_random(&seed, 1, 9)) == temp)
-                    ;
+                while ((new = get_bound_random(&seed, 1, 9)) == temp);
                 lines[i][j] = new;
 
                 // Step 7: evaluate the cost of the random cell with changed value
@@ -453,20 +380,20 @@ int main(int argc, char *argv[])
 
                 // Step 8: compare the cost between the two random cell values
                 cost_comp = cost - cost_one + cost_two;
-
                 // Step 9: choose random value in [0, 1]
-                u = get_random(&seed);
+                u = get_random();
 #if _DEBUG_
-                snprintf(debug_buffer, DEBUG_SIZE, "{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d, temperature: %f}", cost, cost_one, cost_two, cost_comp, temperature);
-                sudoku_debug_output(puzzle_hash, debug_buffer, date_buffer);
+                if (tries == 1)
+                {
+                    snprintf(debug_buffer, DEBUG_SIZE, "\nFirst iterations of the second try of the algorithm ->{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d}\n", cost, cost_one, cost_two, cost_comp);
+                    sudoku_debug_output(puzzle_hash, debug_buffer, date_buffer);
+                }
 #endif
                 // Step 10: probability acceptance
-                if (cost_comp < cost)
-                {
+                if(cost_comp < cost) {
                     cost = cost_comp;
                 }
-                //else if (u <= MIN(1, e - ((cost_comp - cost) / temperature)))
-                else if (u <= exp(-((cost_comp - cost) / temperature)))
+                else if (u <= MIN(1, e - ((cost_comp - cost) / temperature)))
                 { // acceptation
                     cost = cost_comp;
                 }
@@ -474,87 +401,52 @@ int main(int argc, char *argv[])
                 { // rejet
                     lines[i][j] = temp;
                 }
-
-// send current sudoku to visualization program
-#if _SHOW_
-                for (int s = 0; s < SUDOKU_SIZE; s++)
-                {
-                    if (write(fd, &lines[s], sizeof(int) * SUDOKU_SIZE) == -1)
-                    {
-                        perror("Error writing integers in pipe");
-                        exit(EXIT_FAILURE);
-                    }
-                }
-#endif
-                // Stop the algorithm if the cost of the grid is SOLUTION_COST
+                // Stop the algorithm if the cost of the grid is 0
                 if (cost <= SOLUTION_COST)
                 {
                     printf("\n>>> [NULL 0 cost solution found]\n");
-                    print_sudoku(lines);
                     solved = true;
                     // log the stats of the recuit solver
-                    if (GET_STATS)
-                        sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
+                    if(GET_STATS) sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
                     break;
                 }
-#if _DEBUG_
-                snprintf(debug_buffer, DEBUG_SIZE, "{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d, temperature: %f}", cost, cost_one, cost_two, cost_comp, temperature);
-                sudoku_debug_output(puzzle_hash, debug_buffer, date_buffer);
-#endif
             }
-
+#if _DEBUG_
+            snprintf(debug_buffer, DEBUG_SIZE, "{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d, temperature: %f}", cost, cost_one, cost_two, cost_comp, temperature);
+            sudoku_debug_output(puzzle_hash, debug_buffer, date_buffer);
+#endif
             // Step k: reduce the temperature
             temperature = temperature / (1 + (log(1 + sigma) / ep + 1) * temperature);
+            // temperature = 0.5 / 81 * log(9) - log(1 - sigma);
         }
-
-        // find lowest cost and manage the best current solution
-        if (cost < lowest_cost_found)
-        { // if we find the current best solution, keep the cost and the grid
+        
+        //find lowest cost and manage the best current solution
+        if(cost < lowest_cost_found) { //if we find the current best solution, keep the cost and the grid
             lowest_cost_found = cost;
-            if (KEEP_BEST)
-            {
-                if (best_solution != NULL)
-                {
+            if(KEEP_BEST) {
+                if(best_solution != NULL) {
                     sudoku_free(best_solution);
                     best_solution = NULL;
                 }
                 best_solution = create_sudoku_lines(lines);
             }
-        }
-        else if (KEEP_BEST)
-        { // if the cost found is inferior, go back to best solution
+            
+        } else if(KEEP_BEST) { //if the cost found is inferior, go back to best solution
             sudoku_copy_content(&lines, best_solution);
         }
 
-        // increment the number of tries
+        //increment the number of tries
         tries++;
-        if (tries > MAX_TRIES && !KEEP_TRYING)
-            break;
+        if(tries > MAX_TRIES && !KEEP_TRYING) break;
     }
-
-#if _SHOW_
-    if (close(fd) == -1)
-    {
-        perror("Error closing pipe");
-        exit(EXIT_FAILURE);
-    }
-
-    if (unlink(PIPE_NAME) == -1)
-    {
-        perror("Error deleting pipe");
-        exit(EXIT_FAILURE);
-    }
-#endif
-
     end_time = omp_get_wtime();
 
-    // calculate the CPU execution time of the sudoku solving algorithm
+    //calculate the CPU execution time of the sudoku solving algorithm
     CPU_time = end_time - start_time;
 
     /////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////
-    if (verbose)
-    {
+    if(verbose) {
         printf("\n===========================\n");
         printf("\nResults of the simulation: \n");
         printf("\n===========================\n");
@@ -564,30 +456,26 @@ int main(int argc, char *argv[])
     }
 
     // calculate cost of grid
-    if (OLD)
-        cost = sudoku_constraints_old(original_grid, lines, columns, regions);
-    else
-        cost = sudoku_constraints(original_grid, lines, columns, regions);
+    cost = sudoku_constraints(lines, columns, regions);
 
-    if (verbose)
-    {
+    if(verbose) {
         printf("\n===========================\n");
         printf("From: ");
         printf("\n===========================\n");
+
         print_sudoku(original_grid);
     }
 
-    if (verbose)
-    {
+    if(verbose) {
         printf("\n===========================\n");
         printf("To: ");
         printf("\n===========================\n");
+        
         print_sudoku(lines);
     }
 
     printf(">> Current cost at the end of the simulation : %d\n", cost);
     printf(">> Best solution (lowest cost) found during the execution of the simulation : %d\n", lowest_cost_found);
-    printf(">> Numbers of tries taken : %d\n", tries - 1);
     printf(">> CPU Execution time of the sudoku solving simulation : %f\n", CPU_time);
 
     /////////////////////////////////////////////////////////////////////////////////////
@@ -598,7 +486,7 @@ int main(int argc, char *argv[])
     sudoku_free_pointers(columns);
     sudoku_free(lines);
     sudoku_free(original_grid);
-    if (best_solution != NULL)
+    if(best_solution != NULL)
         sudoku_free(best_solution);
 
     return EXIT_SUCCESS;

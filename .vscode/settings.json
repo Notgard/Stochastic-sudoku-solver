@@ -1,9 +1,12 @@
 {
     "files.associations": {
+        "*.ffem": "freefem",
         "benchmark.h": "c",
         "math.h": "c",
         "stdarg.h": "c",
         "stdio.h": "c",
-        "config.h": "c"
-    }
+        "config.h": "c",
+        "utils.h": "c"
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }
