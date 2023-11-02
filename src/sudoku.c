@@ -212,7 +212,8 @@ int sudoku_constraints(int **original_grid, int **lines, int ***columns, int ***
             if (original_grid[i][j] == 0)
             {
                 cost = sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
-                if(cost < 0) {
+                if (cost < 0)
+                {
                     fprintf(stderr, "ERROR: negative cell cost %d !!\n", cost);
                 }
                 sum += cost;
@@ -260,67 +261,72 @@ void sudoku_get_random_cell(int **sudoku_grid, int *i, int *j, unsigned int *see
     *j = col;
 }
 
-void simmulated_annealing(int **original_grid, int **lines, int ***columns, int ***regions, int * cost) {
+void simmulated_annealing(int **original_grid, int **lines, int ***columns, int ***regions, int *cost)
+{
     unsigned int seed = (unsigned int)time(NULL);
     double delta = 0.1;
-    double e_p = 1620/2;
+    double e_p = START_TEMPERATURE;
     double temperature = e_p;
     int line = get_bound_random(&seed, 0, 8);
     int column = get_bound_random(&seed, 0, 8);
     int temp = 0;
     int cost1 = 0, cost2 = 0;
-    int new_val = get_bound_random(&seed, 1, 9);
+    int new_val;
     int diff_cost = 0;
-    int compteur = 0;
-    float u;
-    int save_cost = 0;
+    double u;
+    bool solved = false;
 
+    // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
     sudoku_randomize(&lines, original_grid, &seed);
 
     int total_cost = sudoku_constraints_old(original_grid, lines, columns, regions);
 
-    while(temperature >= TEMPERATURE_CEILING) {
-        for(int i = 0; i < PRESUMED_PUZZLE_SIZE; i++) {
-            line = get_bound_random(&seed, 0, 8);
-            column = get_bound_random(&seed, 0, 8);
-            save_cost = total_cost;
+    // Step 3: Start the recuit simulation algorithm
+    while (temperature >= TEMPERATURE_CEILING)
+    {
+        for (int i = 0; i < PRESUMED_PUZZLE_SIZE; i++)
+        {
+            // Step 4: choose random cell from the grid which isn't fixed
+            sudoku_get_random_cell(original_grid, &line, &column, &seed);
 
-            while(original_grid[line][column] != 0) {
-                line = get_bound_random(&seed, 0, 8);
-                column = get_bound_random(&seed, 0, 8);
-            }
-
+            // Step 5: store the value in a temp variable and evaluate the cost of the random cell
             temp = lines[line][column];
             cost1 = sudoku_cell_constraints(lines[line][column], line, column, lines, columns, regions);
 
-            while(new_val==lines[line][column]) {
-                new_val = get_bound_random(&seed, 1, 9);
-            }
+            // Step 6: choose a new different value for the random cell
+            while ((new_val = get_bound_random(&seed, 1, 9)) == temp);
 
             lines[line][column] = new_val;
+            // Step 7: evaluate the cost of the random cell with changed value
             cost2 = sudoku_cell_constraints(lines[line][column], line, column, lines, columns, regions);
 
+            // Step 8: compare the cost between the two random cell values
             diff_cost = total_cost - cost1 + cost2;
-
+            
+            // Step 9: choose random value in [0, 1]
             u = get_random(&seed);
-            if(u <= exp(-((diff_cost - total_cost) / temperature))) {
+            // Step 10: probability acceptance
+            if (diff_cost < total_cost)
+            { // acceptation
                 total_cost = diff_cost;
             }
-            else {
+            else if (u <= MIN(1, exp(-((diff_cost - total_cost) / temperature))))
+            { // acceptation probabilitaire
+                total_cost = diff_cost;
+            }
+            else
+            { // rejet
                 lines[line][column] = temp;
             }
-            if(save_cost == total_cost) {
-                cmpt_sortie++;
-            }
-            if(total_cost == 0) {
+
+            if (total_cost == 0)
+            {
+                solved = true;
                 break;
             }
         }
-        compteur++;
+        if(solved) break;
         temperature = temperature / (1 + (log(1 + delta) / (e_p + 1)) * temperature);
-        if(total_cost == 0) {
-            break;
-        }
     }
     *cost = total_cost;
 }

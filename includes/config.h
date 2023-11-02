@@ -27,17 +27,17 @@
 #define DEBUG_SIZE 256
 
 // configuration of the solving algorithm
-#define MAX_TRIES 500
+#define MAX_TRIES 10
 
 #define RANDOMIZE_SUDOKU (true)
 
-#define KEEP_BEST (true)
+#define KEEP_BEST (false)
 
 #define KEEP_TRYING (false)
 
 #define PRINT_CONFIG (true)
 
-#define KEEP_START (false)
+#define KEEP_START (true)
 
 #define OLD (true)
 

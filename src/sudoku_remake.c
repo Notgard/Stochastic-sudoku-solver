@@ -25,26 +25,43 @@ int main(int argc, char *argv[])
 
     printf("%s#File currently being solved [%s]%s\n", CLR_GRN, puzzle_hash, CLR_RESET);
 
+    // print the current solving configuration
+    if (PRINT_CONFIG)
+        print_config();
+
     int **original_grid = read_sudoku_file(filename, SUDOKU_SIZE, puzzle_hash);
     // seperate the region, lines and columns of the grid into 3 variables
     int **lines;
     int ***columns;
     int ***regions;
+    // make a deep copy of the original grid with lines and have the regions and columns point to it
+    lines = create_sudoku_lines(original_grid);
+    // create a 2D array of pointers where each array is a region of the grid(from left to right)
+    regions = create_sudoku_region(lines);
+    // print_sudoku_pointers(regions);
+    columns = create_sudoku_columns(lines);
+
     int tries;
     int cost = (int)INFINITY;
     double CPU_time, start_time, end_time;
+    int lowest_cost_found = (int)INFINITY;
+    int **best_solution = NULL;
+
+    char date_buffer[FILE_SIZE];
+    time_t timestamp = time(NULL);
+    strftime(date_buffer, FILE_SIZE, "%d-%m-%Y-(%H-%M-%S)", localtime(&timestamp));
 
     start_time = omp_get_wtime();
-    for (int i = 0; i < 10; i++)
+
+    // Start of the solving phase until we get SOLUTION_COST value
     {
-        // make a deep copy of the original grid with lines and have the regions and columns point to it
-        lines = create_sudoku_lines(original_grid);
-        // create a 2D array of pointers where each array is a region of the grid(from left to right)
-        regions = create_sudoku_region(lines);
-        // print_sudoku_pointers(regions);
-        columns = create_sudoku_columns(lines);
+        if (KEEP_START)
+        {
+            sudoku_copy_content(&lines, original_grid);
+        }
+
         tries = 0;
-        while (cost != 0)
+        while (cost != SOLUTION_COST && tries <= MAX_TRIES)
         {
             simmulated_annealing(original_grid, lines, columns, regions, &cost);
             tries++;
@@ -54,15 +71,29 @@ int main(int argc, char *argv[])
                 print_sudoku(lines);
                 printf("[TRY#%d]>> Current cost : %d\n", tries, cost);
             }
+            // log the stats of the recuit solver
+            if (GET_STATS)
+                sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
+
+            // find lowest cost and manage the best current solution
+            if (cost < lowest_cost_found)
+            { // if we find the current best solution, keep the cost and the grid
+                lowest_cost_found = cost;
+                if (KEEP_BEST)
+                {
+                    if (best_solution != NULL)
+                    {
+                        sudoku_free(best_solution);
+                        best_solution = NULL;
+                    }
+                    best_solution = create_sudoku_lines(lines);
+                }
+            }
+            else if (KEEP_BEST)
+            { // if the cost found is inferior, go back to best solution
+                sudoku_copy_content(&lines, best_solution);
+            }
         }
-
-        printf("Essai %d\n", i);
-
-        if (cost == 0)
-            break;
-        sudoku_free_pointers(regions);
-        sudoku_free_pointers(columns);
-        sudoku_free(lines);
     }
     end_time = omp_get_wtime();
 
@@ -71,6 +102,14 @@ int main(int argc, char *argv[])
 
     /////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////
+    if (verbose)
+    {
+        printf("\n===========================\n");
+        printf("\nResults of the simulation: \n");
+        printf("\n===========================\n");
+
+        printf("\n---------------------------------------------------------------------------------\n");
+    }
 
     if (verbose)
     {
@@ -89,6 +128,7 @@ int main(int argc, char *argv[])
     }
 
     printf(">> Current cost at the end of the simulation : %d\n", cost);
+    printf(">> Best solution (lowest cost) found during the execution of the simulation : %d\n", lowest_cost_found);
     printf(">> Numbers of tries taken : %d\n", tries);
     printf(">> CPU Execution time of the sudoku solving simulation : %f\n", CPU_time);
 
@@ -97,12 +137,11 @@ int main(int argc, char *argv[])
 
     // Free allocated memory of the various grids used
     sudoku_free(original_grid);
-    if (cost == 0)
-    {
-        sudoku_free_pointers(regions);
-        sudoku_free_pointers(columns);
-        sudoku_free(lines);
-    }
+    sudoku_free_pointers(regions);
+    sudoku_free_pointers(columns);
+    sudoku_free(lines);
+    if (best_solution != NULL)
+        sudoku_free(best_solution);
 
     return EXIT_SUCCESS;
 }
