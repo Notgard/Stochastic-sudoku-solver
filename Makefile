@@ -2,8 +2,8 @@
 # MAIN CONFIGURATION
 #
 
-EXEC = main stats benchmark test
-OBJECTS = utils.o
+EXEC = sudoku_remake main stats benchmark #visualization
+OBJECTS = utils.o sudoku.o
 PROJECT_NAME = SUDOKU_SOLVER
 
 SRC_DIR = src

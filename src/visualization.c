@@ -8,8 +8,8 @@
 
 #define ESC '\e'
 
-void show_sudoku_grid(int sudoku[][]) {
-    int i;
+void show_sudoku_grid(int sudoku[][SUDOKU_SIZE]) {
+    int i, j;
     
     window_erase(stdscr);
 
@@ -38,6 +38,7 @@ int main() {
     size_t offset = 0;
     size_t bytes, bytes_read;
     int sudoku_buffer[SUDOKU_SIZE][SUDOKU_SIZE];
+    int pipe_flag;
 
     ncurses_init();
         
@@ -48,8 +49,17 @@ int main() {
         perror("Error opening pipe");
         exit(EXIT_FAILURE);
     }
+
+    printf("================================================\n");
+    printf("Sudoku Solving Visualization program\n");
+    printf("================================================\n");
     
+    printf("Waiting for sudoku to start\n");
     while(true) {
+        if((read(fd, &pipe_flag, sizeof(int))) == -1) {
+            perror("Error reading named pipe flag from pipe");
+            exit(EXIT_FAILURE);
+        }
         if((bytes = read(fd, &sudoku_buffer[offset], sizeof(int) * SUDOKU_SIZE)) == -1) {
             perror("Error reading sudoku data from pipe");
             exit(EXIT_FAILURE);
@@ -65,7 +75,7 @@ int main() {
         }
 
         offset++;
-        if(sudoku_data == -1) break;
+        if(pipe_flag == PIPE_CLOSE) break;
     }
     
     if(close(fd) == -1) {
@@ -74,6 +84,8 @@ int main() {
     }
 
     ncurses_stop();
+
+    printf("End of program\n");
     
     return EXIT_SUCCESS;
 }

@@ -1,290 +1,7 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <string.h>
-#include <time.h>
-#include <locale.h>
-#include <sys/stat.h>
-
 #include <math.h>
 #include <omp.h>
 
-#include "utils.h"
-
-/// @brief Returns a 2D array containing each region in order (from left to right)
-/// @param sudoku_grid
-/// @return An integer array containing every region of the sudoku grid in a 1D array for each region block
-int ***create_sudoku_region(int **sudoku_grid)
-{
-    int ***puzzle_grid;
-
-    int lines = SUDOKU_SIZE, cols = SUDOKU_SIZE;
-
-    if ((puzzle_grid = (int ***)malloc(sizeof(int **) * lines)) == NULL)
-    {
-        fprintf(stderr, "ERROR: Out of memory!!\n");
-        exit(EXIT_FAILURE);
-    }
-
-    for (int i = 0; i < lines; i++)
-    {
-        if ((puzzle_grid[i] = (int **)malloc(cols * sizeof(int *))) == NULL)
-        {
-            fprintf(stderr, "ERROR: Out of memory!!\n");
-            exit(EXIT_FAILURE);
-        }
-    }
-
-    int i, j, k, cursor;
-    int i_offset = 0, j_offset = 0;
-    for (k = 0; k < SUDOKU_SIZE; k++, j_offset += 3)
-    {
-        cursor = 0;
-
-        if (k != 0 && k % 3 == 0)
-        {
-            i_offset += 3;
-            j_offset = 0;
-        }
-
-        for (i = 0; i < SUDOKU_SIZE / 3; i++)
-        {
-            for (j = 0; j < SUDOKU_SIZE / 3; j++)
-            {
-                puzzle_grid[k][cursor] = &sudoku_grid[i + i_offset][j + j_offset];
-                cursor++;
-            }
-        }
-    }
-
-    return puzzle_grid;
-}
-
-/// @brief Returns a 2D array containing each line of the sudoku grid in order (from top to bottom)
-/// Each value points to the values in the provided array
-/// @param sudoku_grid the provided array
-/// @return
-int **create_sudoku_lines(int **sudoku_grid)
-{
-    int **puzzle_grid;
-
-    int lines = SUDOKU_SIZE, cols = SUDOKU_SIZE;
-
-    if ((puzzle_grid = (int **)malloc(sizeof(int *) * lines)) == NULL)
-    {
-        fprintf(stderr, "ERROR: Out of memory!!\n");
-        exit(EXIT_FAILURE);
-    }
-
-    for (int i = 0; i < lines; i++)
-    {
-        if ((puzzle_grid[i] = (int *)malloc(cols * sizeof(int))) == NULL)
-        {
-            fprintf(stderr, "ERROR: Out of memory!!\n");
-            exit(EXIT_FAILURE);
-        }
-    }
-
-    for (int i = 0; i < SUDOKU_SIZE; i++)
-    {
-        for (int j = 0; j < SUDOKU_SIZE; j++)
-        {
-            puzzle_grid[i][j] = sudoku_grid[i][j];
-        }
-    }
-
-    return puzzle_grid;
-}
-
-/// @brief Returns a 2D array containing each line of the sudoku grid in order (from left to right)
-/// Each value points to the values in the provided array
-/// @param sudoku_grid the provided array
-/// @return
-int ***create_sudoku_columns(int **sudoku_grid)
-{
-    int ***puzzle_grid;
-
-    int lines = SUDOKU_SIZE, cols = SUDOKU_SIZE;
-
-    if ((puzzle_grid = (int ***)malloc(sizeof(int **) * lines)) == NULL)
-    {
-        fprintf(stderr, "ERROR: Out of memory!!\n");
-        exit(EXIT_FAILURE);
-    }
-
-    for (int i = 0; i < lines; i++)
-    {
-        if ((puzzle_grid[i] = (int **)malloc(cols * sizeof(int *))) == NULL)
-        {
-            fprintf(stderr, "ERROR: Out of memory!!\n");
-            exit(EXIT_FAILURE);
-        }
-    }
-
-    int i, j;
-    for (i = 0; i < SUDOKU_SIZE; i++)
-    {
-        for (j = 0; j < SUDOKU_SIZE; j++)
-        {
-            puzzle_grid[i][j] = &sudoku_grid[j][i];
-        }
-    }
-
-    return puzzle_grid;
-}
-
-/**
- * @brief Frees memory from each line and the sudoku grid itself
- *
- * @param sudoku_grid
- */
-void sudoku_free(int **sudoku_grid)
-{
-    if (sudoku_grid != NULL)
-    {
-        // Free dynamically allocated memory
-        for (int i = 0; i < SUDOKU_SIZE; i++)
-        {
-            free(sudoku_grid[i]);
-        }
-        free(sudoku_grid);
-    }
-}
-
-/**
- * @brief Frees memory from each line and the sudoku grid itself
- *
- * @param sudoku_grid
- */
-void sudoku_free_pointers(int ***sudoku_grid)
-{
-    if (sudoku_grid != NULL)
-    {
-        // Free dynamically allocated memory
-        for (int i = 0; i < SUDOKU_SIZE; i++)
-        {
-            free(sudoku_grid[i]);
-        }
-        free(sudoku_grid);
-    }
-}
-
-/// @brief Calculates the total amount of constraints violated in the sudoku grid by checking
-///        the occurence of a given number in the lines, columns and regions of the sudoku
-/// @param nb the given number to find the total amount of constraints violated
-/// @param start_l the starting index of the line
-/// @param start_c the starting index of the column
-/// @param lines 2D array containing each line of the sudoku grid
-/// @param columns 2D array containing each column of the sudoku grid
-/// @param regions 2D array containing each region of the sudoku grid
-/// @return the total amount of constraints violated in the given sudoku for the given cell
-int sudoku_cell_constraints(int nb, int start_l, int start_c, int **lines, int ***columns, int ***regions)
-{
-    if (nb == 0)
-        return 0;
-    int sum = 0;
-    int start_r = (start_l / 3) * 3 + (start_c / 3); // gets the specific region to check inside
-    for (int j = 0; j < SUDOKU_SIZE; j++)
-    {
-        // if (lines[start_l][j] == nb || (*columns[start_c][j]) == nb || (*regions[start_r][j]) == nb)
-        //{ // check the content of the line, column and region
-        //     sum++;
-        // }
-        if (lines[start_l][j] == nb)
-        {
-            sum++;
-        }
-        if (*columns[start_c][j] == nb)
-        {
-            sum++;
-        }
-        if (*regions[start_r][j] == nb)
-        {
-            sum++;
-        }
-    }
-
-    return sum - 3;
-}
-
-/// @brief Checks the total amount of constraints violated of every cell in the provided grid
-/// @param lines 2D array containing each line of the sudoku grid
-/// @param columns 2D array containing each column of the sudoku grid
-/// @param regions 2D array containing each region of the sudoku grid
-/// @return the total amount of constraints violated in the given sudoku
-int sudoku_constraints(int **original_grid, int **lines, int ***columns, int ***regions)
-{
-    int sum = 0;
-#if _DEBUG_
-    int constraints[9][9];
-    for (int i = 0; i < SUDOKU_SIZE; i++)
-    {
-        for (int j = 0; j < SUDOKU_SIZE; j++)
-        {
-            constraints[i][j] = 0;
-        }
-    }
-#endif
-    for (int i = 0; i < SUDOKU_SIZE; i++)
-    {
-        for (int j = 0; j < SUDOKU_SIZE; j++)
-        {
-            if (original_grid[i][j] == 0)
-            {
-                sum += sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
-#if _DEBUG_
-                constraints[i][j] = sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
-#endif
-            }
-        }
-    }
-#if _DEBUG_
-    printf("-------------------[\n");
-    print_sudoku_grid(constraints);
-    printf("]-------------------\n");
-#endif
-    return sum;
-    // return sum / 2;
-}
-
-int sudoku_constraints_old(int **original_grid, int **lines, int ***columns, int ***regions)
-{
-    int sum = 0;
-    for (int i = 0; i < SUDOKU_SIZE; i++)
-    {
-        for (int j = 0; j < SUDOKU_SIZE; j++)
-        {
-            sum += sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
-        }
-    }
-    return sum / 2;
-}
-
-/// @brief Chooses a random cell from the sudoku grid. If i or j != -1 then the random cell chosen needs to be different
-///        from the previous cell chosen by the function. This is done to avoid repeated randomly chosen cells
-/// @param sudoku_grid the provided sudoku grid
-/// @param i the line index
-/// @param j the column index
-void sudoku_get_random_cell(int **sudoku_grid, int *i, int *j, unsigned int *seed)
-{
-    int line = get_bound_random(seed, 0, 8);
-    int col = get_bound_random(seed, 0, 8);
-
-    bool different = (*i != -1 && *j != -1);
-    while (sudoku_grid[line][col] != 0 || different)
-    {
-        line = get_bound_random(seed, 0, 8);
-        col = get_bound_random(seed, 0, 8);
-        if (different && (line != *i || col != *j))
-        {
-            different = false;
-        }
-    }
-
-    *i = line;
-    *j = col;
-}
+#include "sudoku.h"
 
 int main(int argc, char *argv[])
 {
@@ -326,10 +43,12 @@ int main(int argc, char *argv[])
     // print_sudoku_pointers(columns);
 
     int cost = 0;
-    if(OLD) cost = sudoku_constraints_old(original_grid, lines, columns, regions);
-    else cost = sudoku_constraints(original_grid, lines, columns, regions);
+    if (OLD)
+        cost = sudoku_constraints_old(original_grid, lines, columns, regions);
+    else
+        cost = sudoku_constraints(original_grid, lines, columns, regions);
 
-    if(verbose)
+    if (verbose)
         printf(">> Current cost : %d\n", cost);
 
 #if _SHOW_
@@ -371,7 +90,9 @@ int main(int argc, char *argv[])
     time_t timestamp = time(NULL);
     strftime(date_buffer, FILE_SIZE, "%d-%m-%Y-(%H-%M-%S)", localtime(&timestamp));
     //
-
+#if _SHOW_
+    int pipe_flag = PIPE_OPEN;
+#endif
     // define recuit algorithm variables
     bool solved = false;
     int k, cost_one, cost_two, cost_comp, temp, new;
@@ -403,10 +124,10 @@ int main(int argc, char *argv[])
             sudoku_randomize(&lines, original_grid, &seed);
             if (OLD)
                 cost = sudoku_constraints_old(original_grid, lines, columns, regions);
-            else
+            else if (!OLD)
                 cost = sudoku_constraints(original_grid, lines, columns, regions);
-            //print_sudoku(lines);
-            //printf("Cost after randomization : %d\n", cost);
+            // print_sudoku(lines);
+            // printf("Cost after randomization : %d\n", cost);
         }
 
         if (verbose)
@@ -424,12 +145,12 @@ int main(int argc, char *argv[])
         int i = -1, j = -1;
         float sigma = 0.1;
         double ep = START_TEMPERATURE;
-        double e = exp(1);
+        // double e = exp(1);
         double temperature = ep;
 
         // diminution/augmentation de la temperature de départ à chaque quart d'essaie
         if (tries != 0 && tries % (MAX_TRIES / TEMP_STEP) == 0)
-            temperature *= 2;
+            temperature /= 2;
 
         // Step 3: Start the recuit simulation algorithm
         while (temperature >= TEMPERATURE_CEILING && solved != true)
@@ -457,15 +178,15 @@ int main(int argc, char *argv[])
                 // Step 9: choose random value in [0, 1]
                 u = get_random(&seed);
 #if _DEBUG_
-                snprintf(debug_buffer, DEBUG_SIZE, "{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d, temperature: %f}", cost, cost_one, cost_two, cost_comp, temperature);
-                sudoku_debug_output(puzzle_hash, debug_buffer, date_buffer);
+                // snprintf(debug_buffer, DEBUG_SIZE, "{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d, temperature: %f}", cost, cost_one, cost_two, cost_comp, temperature);
+                // sudoku_debug_output(puzzle_hash, debug_buffer, date_buffer);
 #endif
                 // Step 10: probability acceptance
                 if (cost_comp < cost)
                 {
                     cost = cost_comp;
                 }
-                //else if (u <= MIN(1, e - ((cost_comp - cost) / temperature)))
+                // else if (u <= MIN(1, e - ((cost_comp - cost) / temperature)))
                 else if (u <= exp(-((cost_comp - cost) / temperature)))
                 { // acceptation
                     cost = cost_comp;
@@ -477,11 +198,16 @@ int main(int argc, char *argv[])
 
 // send current sudoku to visualization program
 #if _SHOW_
+                if (write(fd, &pipe_flag, sizeof(int)) == -1)
+                {
+                    perror("Error writing integer to pipe");
+                    exit(EXIT_FAILURE);
+                }
                 for (int s = 0; s < SUDOKU_SIZE; s++)
                 {
                     if (write(fd, &lines[s], sizeof(int) * SUDOKU_SIZE) == -1)
                     {
-                        perror("Error writing integers in pipe");
+                        perror("Error writing sudoku line to pipe");
                         exit(EXIT_FAILURE);
                     }
                 }
@@ -533,6 +259,14 @@ int main(int argc, char *argv[])
     }
 
 #if _SHOW_
+    //send pipe closing signal to process
+    pipe_flag = PIPE_CLOSE;
+    if (write(fd, &pipe_flag, sizeof(int)) == -1)
+    {
+        perror("Error writing integer to pipe");
+        exit(EXIT_FAILURE);
+    }
+
     if (close(fd) == -1)
     {
         perror("Error closing pipe");
@@ -560,8 +294,8 @@ int main(int argc, char *argv[])
         printf("\n===========================\n");
 
         printf("\n---------------------------------------------------------------------------------\n");
-        printf(">>> Last output cost by the annealing algorithm: %d\n", cost);
     }
+    printf(">>> Last output cost by the annealing algorithm: %d\n", cost);
 
     // calculate cost of grid
     if (OLD)

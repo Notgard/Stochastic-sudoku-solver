@@ -27,7 +27,7 @@
 #define DEBUG_SIZE 256
 
 // configuration of the solving algorithm
-#define MAX_TRIES 1000
+#define MAX_TRIES 500
 
 #define RANDOMIZE_SUDOKU (true)
 
@@ -41,7 +41,7 @@
 
 #define OLD (true)
 
-#define TEMP_STEP 1 //the temperature is divided by two each step (depends on the numbers of tries)
+#define TEMP_STEP 10 //the temperature is divided by two each step (depends on the numbers of tries)
 #define SOLUTION_COST 0 // the cost of the wanted solution of the sudoku
 #define START_TEMPERATURE ((double)(1620 / 2))
 #define TEMPERATURE_CEILING 0.00273852
@@ -62,5 +62,7 @@ extern const char plot_colors[10][10];
 
 //output settings
 #define DATA_PIPE "/tmp/sudoku"
+#define PIPE_OPEN 0
+#define PIPE_CLOSE 1
 
 #endif
