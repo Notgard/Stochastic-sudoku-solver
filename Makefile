@@ -2,8 +2,8 @@
 # MAIN CONFIGURATION
 #
 
-EXEC = sudoku_remake main stats benchmark #visualization
-OBJECTS = utils.o sudoku.o
+EXEC = stats benchmark visualization sudoku_remake test
+OBJECTS = utils.o sudoku.o colors.o functions.o window.o
 PROJECT_NAME = SUDOKU_SOLVER
 
 SRC_DIR = src
@@ -31,7 +31,7 @@ OBJECTS_O = $(OBJECTS) $(EXEC_O)
 CC = gcc
 CCFLAGS_STD = -Wall -O3 -fopenmp
 CCFLAGS_DEBUG = -D _DEBUG_
-CCFLAGS_CUSTOM = _SHOW_
+CCFLAGS_CUSTOM = -D _SHOW_
 CCFLAGS = $(CCFLAGS_STD)
 CCLIBS = -fopenmp -lm -lncurses
 

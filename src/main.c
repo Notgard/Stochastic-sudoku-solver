@@ -52,13 +52,7 @@ int main(int argc, char *argv[])
         printf(">> Current cost : %d\n", cost);
 
 #if _SHOW_
-    // create and open data visualization pipe
-    if (mkfifo(DATA_PIPE, S_IRUSR | S_IWUSR) == -1)
-    {
-        fprintf(stderr, "Error creating named pipe '%s'", PIPE_NAME);
-        perror("");
-        exit(EXIT_FAILURE);
-    }
+    int fd;
 
     if ((fd = open(PIPE_NAME, O_WRONLY)) == -1)
     {
@@ -198,6 +192,7 @@ int main(int argc, char *argv[])
 
 // send current sudoku to visualization program
 #if _SHOW_
+                // printf("sending sudoku %d\n", pipe_flag);
                 if (write(fd, &pipe_flag, sizeof(int)) == -1)
                 {
                     perror("Error writing integer to pipe");
@@ -205,12 +200,17 @@ int main(int argc, char *argv[])
                 }
                 for (int s = 0; s < SUDOKU_SIZE; s++)
                 {
-                    if (write(fd, &lines[s], sizeof(int) * SUDOKU_SIZE) == -1)
+                    for (int h = 0; h < SUDOKU_SIZE; h++)
                     {
-                        perror("Error writing sudoku line to pipe");
-                        exit(EXIT_FAILURE);
+                        int data = lines[s][h];
+                        if (write(fd, &data, sizeof(int)) == -1)
+                        {
+                            perror("Error writing sudoku line to pipe");
+                            exit(EXIT_FAILURE);
+                        }
                     }
                 }
+                // printf("send sudoku\n");
 #endif
                 // Stop the algorithm if the cost of the grid is SOLUTION_COST
                 if (cost <= SOLUTION_COST)
@@ -259,7 +259,7 @@ int main(int argc, char *argv[])
     }
 
 #if _SHOW_
-    //send pipe closing signal to process
+    // send pipe closing signal to process
     pipe_flag = PIPE_CLOSE;
     if (write(fd, &pipe_flag, sizeof(int)) == -1)
     {
@@ -270,12 +270,6 @@ int main(int argc, char *argv[])
     if (close(fd) == -1)
     {
         perror("Error closing pipe");
-        exit(EXIT_FAILURE);
-    }
-
-    if (unlink(PIPE_NAME) == -1)
-    {
-        perror("Error deleting pipe");
         exit(EXIT_FAILURE);
     }
 #endif

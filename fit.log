@@ -1967,3 +1967,47 @@ correlation matrix of the fit parameters:
                 m      b      
 m               1.000 
 b              -0.999  1.000 
+
+
+*******************************************************************************
+Sat Nov  4 11:47:43 2023
+
+
+FIT:    data read from './benchmark/easy/stats-10719.txt' using 1:2
+        format = x:z
+BREAK: No data to fit
+
+*******************************************************************************
+Sat Nov  4 11:48:48 2023
+
+
+FIT:    data read from './benchmark/easy/stats-10990.txt' using 1:2
+        format = x:z
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = m*x + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   m             b            
+   0 2.7576353426e+00   0.00e+00  2.59e+00    1.000000e+00   1.000000e+00
+   6 1.8211280180e+00  -4.01e-08  2.59e-06    6.180147e+00  -1.775340e+01
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 1.82113
+rel. change during last iteration : -4.01018e-13
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.34949
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.82113
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 6.18015          +/- 19.72        (319.1%)
+b               = -17.7534         +/- 69.42        (391%)
+
+correlation matrix of the fit parameters:
+                m      b      
+m               1.000 
+b              -1.000  1.000 

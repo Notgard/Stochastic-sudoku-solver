@@ -8,7 +8,7 @@
 #include <string.h>
 #include <time.h>
 #include <locale.h>
-#include <sys/stat.h>
+
 
 #include "math.h"
 
@@ -72,6 +72,13 @@ int sudoku_constraints_old(int **original_grid, int **lines, int ***columns, int
 /// @param j the column index
 void sudoku_get_random_cell(int **sudoku_grid, int *i, int *j, unsigned int *seed);
 
-void simmulated_annealing(int **original_grid, int **sudoku_lines, int ***sudoku_columns, int ***sudoku_regions, int * cost);
+/// @brief Performs a simulated annealing on a sudoku grid to try to solve the sudoku
+/// @param original_grid 
+/// @param sudoku_lines 
+/// @param sudoku_columns 
+/// @param sudoku_regions 
+/// @param cost 
+/// @param fd 
+void simmulated_annealing(int **original_grid, int **sudoku_lines, int ***sudoku_columns, int ***sudoku_regions, int * cost, FILE * fd);
 
 #endif

@@ -261,7 +261,14 @@ void sudoku_get_random_cell(int **sudoku_grid, int *i, int *j, unsigned int *see
     *j = col;
 }
 
-void simmulated_annealing(int **original_grid, int **lines, int ***columns, int ***regions, int *cost)
+/// @brief Performs a simulated annealing on a sudoku grid to try to solve the sudoku
+/// @param original_grid 
+/// @param sudoku_lines 
+/// @param sudoku_columns 
+/// @param sudoku_regions 
+/// @param cost 
+/// @param fd 
+void simmulated_annealing(int **original_grid, int **lines, int ***columns, int ***regions, int *cost, FILE * fd)
 {
     unsigned int seed = (unsigned int)time(NULL);
     double delta = 0.1;
@@ -275,6 +282,7 @@ void simmulated_annealing(int **original_grid, int **lines, int ***columns, int 
     int diff_cost = 0;
     double u;
     bool solved = false;
+    int x = 0;
 
     // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
     sudoku_randomize(&lines, original_grid, &seed);
@@ -326,6 +334,11 @@ void simmulated_annealing(int **original_grid, int **lines, int ***columns, int 
             }
         }
         if(solved) break;
+        if(fd != NULL) {
+            fprintf(fd, "%d %f\n", x, temperature);
+            fflush(fd);
+        }
+        x++;
         temperature = temperature / (1 + (log(1 + delta) / (e_p + 1)) * temperature);
     }
     *cost = total_cost;

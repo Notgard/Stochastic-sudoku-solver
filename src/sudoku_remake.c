@@ -1,6 +1,8 @@
 #include <math.h>
 #include <omp.h>
 
+#include <stdio.h>
+
 #include "sudoku.h"
 
 int main(int argc, char *argv[])
@@ -47,9 +49,16 @@ int main(int argc, char *argv[])
     int lowest_cost_found = (int)INFINITY;
     int **best_solution = NULL;
 
+    FILE *gnu_pipe = NULL;
     char date_buffer[FILE_SIZE];
     time_t timestamp = time(NULL);
     strftime(date_buffer, FILE_SIZE, "%d-%m-%Y-(%H-%M-%S)", localtime(&timestamp));
+
+    if(GET_STATS) {
+        gnu_pipe = popen("gnuplot -persist", "w");
+        fprintf(gnu_pipe, "set terminal dumb\n");
+        fprintf(gnu_pipe, "plot '-' with lines\n");
+    }
 
     start_time = omp_get_wtime();
 
@@ -63,7 +72,7 @@ int main(int argc, char *argv[])
         tries = 0;
         while (cost != SOLUTION_COST && tries <= MAX_TRIES)
         {
-            simmulated_annealing(original_grid, lines, columns, regions, &cost);
+            simmulated_annealing(original_grid, lines, columns, regions, &cost, gnu_pipe);
             tries++;
             if (verbose)
             {
@@ -96,6 +105,10 @@ int main(int argc, char *argv[])
         }
     }
     end_time = omp_get_wtime();
+
+    if(GET_STATS) {
+        pclose(gnu_pipe);
+    }
 
     // calculate the CPU execution time of the sudoku solving algorithm
     CPU_time = end_time - start_time;

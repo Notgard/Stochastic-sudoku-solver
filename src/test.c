@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #define ROWS 3
 #define COLS 4
@@ -86,7 +87,7 @@ int get_bound_randomm(unsigned int *seed, unsigned int lBound, unsigned int uBou
     return r;
 }
 
-int main(void) {
+int test(void) {
     unsigned int seed = 123456;
 
     printf("Series of 20 random numbers: \n");
@@ -105,5 +106,59 @@ int main(void) {
 
     printf("\n");
 
+    printf("%.*s", 5, "=================");
+
     return 0;
 }
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+void writeData() {
+    FILE *file = fopen("plot.dat", "w");
+    if (file == NULL) {
+        perror("Failed to open plot.dat");
+        exit(1);
+    }
+
+    for (int i = 1; i <= 20; i++) {
+        fprintf(file, "%d\t%d\n", i, i * i);
+        fclose(file); // Close and reopen the file to simulate appending.
+        file = fopen("plot.dat", "a");
+        if (file == NULL) {
+            perror("Failed to open plot.dat");
+            exit(1);
+        }
+        sleep(1);
+        printf("done\n");
+    }
+
+    fclose(file);
+}
+
+int main() {
+    // Remove the existing plot.dat file, if any.
+    if (remove("plot.dat") == 0) {
+        printf("plot.dat removed\n");
+    }
+
+    // Start a separate process to write data in the background.
+    if (fork() == 0) {
+        writeData();
+        exit(0);
+    } else {
+        sleep(1); // Sleep to ensure the background process starts writing data.
+        
+        // Run Gnuplot with a script file to update the graph.
+        if (fork() == 0) {
+            execlp("gnuplot", "gnuplot", "liveplot.gnu", (char *)0);
+            perror("Failed to execute gnuplot");
+            exit(1);
+        }
+    }
+
+    return 0;
+}
+
+

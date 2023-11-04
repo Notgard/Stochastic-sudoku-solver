@@ -6,7 +6,8 @@
         "stdarg.h": "c",
         "stdio.h": "c",
         "config.h": "c",
-        "utils.h": "c"
+        "utils.h": "c",
+        "unistd.h": "c"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }
