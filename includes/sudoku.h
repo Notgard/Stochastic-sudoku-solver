@@ -8,11 +8,16 @@
 #include <string.h>
 #include <time.h>
 #include <locale.h>
-
+#include <sys/wait.h>
 
 #include "math.h"
 
 #include "utils.h"
+
+typedef struct setting_t {
+    FILE * stat_file;
+    int fd;
+} setting_t;
 
 /// @brief Returns a 2D array containing each region in order (from left to right)
 /// @param sudoku_grid
@@ -79,6 +84,6 @@ void sudoku_get_random_cell(int **sudoku_grid, int *i, int *j, unsigned int *see
 /// @param sudoku_regions 
 /// @param cost 
 /// @param fd 
-void simmulated_annealing(int **original_grid, int **sudoku_lines, int ***sudoku_columns, int ***sudoku_regions, int * cost, FILE * fd);
+void simmulated_annealing(int **original_grid, int **sudoku_lines, int ***sudoku_columns, int ***sudoku_regions, int * cost, setting_t setting);
 
 #endif

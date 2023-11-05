@@ -76,4 +76,8 @@ void print_config();
 
 void print_sudoku_grid(int sudoku_grid[][SUDOKU_SIZE]);
 
+void sudoku_pipe_write(int fd, int flag, int **grid);
+
+void sudoku_pipe_close(int fd, int flag);
+
 #endif

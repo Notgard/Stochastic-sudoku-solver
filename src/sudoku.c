@@ -171,9 +171,13 @@ int sudoku_cell_constraints(int nb, int start_l, int start_c, int **lines, int *
 {
     if (nb == 0)
         return 0;
+    int j;
     int sum = 0;
     int start_r = (start_l / 3) * 3 + (start_c / 3); // gets the specific region to check inside
-    for (int j = 0; j < SUDOKU_SIZE; j++)
+//#pragma omp parallel num_threads(N_THREADS), shared(sum)
+//{
+    //#pragma omp parallel for 
+    for (j = 0; j < SUDOKU_SIZE; j++)
     {
         // if (lines[start_l][j] == nb || (*columns[start_c][j]) == nb || (*regions[start_r][j]) == nb)
         //{ // check the content of the line, column and region
@@ -181,18 +185,21 @@ int sudoku_cell_constraints(int nb, int start_l, int start_c, int **lines, int *
         // }
         if (lines[start_l][j] == nb)
         {
+            //#pragma omp critical
             sum++;
         }
         if (*columns[start_c][j] == nb)
         {
+            //#pragma omp critical
             sum++;
         }
         if (*regions[start_r][j] == nb)
         {
+            //#pragma omp critical
             sum++;
         }
     }
-
+//}
     return sum - 3;
 }
 
@@ -205,6 +212,7 @@ int sudoku_constraints(int **original_grid, int **lines, int ***columns, int ***
 {
     int sum = 0;
     int cost;
+    //#pragma omp parallel for collapse(2), num_threads(N_THREADS), reduction(+:sum), schedule(dynamic, SUDOKU_GRID_SIZE)
     for (int i = 0; i < SUDOKU_SIZE; i++)
     {
         for (int j = 0; j < SUDOKU_SIZE; j++)
@@ -225,10 +233,12 @@ int sudoku_constraints(int **original_grid, int **lines, int ***columns, int ***
 
 int sudoku_constraints_old(int **original_grid, int **lines, int ***columns, int ***regions)
 {
+    int i, j;
     int sum = 0;
-    for (int i = 0; i < SUDOKU_SIZE; i++)
+    #pragma omp parallel for collapse(2), num_threads(N_THREADS), reduction(+:sum), schedule(static, SUDOKU_GRID_SIZE)
+    for (i = 0; i < SUDOKU_SIZE; i++)
     {
-        for (int j = 0; j < SUDOKU_SIZE; j++)
+        for (j = 0; j < SUDOKU_SIZE; j++)
         {
             sum += sudoku_cell_constraints(lines[i][j], i, j, lines, columns, regions);
         }
@@ -247,12 +257,17 @@ void sudoku_get_random_cell(int **sudoku_grid, int *i, int *j, unsigned int *see
     int col = get_bound_random(seed, 0, 8);
 
     bool different = (*i != -1 && *j != -1);
+    //#pragma omp parallel num_threads(N_THREADS), shared(line, col), private(different)
     while (sudoku_grid[line][col] != 0 || different)
     {
-        line = get_bound_random(seed, 0, 8);
-        col = get_bound_random(seed, 0, 8);
+        //#pragma omp critical
+        {
+            line = get_bound_random(seed, 0, 8);
+            col = get_bound_random(seed, 0, 8);
+        }
         if (different && (line != *i || col != *j))
         {
+            //#pragma omp critical
             different = false;
         }
     }
@@ -268,7 +283,7 @@ void sudoku_get_random_cell(int **sudoku_grid, int *i, int *j, unsigned int *see
 /// @param sudoku_regions 
 /// @param cost 
 /// @param fd 
-void simmulated_annealing(int **original_grid, int **lines, int ***columns, int ***regions, int *cost, FILE * fd)
+void simmulated_annealing(int **original_grid, int **lines, int ***columns, int ***regions, int *cost, setting_t setting)
 {
     unsigned int seed = (unsigned int)time(NULL);
     double delta = 0.1;
@@ -283,6 +298,7 @@ void simmulated_annealing(int **original_grid, int **lines, int ***columns, int 
     double u;
     bool solved = false;
     int x = 0;
+    int iterations = 0;
 
     // Step 1: Fill the grid's non fixed cells with random values and calculate the cost of the grid
     sudoku_randomize(&lines, original_grid, &seed);
@@ -296,7 +312,7 @@ void simmulated_annealing(int **original_grid, int **lines, int ***columns, int 
         {
             // Step 4: choose random cell from the grid which isn't fixed
             sudoku_get_random_cell(original_grid, &line, &column, &seed);
-
+            
             // Step 5: store the value in a temp variable and evaluate the cost of the random cell
             temp = lines[line][column];
             cost1 = sudoku_cell_constraints(lines[line][column], line, column, lines, columns, regions);
@@ -326,20 +342,33 @@ void simmulated_annealing(int **original_grid, int **lines, int ***columns, int 
             { // rejet
                 lines[line][column] = temp;
             }
-
+            #if _SHOW_
+            #pragma omp parallel num_threads(2)
+            {
+                #pragma omp single
+                {
+                    sudoku_pipe_write(setting.fd, PIPE_OPEN, lines);    
+                }
+            }
+            #endif
             if (total_cost == 0)
             {
                 solved = true;
                 break;
             }
         }
-        if(solved) break;
-        if(fd != NULL) {
-            fprintf(fd, "%d %f\n", x, temperature);
-            fflush(fd);
+        // end for
+        iterations++;
+        if(setting.stat_file != NULL) {
+            //usleep(1000);
+            x++;
+            fprintf(setting.stat_file, "%d %d %f\n", x, total_cost, temperature);
+            //fprintf(fd, "%d %f %f\n", x, temperature, temperature);
+            fflush(setting.stat_file);
         }
-        x++;
+        if(solved || iterations > MAX_ITERATIONS) break;
         temperature = temperature / (1 + (log(1 + delta) / (e_p + 1)) * temperature);
     }
+    //end while
     *cost = total_cost;
 }

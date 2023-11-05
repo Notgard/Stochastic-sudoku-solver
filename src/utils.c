@@ -189,9 +189,11 @@ void print_sudoku_grid(int sudoku_grid[][SUDOKU_SIZE])
 /// @param sudoku_grid the given sudoku grid
 /// @param seed the randomization seed used
 void sudoku_randomize(int ***sudoku_grid, int ** original_grid, unsigned int * seed) {
-    for (int line = 0; line < SUDOKU_SIZE; line++)
+    int line, col;
+    #pragma omp parallel for collapse(2), num_threads(N_THREADS), schedule(static, SUDOKU_GRID_SIZE)
+    for (line = 0; line < SUDOKU_SIZE; line++)
     {
-        for (int col = 0; col < SUDOKU_SIZE; col++)
+        for (col = 0; col < SUDOKU_SIZE; col++)
         {
             if (original_grid[line][col] == 0) {
                 (*sudoku_grid)[line][col] = get_bound_random(seed, 1, 9);
@@ -277,4 +279,40 @@ void print_config() {
     printf("  %s>[SOLUTION_COST]The cost for the sudoku to be considered solved:%s %d\n", CLR_YEL, CLR_RESET, SOLUTION_COST);
 
     printf("  %s>[START_TEMPERATURE]Starting temperature:%s %s%f%s\n", CLR_YEL, CLR_RESET, CLR_RED, START_TEMPERATURE, CLR_RESET);
+}
+
+void sudoku_pipe_write(int fd, int flag, int **grid)
+{
+    int s, h, data;
+    if (write(fd, &flag, sizeof(int)) == -1)
+    {
+        perror("Error writing integer to pipe");
+        exit(EXIT_FAILURE);
+    }
+    for (s = 0; s < SUDOKU_SIZE; s++)
+    {
+        for (h = 0; h < SUDOKU_SIZE; h++)
+        {
+            data = grid[s][h];
+            if (write(fd, &data, sizeof(int)) == -1)
+            {
+                perror("Error writing sudoku line to pipe");
+                exit(EXIT_FAILURE);
+            }
+        }
+    }
+}
+
+void sudoku_pipe_close(int fd, int flag) {
+    if (write(fd, &flag, sizeof(int)) == -1)
+    {
+        perror("Error writing integer to pipe");
+        exit(EXIT_FAILURE);
+    }
+
+    if (close(fd) == -1)
+    {
+        perror("Error closing pipe");
+        exit(EXIT_FAILURE);
+    }
 }

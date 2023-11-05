@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
     //
     start_time = omp_get_wtime();
     tries = 0;
-
+    
     while (solved != true)
     {
         if (KEEP_START)
@@ -192,25 +192,7 @@ int main(int argc, char *argv[])
 
 // send current sudoku to visualization program
 #if _SHOW_
-                // printf("sending sudoku %d\n", pipe_flag);
-                if (write(fd, &pipe_flag, sizeof(int)) == -1)
-                {
-                    perror("Error writing integer to pipe");
-                    exit(EXIT_FAILURE);
-                }
-                for (int s = 0; s < SUDOKU_SIZE; s++)
-                {
-                    for (int h = 0; h < SUDOKU_SIZE; h++)
-                    {
-                        int data = lines[s][h];
-                        if (write(fd, &data, sizeof(int)) == -1)
-                        {
-                            perror("Error writing sudoku line to pipe");
-                            exit(EXIT_FAILURE);
-                        }
-                    }
-                }
-                // printf("send sudoku\n");
+                sudoku_pipe_write(fd, pipe_flag, lines);
 #endif
                 // Stop the algorithm if the cost of the grid is SOLUTION_COST
                 if (cost <= SOLUTION_COST)
@@ -261,17 +243,7 @@ int main(int argc, char *argv[])
 #if _SHOW_
     // send pipe closing signal to process
     pipe_flag = PIPE_CLOSE;
-    if (write(fd, &pipe_flag, sizeof(int)) == -1)
-    {
-        perror("Error writing integer to pipe");
-        exit(EXIT_FAILURE);
-    }
-
-    if (close(fd) == -1)
-    {
-        perror("Error closing pipe");
-        exit(EXIT_FAILURE);
-    }
+    sudoku_pipe_close(fd, pipe_flag);
 #endif
 
     end_time = omp_get_wtime();

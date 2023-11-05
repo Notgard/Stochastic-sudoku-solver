@@ -46,8 +46,9 @@
 #define START_TEMPERATURE ((double)(1620 / 2))
 #define TEMPERATURE_CEILING 0.00273852
 #define PRESUMED_PUZZLE_SIZE PUZZLE_SIZE
+#define MAX_ITERATIONS 200000
 
-#define GET_STATS (false)
+#define GET_STATS (true)
 
 // gnuplot configuration
 #define COMMANDE_SIZE 4086
@@ -66,5 +67,8 @@ extern const char plot_colors[10][10];
 #define PIPE_CLOSE 1
 #define WIDTH 20
 #define HEIGHT 20
+
+//OpenMP config
+#define N_THREADS 10
 
 #endif

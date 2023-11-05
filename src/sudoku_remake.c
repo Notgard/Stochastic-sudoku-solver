@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
         print_config();
 
     int **original_grid = read_sudoku_file(filename, SUDOKU_SIZE, puzzle_hash);
+
     // seperate the region, lines and columns of the grid into 3 variables
     int **lines;
     int ***columns;
@@ -48,21 +49,57 @@ int main(int argc, char *argv[])
     double CPU_time, start_time, end_time;
     int lowest_cost_found = (int)INFINITY;
     int **best_solution = NULL;
+    setting_t setting;
 
-    FILE *gnu_pipe = NULL;
+    FILE *fd = NULL;
+    FILE *gnuplotPipe;
+    pid_t pid = 0;
+
     char date_buffer[FILE_SIZE];
     time_t timestamp = time(NULL);
     strftime(date_buffer, FILE_SIZE, "%d-%m-%Y-(%H-%M-%S)", localtime(&timestamp));
 
-    if(GET_STATS) {
-        gnu_pipe = popen("gnuplot -persist", "w");
-        fprintf(gnu_pipe, "set terminal dumb\n");
-        fprintf(gnu_pipe, "plot '-' with lines\n");
+    if (GET_STATS)
+    {
+        // Remove the existing plot.dat file, if any.
+        if (remove("plot.dat") == 0)
+        {
+            printf("plot.dat removed\n");
+        }
+        fd = fopen("plot.dat", "w");
+        if (fd == NULL)
+        {
+            perror("Failed to open plot.dat");
+            exit(1);
+        }
+        fclose(fd);
+        fd = fopen("plot.dat", "a");
+        setting.stat_file = fd;
+
+        gnuplotPipe = popen("gnuplot", "w");
+        if (gnuplotPipe == NULL)
+        {
+            perror("Error opening Gnuplot pipe\n");
+            return 1;
+        }
     }
+
+#if _SHOW_
+    int filed;
+    if ((filed = open(PIPE_NAME, O_WRONLY)) == -1)
+    {
+        perror("Error opening pipe");
+        exit(EXIT_FAILURE);
+    }
+    setting.fd = filed;
+#endif
 
     start_time = omp_get_wtime();
 
     // Start of the solving phase until we get SOLUTION_COST value
+    if (GET_STATS)
+        pid = fork();
+    if (pid == 0)
     {
         if (KEEP_START)
         {
@@ -72,7 +109,7 @@ int main(int argc, char *argv[])
         tries = 0;
         while (cost != SOLUTION_COST && tries <= MAX_TRIES)
         {
-            simmulated_annealing(original_grid, lines, columns, regions, &cost, gnu_pipe);
+            simmulated_annealing(original_grid, lines, columns, regions, &cost, setting);
             tries++;
             if (verbose)
             {
@@ -81,8 +118,8 @@ int main(int argc, char *argv[])
                 printf("[TRY#%d]>> Current cost : %d\n", tries, cost);
             }
             // log the stats of the recuit solver
-            if (GET_STATS)
-                sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
+            // if (GET_STATS)
+            //    sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
 
             // find lowest cost and manage the best current solution
             if (cost < lowest_cost_found)
@@ -103,12 +140,29 @@ int main(int argc, char *argv[])
                 sudoku_copy_content(&lines, best_solution);
             }
         }
+        if (GET_STATS)
+            exit(EXIT_SUCCESS);
+    }
+    else
+    {
+        if (GET_STATS)
+        {
+            fprintf(gnuplotPipe, "load 'liveplot_cost.gnu'\n");
+            fflush(gnuplotPipe);
+        }
     }
     end_time = omp_get_wtime();
 
-    if(GET_STATS) {
-        pclose(gnu_pipe);
+    if (GET_STATS)
+    {
+        pclose(gnuplotPipe);
+        fclose(fd);
     }
+
+#if _SHOW_
+    // send pipe closing signal to process
+    sudoku_pipe_close(filed, PIPE_CLOSE);
+#endif
 
     // calculate the CPU execution time of the sudoku solving algorithm
     CPU_time = end_time - start_time;

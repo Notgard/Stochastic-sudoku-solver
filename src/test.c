@@ -122,16 +122,15 @@ void writeData() {
         exit(1);
     }
 
-    for (int i = 1; i <= 20; i++) {
-        fprintf(file, "%d\t%d\n", i, i * i);
+    for (int i = 1, j = 400; i <= 400; i++, j--) {
+        fprintf(file, "%d\t%d\t%d\n", i, i + 5, j);
         fclose(file); // Close and reopen the file to simulate appending.
         file = fopen("plot.dat", "a");
         if (file == NULL) {
             perror("Failed to open plot.dat");
             exit(1);
         }
-        sleep(1);
-        printf("done\n");
+        usleep(10000);
     }
 
     fclose(file);
@@ -143,22 +142,24 @@ int main() {
         printf("plot.dat removed\n");
     }
 
+    FILE *gnuplotPipe = popen("gnuplot", "w");
+    if (gnuplotPipe == NULL) {
+        perror("Error opening Gnuplot pipe\n");
+        return 1;
+    }
+
     // Start a separate process to write data in the background.
     if (fork() == 0) {
         writeData();
         exit(0);
     } else {
-        sleep(1); // Sleep to ensure the background process starts writing data.
-        
         // Run Gnuplot with a script file to update the graph.
-        if (fork() == 0) {
-            execlp("gnuplot", "gnuplot", "liveplot.gnu", (char *)0);
-            perror("Failed to execute gnuplot");
-            exit(1);
-        }
+        fprintf(gnuplotPipe, "load 'liveplot.gnu'\n");
+        fflush(gnuplotPipe);
     }
+
+    // Close the Gnuplot pipe.
+    pclose(gnuplotPipe);
 
     return 0;
 }
-
-
