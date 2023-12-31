@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <omp.h>
+#include <math.h>
 
 #define ROWS 3
 #define COLS 4
+
 
 #if 0
 
@@ -136,7 +139,7 @@ void writeData() {
     fclose(file);
 }
 
-int main() {
+int test2() {
     // Remove the existing plot.dat file, if any.
     if (remove("plot.dat") == 0) {
         printf("plot.dat removed\n");
@@ -161,5 +164,28 @@ int main() {
     // Close the Gnuplot pipe.
     pclose(gnuplotPipe);
 
+    return 0;
+}
+
+#define START_TEMPERATURE ((double)(1620 / 2))
+#define TEMPERATURE_CEILING 0.00273852
+
+int main(void) {
+    double delta = 0.1;
+    double e_p = START_TEMPERATURE;
+    double temperature = e_p;
+    double start, end, cpu;
+    int test = 0;
+    start = omp_get_wtime();
+    while (temperature >= TEMPERATURE_CEILING)
+    {
+        for(int i = 0; i < 81; i++) {
+            test++;
+        }
+        temperature = temperature / (1 + (log(1 + delta) / (e_p + 1)) * temperature);
+    }
+    end = omp_get_wtime();
+    cpu = end - start;
+    printf("%lf\n", cpu);
     return 0;
 }

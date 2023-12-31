@@ -19,9 +19,10 @@
 
 #define ESC '\e'
 
-#define COLORS 1
+#define COLORS 0
 
-void signal_handler(int signum) {
+void signal_handler(int signum)
+{
     if (unlink(PIPE_NAME) == -1)
     {
         perror("Error deleting pipe");
@@ -100,7 +101,7 @@ int cell_constraint(int nb, int start_l, int start_c, int **lines, int ***column
     int sum = 0;
     int start_r = (start_l / 3) * 3 + (start_c / 3); // gets the specific region to check inside
 
-    //#pragma omp parallel for num_threads(N_THREADS), reduction(+:sum), private(j), shared(start_r, start_c, start_l)
+    // #pragma omp parallel for num_threads(N_THREADS), reduction(+:sum), private(j), shared(start_r, start_c, start_l)
     for (j = 0; j < SUDOKU_SIZE; j++)
     {
         if (lines[start_l][j] == nb)
@@ -132,13 +133,19 @@ void show_sudoku_grid(int **sudoku, int ***regions, int ***columns, window_t *wi
         {
             if (j == 0)
                 window_printw(window, "| ");
-            if(COLORS) {
-                if(cell_constraint(sudoku[i][j], i, j, sudoku, columns, regions) > 0) {
+            if (COLORS)
+            {
+                if (cell_constraint(sudoku[i][j], i, j, sudoku, columns, regions) > 0)
+                {
                     window_printw_col(window, RED, "%d ", sudoku[i][j]);
-                } else {
+                }
+                else
+                {
                     window_printw_col(window, GREEN, "%d ", sudoku[i][j]);
                 }
-            } else {
+            }
+            else
+            {
                 window_printw(window, "%d ", sudoku[i][j]);
             }
             if ((j + 1) % 3 == 0)
@@ -156,7 +163,7 @@ int main()
 {
     int fd;
 
-    //prepare to close named pipe if process is killed
+    // prepare to close named pipe if process is killed
     init_signal_handler();
 
     // create and open data visualization pipe
@@ -167,17 +174,21 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-    size_t bytes, bytes_read = 0;
-    //setting up the data buffers
+    size_t bytes;
+    // setting up the data buffers
+    cell_t cell;
+    cell.cost = 0;
     int sudoku_buffer[SUDOKU_SIZE][SUDOKU_SIZE];
     int *buffer_pointer[SUDOKU_SIZE];
     memset(sudoku_buffer, 0, (PUZZLE_SIZE * sizeof(int)));
-    for(int i = 0; i < SUDOKU_SIZE; i++) {
+    for (int i = 0; i < SUDOKU_SIZE; i++)
+    {
         buffer_pointer[i] = sudoku_buffer[i];
     }
-    int ***regions = NULL; 
+    int ***regions = NULL;
     int ***columns = NULL;
-    if(COLORS) {
+    if (COLORS)
+    {
         regions = create_sudoku_region(buffer_pointer);
         columns = create_sudoku_columns(buffer_pointer);
     }
@@ -191,8 +202,10 @@ int main()
     printf("Waiting for sudoku to start...\n");
 
     ncurses_init();
-    ncurses_colors();
+    ncurses_colors(); 
     palette();
+    clear();
+    refresh();
 
     //
     int y, x;
@@ -201,10 +214,10 @@ int main()
     window_mvprintw(winfo, 0, 0, "=========================================");
     window_mvprintw(winfo, 1, 0, "  Sudoku Solving Visualization program");
     window_mvprintw(winfo, 2, 0, "=========================================");
-    window_mvprintw(winfo, 3, 0, "Bytes read: %ld", bytes_read);
+    window_mvprintw(winfo, 3, 0, "Current sudoku cost: %d", cell.cost);
     window_refresh(winfo);
     //
-    window_t * wsudoku = window_create(0, 6, x-1, y-6, "Sudoku", FALSE);
+    window_t *wsudoku = window_create(0, 6, x - 1, y - 6, "Sudoku", FALSE);
     window_refresh(wsudoku);
     //
     show_sudoku_grid(buffer_pointer, regions, columns, wsudoku);
@@ -222,28 +235,44 @@ int main()
             perror("Error reading named pipe flag from pipe");
             exit(EXIT_FAILURE);
         }
-        bytes_read += bytes;
-        for (int s = 0; s < SUDOKU_SIZE; s++)
+
+        switch (pipe_flag)
         {
-            for (int h = 0; h < SUDOKU_SIZE; h++)
+        case PIPE_OPEN: // get the initial entire sudoku grid
+            for (int s = 0; s < SUDOKU_SIZE; s++)
             {
-                if ((bytes = read(fd, &sudoku_buffer[s][h], sizeof(int))) == -1)
+                for (int h = 0; h < SUDOKU_SIZE; h++)
                 {
-                    perror("Error reading sudoku data from pipe");
-                    exit(EXIT_FAILURE);
+                    if ((bytes = read(fd, &sudoku_buffer[s][h], sizeof(int))) == -1)
+                    {
+                        perror("Error reading sudoku data from pipe");
+                        exit(EXIT_FAILURE);
+                    }
                 }
             }
-            bytes_read += bytes;
-        }
-        window_mvprintw(winfo, 3, 0, "Bytes read: %ld", bytes_read);
-
-        show_sudoku_grid(buffer_pointer, regions, columns, wsudoku);
-
-        if (pipe_flag == PIPE_CLOSE)
-        {
+            break;
+        case PIPE_CONTINUE: // only get the changed cell in the grid
+            if ((bytes = read(fd, &cell, sizeof(cell_t))) == -1)
+            {
+                perror("Error reading cell data from pipe");
+                exit(EXIT_FAILURE);
+            }
+            sudoku_buffer[cell.line][cell.col] = cell.val;
+            window_erase(winfo);
+            window_mvprintw(winfo, 0, 0, "==================================================");
+            window_mvprintw(winfo, 1, 0, "      Sudoku Solving Visualization program");
+            window_mvprintw(winfo, 2, 0, "==================================================");
+            window_mvprintw(winfo, 3, 0, "Current sudoku cost: %d", cell.cost);
+            window_refresh(winfo);
+            break;
+        case PIPE_CLOSE:
+            goto exit_loop;
             break;
         }
+        
+        show_sudoku_grid(buffer_pointer, regions, columns, wsudoku);
     }
+    exit_loop:;
 
     if (close(fd) == -1)
     {
@@ -261,11 +290,13 @@ int main()
     window_delete(&wsudoku);
     ncurses_stop();
 
-    if(COLORS) {
+    if (COLORS)
+    {
         sudoku_free_pointers(regions);
         sudoku_free_pointers(columns);
     }
 
+    printf("Final cost : %d\n", cell.cost);
     printf("End of program\n");
 
     return EXIT_SUCCESS;

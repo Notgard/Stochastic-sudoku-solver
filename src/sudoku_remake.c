@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 
     FILE *fd = NULL;
     FILE *gnuplotPipe;
-    pid_t pid = 0;
+    pid_t pid = 1;
 
     char date_buffer[FILE_SIZE];
     time_t timestamp = time(NULL);
@@ -97,10 +97,15 @@ int main(int argc, char *argv[])
     start_time = omp_get_wtime();
 
     // Start of the solving phase until we get SOLUTION_COST value
-    if (GET_STATS)
-        pid = fork();
-    if (pid == 0)
-    {
+    if (GET_STATS) {
+        if((pid = fork()) == -1) {
+            perror("Error creating child process");
+            exit(EXIT_FAILURE);
+        }
+    }
+        
+    if (pid > 0)
+    {//run using main process
         if (KEEP_START)
         {
             sudoku_copy_content(&lines, original_grid);
@@ -109,7 +114,12 @@ int main(int argc, char *argv[])
         tries = 0;
         while (cost != SOLUTION_COST && tries <= MAX_TRIES)
         {
-            simmulated_annealing(original_grid, lines, columns, regions, &cost, setting);
+            #if _PARALLEL_
+                parallel_simmulated_annealing_test(original_grid, lines, columns, regions, &cost, setting);
+            #else
+                simmulated_annealing(original_grid, lines, columns, regions, &cost, setting);
+            #endif
+            
             tries++;
             if (verbose)
             {
@@ -140,17 +150,18 @@ int main(int argc, char *argv[])
                 sudoku_copy_content(&lines, best_solution);
             }
         }
-        if (GET_STATS)
-            exit(EXIT_SUCCESS);
+        
     }
     else
     {
-        if (GET_STATS)
+        if (GET_STATS) //load stats using child process
         {
             fprintf(gnuplotPipe, "load 'liveplot_cost.gnu'\n");
             fflush(gnuplotPipe);
+            exit(EXIT_SUCCESS);
         }
     }
+    
     end_time = omp_get_wtime();
 
     if (GET_STATS)
@@ -158,6 +169,7 @@ int main(int argc, char *argv[])
         pclose(gnuplotPipe);
         fclose(fd);
     }
+
 
 #if _SHOW_
     // send pipe closing signal to process

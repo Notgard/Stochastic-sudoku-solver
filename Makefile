@@ -31,7 +31,8 @@ OBJECTS_O = $(OBJECTS) $(EXEC_O)
 CC = gcc
 CCFLAGS_STD = -Wall -O3 -fopenmp
 CCFLAGS_DEBUG = -D _DEBUG_
-CCFLAGS_CUSTOM = -D _SHOW_
+CCFLAGS_SHOW = -D _SHOW_
+CCFLAGS_PARALLEL = -D _PARALLEL_
 CCFLAGS = $(CCFLAGS_STD)
 CCLIBS = -fopenmp -lm -lncurses
 
@@ -52,8 +53,11 @@ msg:
 debug: CCFLAGS = $(CCFLAGS_STD) $(CCFLAGS_DEBUG)
 debug: all
 
-show: CCFLAGS = $(CCFLAGS_STD) $(CCFLAGS_CUSTOM)
+show: CCFLAGS = $(CCFLAGS_STD) $(CCFLAGS_SHOW)
 show: all
+
+parallel: CCFLAGS = $(CCFLAGS_STD) $(CCFLAGS_PARALLEL)
+parallel: all
 
 #
 # DEFAULT RULES (must not change it)

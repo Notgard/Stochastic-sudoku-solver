@@ -48,7 +48,7 @@
 #define PRESUMED_PUZZLE_SIZE PUZZLE_SIZE
 #define MAX_ITERATIONS 200000
 
-#define GET_STATS (true)
+#define GET_STATS (false)
 
 // gnuplot configuration
 #define COMMANDE_SIZE 4086
@@ -64,11 +64,12 @@ extern const char plot_colors[10][10];
 //visualization demo config
 #define PIPE_NAME "/tmp/sudoku"
 #define PIPE_OPEN 0
-#define PIPE_CLOSE 1
+#define PIPE_CONTINUE 1
+#define PIPE_CLOSE 2
 #define WIDTH 20
 #define HEIGHT 20
 
 //OpenMP config
-#define N_THREADS 10
+#define N_THREADS 20
 
 #endif

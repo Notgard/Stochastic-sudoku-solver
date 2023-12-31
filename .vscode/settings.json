@@ -8,7 +8,9 @@
         "config.h": "c",
         "utils.h": "c",
         "unistd.h": "c",
-        "atomic": "c"
+        "atomic": "c",
+        "ncurses.h": "c",
+        "*.tcc": "c"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }

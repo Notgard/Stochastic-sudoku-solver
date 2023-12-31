@@ -261,6 +261,12 @@ void sudoku_debug_output(char * filename, char * info, char * date) {
 /// @brief Prints the current configuration of the sudoku solving alogrithm
 void print_config() {
     printf("Current configuration: \n");
+    #if _PARALLEL_ 
+        printf("  %s>[PARALLEL_COMPUTING]Tries to solve the sudoku in parallel:%s %sON%s\n", CLR_YEL, CLR_RESET, CLR_GRN, CLR_RESET);
+    #else 
+        printf("  %s>[PARALLEL_COMPUTING]Tries to solve the sudoku in parallel:%s %sOFF%s\n", CLR_YEL, CLR_RESET, CLR_RED, CLR_RESET);
+    #endif
+
     if(KEEP_START) printf("  %s>[KEEP_START]Keep starting sudoku each try:%s %sON%s\n", CLR_YEL, CLR_RESET, CLR_GRN, CLR_RESET);
     else printf("  %s>[KEEP_START]Keep starting sudoku each try:%s %sOFF%s\n", CLR_YEL, CLR_RESET, CLR_RED, CLR_RESET);
 
@@ -279,6 +285,19 @@ void print_config() {
     printf("  %s>[SOLUTION_COST]The cost for the sudoku to be considered solved:%s %d\n", CLR_YEL, CLR_RESET, SOLUTION_COST);
 
     printf("  %s>[START_TEMPERATURE]Starting temperature:%s %s%f%s\n", CLR_YEL, CLR_RESET, CLR_RED, START_TEMPERATURE, CLR_RESET);
+}
+
+void sudoku_cell_write(int fd, int flag, cell_t changed_cell) {
+    if (write(fd, &flag, sizeof(int)) == -1)
+    {
+        perror("Error writing integer to pipe");
+        exit(EXIT_FAILURE);
+    }
+    if (write(fd, &changed_cell, sizeof(cell_t)) == -1)
+    {
+        perror("Error writing sudoku cell to pipe");
+        exit(EXIT_FAILURE);
+    }
 }
 
 void sudoku_pipe_write(int fd, int flag, int **grid)

@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <fcntl.h>
 #include <string.h>
 #include <time.h>
 #include <locale.h>
@@ -86,4 +85,14 @@ void sudoku_get_random_cell(int **sudoku_grid, int *i, int *j, unsigned int *see
 /// @param fd 
 void simmulated_annealing(int **original_grid, int **sudoku_lines, int ***sudoku_columns, int ***sudoku_regions, int * cost, setting_t setting);
 
+/// @brief Performs a parallel simulated annealing on a sudoku grid to try to solve the sudoku
+/// @param original_grid
+/// @param sudoku_lines
+/// @param sudoku_columns
+/// @param sudoku_regions
+/// @param cost
+/// @param fd
+void parallel_simmulated_annealing(int **original_grid, int **lines, int ***columns, int ***regions, int *cost, setting_t setting);
+
+void parallel_simmulated_annealing_test(int **original_grid, int **lines, int ***columns, int ***regions, int *cost, setting_t setting);
 #endif

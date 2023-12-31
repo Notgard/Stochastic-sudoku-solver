@@ -10,10 +10,14 @@
 
 #include "config.h"
 
-/**
- * @brief Calculates the minimum value between parameter a and b
- * 
- */
+typedef struct cell_t {
+    int line;
+    int col;
+    int val;
+    int cost;
+} cell_t;
+
+/// @brief Calculates the minimum value between parameter a and b
 #define MIN(a,b) (((a)<(b))?(a):(b))
 
 /// @brief Get a random double from 0 to 1 [0;1]
@@ -75,6 +79,8 @@ void sudoku_debug_output(char * filename, char * info, char * date);
 void print_config();
 
 void print_sudoku_grid(int sudoku_grid[][SUDOKU_SIZE]);
+
+void sudoku_cell_write(int fd, int flag, cell_t changed_cell);
 
 void sudoku_pipe_write(int fd, int flag, int **grid);
 
