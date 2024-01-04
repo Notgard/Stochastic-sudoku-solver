@@ -10,6 +10,7 @@
 #include <sys/wait.h>
 
 #include "math.h"
+#include "omp.h"
 
 #include "utils.h"
 

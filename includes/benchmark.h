@@ -23,4 +23,8 @@ void sudoku_plot_difficulty_benchmark(int argc, char *argv[], const char *diffic
 /// @param filename the given file
 void sudoku_plot_cost_per_difficulty(const char *filename);
 
+/// @brief Creates box plot of the tries distribution of each sudoku difficulty from the given file
+/// @param filename the given file
+void sudoku_plot_tries_per_difficulty(const char *filename);
+
 #endif

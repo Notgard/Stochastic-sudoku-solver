@@ -150,6 +150,48 @@ void sudoku_plot_cost_per_difficulty(const char *filename)
     exit(EXIT_SUCCESS);
 }
 
+/// @brief Creates box plot of the tries distribution of each sudoku difficulty from the given file
+/// @param filename the given file
+void sudoku_plot_tries_per_difficulty(const char *filename)
+{
+    char command_buffer[COMMANDE_SIZE + 1];
+    char command[COMMANDE_SIZE + 1] = "plot";
+
+    FILE *gnuplot = popen("gnuplot", "w");
+    if (!gnuplot)
+    {
+        perror("popen");
+        exit(EXIT_FAILURE);
+    }
+
+    snprintf(command_buffer,
+             FILE_SIZE + 1,
+             " for [i=1:4] '%s' using (i):i title '%s #'.i",
+             filename, "Distribution du nombre essai");
+    strcat(command, command_buffer);
+    printf("%s\n", command);
+
+    if(GET_OUTPUT) {
+        fprintf(gnuplot, "set terminal pngcairo\n");
+        fprintf(gnuplot, "set output './output/cost_box_plot.png'\n");
+    }
+
+    fprintf(gnuplot, "set title \"Distribution du nombre d'essais de l'algorithm pour chaque type de Sudoku (%d sudokus)\" font \"%s\"\n", MAX_TRIES, "Helvetica,16");
+    fprintf(gnuplot, "set xlabel \"Difficulté du Sudoku\"\n");
+    fprintf(gnuplot, "set ylabel \"Nombre total d'essais retourné par l'algorithme\"\n");
+    fprintf(gnuplot, "set style fill solid 0.25 border -1\n");
+    fprintf(gnuplot, "set style boxplot outliers pointtype 7\n");
+    fprintf(gnuplot, "set style data boxplot\n");
+    fprintf(gnuplot, "set xtics ('easy' 1, 'medium' 2, 'hard' 3, 'diabolical' 4)\n");
+
+    fprintf(gnuplot, "%s\n", command);
+    fflush(gnuplot);
+    fprintf(stdout, "Click Ctrl+d to quit...\n");
+    getchar();
+
+    pclose(gnuplot);
+    exit(EXIT_SUCCESS);
+}
 
 int main(int argc, char *argv[])
 {
@@ -174,7 +216,9 @@ int main(int argc, char *argv[])
     case 6: // diabolical sudoku
         sudoku_plot_difficulty_benchmark(argc, argv, "diabolical");
         break;
+    case 7: //tries distribution
+        sudoku_plot_tries_per_difficulty(argv[2]);
+        break;
     }
-
     return EXIT_SUCCESS;
 }

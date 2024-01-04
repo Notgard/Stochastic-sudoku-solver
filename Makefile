@@ -2,8 +2,16 @@
 # MAIN CONFIGURATION
 #
 
-EXEC = stats benchmark visualization sudoku_remake test
+#sequential execution
+EXEC = stats benchmark visualization sudoku_remake
 OBJECTS = utils.o sudoku.o colors.o functions.o window.o
+#parallel mpi execution
+EXEC_MPI = stats benchmark sudoku_mpi
+OBJECTS_MPI = utils.o sudoku.o
+#parallel openmp version
+EXEC_OMP = stats benchmark sudoku_omp
+OBJECTS_OMP = utils.o sudoku.o
+
 PROJECT_NAME = SUDOKU_SOLVER
 
 SRC_DIR = src
@@ -24,12 +32,18 @@ BIN_DIR = bin
 EXEC_O = $(EXEC:=.o)
 OBJECTS_O = $(OBJECTS) $(EXEC_O)
 
+EXEC_MPI_O = $(EXEC_MPI:=.o)
+OBJECTS_MPI_O = $(OBJECTS_MPI) $(EXEC_MPI_O)
+
+EXEC_OMP_O = $(EXEC_OMP:=.o)
+OBJECTS_OMP_O = $(OBJECTS_OMP) $(EXEC_OMP_O)
+
 #
 # ARGUMENTS AND COMPILER (to configure)
 #
 
 CC = gcc
-CCFLAGS_STD = -Wall -O3 -fopenmp
+CCFLAGS_STD = -Wall -O3 -fopenmp 
 CCFLAGS_DEBUG = -D _DEBUG_
 CCFLAGS_SHOW = -D _SHOW_
 CCFLAGS_PARALLEL = -D _PARALLEL_
@@ -59,6 +73,31 @@ show: all
 parallel: CCFLAGS = $(CCFLAGS_STD) $(CCFLAGS_PARALLEL)
 parallel: all
 
+omp: msg $(addprefix $(OBJECTS_DIR)/,$(OBJECTS_OMP)) $(addprefix $(OBJECTS_DIR)/,$(EXEC_OMP_O))
+	@echo "Create executables..."
+	@for i in $(EXEC_OMP); do \
+	$(CC) -o $(addprefix $(BIN_DIR)/,$$i) $(addprefix $(OBJECTS_DIR)/,$$i.o) $(addprefix $(OBJECTS_DIR)/,$(OBJECTS_OMP)) $(CCLIBS) -I../$(INCLUDE_DIR)/; \
+	done
+	@echo "Done."
+
+mpi: CC = mpicc
+mpi: msg $(addprefix $(OBJECTS_DIR)/,$(OBJECTS_MPI)) $(addprefix $(OBJECTS_DIR)/,$(EXEC_MPI_O))
+	@echo "Create executables..."
+	@for i in $(EXEC_MPI); do \
+	$(CC) -o $(addprefix $(BIN_DIR)/,$$i) $(addprefix $(OBJECTS_DIR)/,$$i.o) $(addprefix $(OBJECTS_DIR)/,$(OBJECTS_MPI)) $(CCLIBS) -I../$(INCLUDE_DIR)/; \
+	done
+	@echo "Done."
+
+omp_mpi: CCFLAGS = $(CCFLAGS_STD) $(CCFLAGS_PARALLEL)
+	CC = mpicc
+omp_mpi: msg $(addprefix $(OBJECTS_DIR)/,$(OBJECTS_MPI)) $(addprefix $(OBJECTS_DIR)/,$(EXEC_MPI_O))
+	@echo "Create executables..."
+	@for i in $(EXEC_MPI); do \
+	$(CC) -o $(addprefix $(BIN_DIR)/,$$i) $(addprefix $(OBJECTS_DIR)/,$$i.o) $(addprefix $(OBJECTS_DIR)/,$(OBJECTS_MPI)) $(CCLIBS) -I../$(INCLUDE_DIR)/; \
+	done
+	@echo "Done."
+$(info $$CCFLAGS is [${CCFLAGS}])
+$(info $$CC is [${CC}])
 #
 # DEFAULT RULES (must not change it)
 #
@@ -75,9 +114,15 @@ clean:
 	@echo "Delete objects, temporary files..."
 	@rm -f $(addprefix $(OBJECTS_DIR)/,$(OBJECTS_O))
 	@rm -f $(addprefix $(OBJECTS_DIR)/,$(EXEC_O))
+	@rm -f $(addprefix $(OBJECTS_DIR)/,$(OBJECTS_MPI_O))
+	@rm -f $(addprefix $(OBJECTS_DIR)/,$(EXEC_MPI_O))
+	@rm -f $(addprefix $(OBJECTS_DIR)/,$(OBJECTS_OMP_O))
+	@rm -f $(addprefix $(OBJECTS_DIR)/,$(EXEC_OMP_O))
 	@rm -f $(addprefix $(OBJECTS_DIR)/,*~) $(addprefix $(OBJECTS_DIR)/,*#)
 	@rm -f $(addprefix $(INCLUDE_DIR)/,*~) $(addprefix $(INCLUDE_DIR)/,*#)
 	@rm -f $(addprefix $(BIN_DIR)/,$(EXEC))
+	@rm -f $(addprefix $(BIN_DIR)/,$(EXEC_MPI))
+	@rm -f $(addprefix $(BIN_DIR)/,$(EXEC_OMP))
 	@rm -f dependancies
 	@echo "Done."
 

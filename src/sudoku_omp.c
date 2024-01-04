@@ -5,8 +5,7 @@
 
 #include "sudoku.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     if (argc < 2)
     {
         fprintf(stderr, "Use: %s Flags file puzzle\n", argv[0]);
@@ -44,139 +43,82 @@ int main(int argc, char *argv[])
     // print_sudoku_pointers(regions);
     columns = create_sudoku_columns(lines);
 
-    int tries;
-    int cost = (int)INFINITY;
-    double CPU_time, start_time, end_time;
+    double start_time, end_time, CPU_time;
     int lowest_cost_found = (int)INFINITY;
     int **best_solution = NULL;
     setting_t setting;
-
-    FILE *fd = NULL;
-    FILE *gnuplotPipe;
-    pid_t pid = 1;
 
     char date_buffer[FILE_SIZE];
     time_t timestamp = time(NULL);
     strftime(date_buffer, FILE_SIZE, "%d-%m-%Y-(%H-%M-%S)", localtime(&timestamp));
 
-    if (GET_STATS)
-    {
-        // Remove the existing plot.dat file, if any.
-        if (remove("plot.dat") == 0)
-        {
-            printf("plot.dat removed\n");
-        }
-        fd = fopen("plot.dat", "w");
-        if (fd == NULL)
-        {
-            perror("Failed to open plot.dat");
-            exit(1);
-        }
-        fclose(fd);
-        fd = fopen("plot.dat", "a");
-        setting.stat_file = fd;
-
-        gnuplotPipe = popen("gnuplot", "w");
-        if (gnuplotPipe == NULL)
-        {
-            perror("Error opening Gnuplot pipe\n");
-            return 1;
-        }
-    }
-
-#if _SHOW_
-    int filed;
-    if ((filed = open(PIPE_NAME, O_WRONLY)) == -1)
-    {
-        perror("Error opening pipe");
-        exit(EXIT_FAILURE);
-    }
-    setting.fd = filed;
-#endif
-
+    // Start timing
     start_time = omp_get_wtime();
 
-    // Start of the solving phase until we get SOLUTION_COST value
-    if (GET_STATS) {
-        if((pid = fork()) == -1) {
-            perror("Error creating child process");
-            exit(EXIT_FAILURE);
-        }
-    }
-        
-    if (pid > 0)
-    {//run using main process
-        tries = 0;
-        while (cost != SOLUTION_COST && tries <= MAX_TRIES)
+    int max_threads = omp_get_max_threads();
+    int tries = 0;
+    int cost = (int)INFINITY;
+
+    // Start of the solving phase until we get SOLUTION_COST or reach MAX_TRIES
+    while (cost != SOLUTION_COST && tries <= MAX_TRIES) {
+        #pragma omp parallel num_threads(max_threads), shared(cost)
         {
-            if (KEEP_START) //keep the original at the beginining of each loop iteration
-            {
-                sudoku_copy_content(&lines, original_grid);
-            }
+            int local_cost = (int)INFINITY;
 
-            #if _PARALLEL_
-                printf(">> PARALEL TEST EXECUTION\n");
-                parallel_simmulated_annealing_test(original_grid, lines, columns, regions, &cost, setting);
-            #else
-                printf(">> SEQUENTIAL EXECUTION\n");
-                simmulated_annealing(original_grid, lines, columns, regions, &cost, setting);
-            #endif
-            
-            tries++;
-            if (verbose)
-            {
-                printf("\n===========================\n");
-                print_sudoku(lines);
-                printf("[TRY#%d]>> Current cost : %d\n", tries, cost);
-            }
-            // log the stats of the recuit solver
-            // if (GET_STATS)
-            //    sudoku_write_stats(puzzle_hash, cost, tries, date_buffer);
+            #pragma omp for
+            for (int i = 0; i < max_threads; ++i) {
+                // Execute simulated annealing function in parallel
+                int thread_cost = (int)INFINITY;
+                simmulated_annealing(original_grid, lines, columns, regions, &thread_cost, setting);
 
-            // find lowest cost and manage the best current solution
-            if (cost < lowest_cost_found)
-            { // if we find the current best solution, keep the cost and the grid
-                lowest_cost_found = cost;
-                if (KEEP_BEST)
+                // Update local cost with the minimum cost found by threads
+                #pragma omp critical
                 {
-                    if (best_solution != NULL)
-                    {
-                        sudoku_free(best_solution);
-                        best_solution = NULL;
+                    if (thread_cost < local_cost) {
+                        local_cost = thread_cost;
                     }
-                    best_solution = create_sudoku_lines(lines);
+                }
+            } //end for
+
+            // Update the global cost with the minimum local cost found
+            #pragma omp critical
+            {
+                if (local_cost < cost) {
+                    cost = local_cost;
                 }
             }
-            else if (KEEP_BEST)
-            { // if the cost found is inferior, go back to best solution
-                sudoku_copy_content(&lines, best_solution);
+        } //end parallel region
+
+        tries++;
+
+        if (verbose)
+        {
+            printf("\n===========================\n");
+            print_sudoku(lines);
+            printf("[TRY#%d]>> Current cost : %d\n", tries, cost);
+        }
+
+        // find lowest cost and manage the best current solution
+        if (cost < lowest_cost_found)
+        { // if we find the current best solution, keep the cost and the grid
+            lowest_cost_found = cost;
+            if (KEEP_BEST)
+            {
+                if (best_solution != NULL)
+                {
+                    sudoku_free(best_solution);
+                    best_solution = NULL;
+                }
+                best_solution = create_sudoku_lines(lines);
             }
         }
-        
-    }
-    else
-    {
-        if (GET_STATS) //load stats using child process
-        {
-            fprintf(gnuplotPipe, "load 'liveplot_cost.gnu'\n");
-            fflush(gnuplotPipe);
-            exit(EXIT_SUCCESS);
+        else if (KEEP_BEST)
+        { // if the cost found is inferior, go back to best solution
+            sudoku_copy_content(&lines, best_solution);
         }
-    }
-    
+    } //end while
+
     end_time = omp_get_wtime();
-
-    if (GET_STATS)
-    {
-        pclose(gnuplotPipe);
-        fclose(fd);
-    }
-
-
-#if _SHOW_
-    // send pipe closing signal to process
-    sudoku_pipe_close(filed, PIPE_CLOSE);
-#endif
 
     // calculate the CPU execution time of the sudoku solving algorithm
     CPU_time = end_time - start_time;

@@ -68,8 +68,9 @@ extern const char plot_colors[10][10];
 #define PIPE_CLOSE 2
 #define WIDTH 20
 #define HEIGHT 20
+#define COLORS (true)
 
 //OpenMP config
-#define N_THREADS 20
+#define N_THREADS 9
 
 #endif

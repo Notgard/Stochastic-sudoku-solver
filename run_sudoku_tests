@@ -1,78 +1,141 @@
 #!/usr/bin/bash
+#check for n_sudokus argument
+if [[ $# -lt 1 || $# -gt 1 ]] ; then
+	echo 'Wrong arguments provided, need number of testing sudokus'
+	exit 1
+fi
 declare -a easy_sudoku_puzzles
 declare -a medium_sudoku_puzzles
 declare -a hard_sudoku_puzzles
 declare -a diabolical_sudoku_puzzles
 #some easy puzzles to test
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0000183b305c"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0001d5d6314e"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="000212406270"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="00023580f347"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="00031006ebf1"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0003af4e2943"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004125f628d"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004464633b4"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004686971dc"
-easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004bab224ce"
+#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0000183b305c"
+#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0001d5d6314e"
+#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="000212406270"
+#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="00023580f347"
+#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="00031006ebf1"
+#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0003af4e2943"
+#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004125f628d"
+#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004464633b4"
+#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004686971dc"
+#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004bab224ce"
+#some easy puzzles (n_sudokus) to test from the file
+n_sudokus=$1
+n=0
+input="./ressources/easy.txt"
+while IFS= read -r line
+do
+  hash=$(echo "$line" | awk '{print $1}')
+  easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="$hash"
+  ((n++))
+  if [[ n -eq n_sudokus ]]; then
+    break;
+  fi
+done < "$input"
 #some medium puzzles to test
-medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0000847b216e"
-medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0000c45fb232"
-medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0000fc7c6b96"
-medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00010f10503b"
-medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0001d8f677e4"
-medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0001e494a5b8"
-medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00020ac6da1f"
-medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00021acb2bbe"
-medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00024d60bdaf"
-medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="000293df085f"
+#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0000847b216e"
+#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0000c45fb232"
+#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0000fc7c6b96"
+#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00010f10503b"
+#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0001d8f677e4"
+#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0001e494a5b8"
+#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00020ac6da1f"
+#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00021acb2bbe"
+#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00024d60bdaf"
+#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="000293df085f"
+n=0
+input="./ressources/medium.txt"
+while IFS= read -r line
+do
+  hash=$(echo "$line" | awk '{print $1}')
+  medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="$hash"
+  ((n++))
+  if [[ n -eq n_sudokus ]]; then
+    break;
+  fi
+done < "$input"
 #some hard pzzules to test
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00005f662e09"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00009e4900fa"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0000b2c3fc62"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0000d2fa4f03"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00011fedd787"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00013f7e562a"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="000160237251"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="000175e5f83b"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0001767b888a"
-hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0001786dfc8c"
+#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00005f662e09"
+#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00009e4900fa"
+#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0000b2c3fc62"
+#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0000d2fa4f03"
+#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00011fedd787"
+#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00013f7e562a"
+#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="000160237251"
+#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="000175e5f83b"
+#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0001767b888a"
+#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0001786dfc8c"
+n=0
+input="./ressources/hard.txt"
+while IFS= read -r line
+do
+  hash=$(echo "$line" | awk '{print $1}')
+  hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="$hash"
+  ((n++))
+  if [[ n -eq n_sudokus ]]; then
+    break;
+  fi
+done < "$input"
 #some diabolical puzzles to test
-diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="00015097c6c3"
-diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0001d2888928"
-diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="000274921f39"
-diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="00035f2db993"
-diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0003c85d91eb"
-diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0004477c8766"
-diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0004d942efa5"
-diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="00057d44a4af"
-diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="000673abbc89"
-diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0006756dc1bd"
+#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="00015097c6c3"
+#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0001d2888928"
+#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="000274921f39"
+#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="00035f2db993"
+#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0003c85d91eb"
+#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0004477c8766"
+#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0004d942efa5"
+#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="00057d44a4af"
+#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="000673abbc89"
+#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0006756dc1bd"
+n=0
+input="./ressources/diabolical.txt"
+while IFS= read -r line
+do
+  hash=$(echo "$line" | awk '{print $1}')
+  diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="$hash"
+  ((n++))
+  if [[ n -eq n_sudokus ]]; then
+    break;
+  fi
+done < "$input"
 #make compile main sudoku solving C program
-make clean && make
+#make clean && make
+make clean && make parallel
 #prepare benchmark data
 NB_TRIES=${#easy_sudoku_puzzles[@]}
+exec_file="sudoku_remake"
+#get each cost distribution
 declare -a e_cost
 declare -a m_cost
 declare -a h_cost
 declare -a d_cost
+#get each number of tries distribution
+declare -a e_tries
+declare -a m_tries
+declare -a h_tries
+declare -a d_tries
 easy_bench=0.0
 medium_bench=0.0
 hard_bench=0.0
 diabolical_bench=0.0
 benchmark_file="./benchmark/CPU_USAGE-$$.txt"
 cost_data="./data/tests/COST_PER_DIFFICULTY-$$.txt"
+tries_data="./data/tests/TRIES_PER_DIFFICULTY-$$.txt"
 echo "# easy medium hard diabolical" > "$cost_data"
+echo "# easy medium hard diabolical" > "$tries_data"
 #try the easy puzzles
 for i in "${easy_sudoku_puzzles[@]}"
 do
-    result=$(./bin/main "easy.txt" "$i")
+    result=$(OMP_NUM_THREADS=4 ./bin/$exec_file "easy.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
+    tries=$(echo "$result" | grep ">> Numbers of tries taken : " | awk 'NF>1{print $NF}')
     if [ -n "$bench_time" ]; then
         easy_bench=$(echo "$easy_bench + $bench_time" | bc -l)
     fi
     e_cost+=($end_cost)
+    e_tries+=($tries)
 done
 mean=$(echo "$easy_bench / $NB_TRIES" | bc -l)
 printf "easy %.3f\n" "$mean" > "$benchmark_file"
@@ -80,14 +143,16 @@ echo -e "-----------------------------------------------------------------------
 #try the medium puzzles
 for i in "${medium_sudoku_puzzles[@]}"
 do
-    result=$(./bin/main "medium.txt" "$i")
+    result=$(OMP_NUM_THREADS=4 ./bin/$exec_file "medium.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
+    tries=$(echo "$result" | grep ">> Numbers of tries taken : " | awk 'NF>1{print $NF}')
     if [ -n "$bench_time" ]; then
         medium_bench=$(echo "$medium_bench + $bench_time" | bc -l)
     fi
     m_cost+=($end_cost)
+    m_tries+=($tries)
 done
 mean=$(echo "$medium_bench / $NB_TRIES" | bc -l)
 printf "medium %.3f\n" "$mean" >> "$benchmark_file"
@@ -95,14 +160,16 @@ echo -e "-----------------------------------------------------------------------
 #try the hard puzzles
 for i in "${hard_sudoku_puzzles[@]}"
 do
-    result=$(./bin/main "hard.txt" "$i")
+    result=$(OMP_NUM_THREADS=4 ./bin/$exec_file "hard.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
+    tries=$(echo "$result" | grep ">> Numbers of tries taken : " | awk 'NF>1{print $NF}')
     if [ -n "$bench_time" ]; then
         hard_bench=$(echo "$hard_bench + $bench_time" | bc -l)
     fi
     h_cost+=($end_cost)
+    h_tries+=($tries)
 done
 mean=$(echo "$hard_bench / $NB_TRIES" | bc -l)
 printf "hard %.3f\n" "$mean" >> "$benchmark_file"
@@ -110,14 +177,16 @@ echo -e "-----------------------------------------------------------------------
 #try the diabolical puzzles
 for i in "${diabolical_sudoku_puzzles[@]}"
 do
-    result=$(./bin/main "diabolical.txt" "$i")
+    result=$(OMP_NUM_THREADS=4 ./bin/$exec_file "diabolical.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
+    tries=$(echo "$result" | grep ">> Numbers of tries taken : " | awk 'NF>1{print $NF}')
     if [ -n "$bench_time" ]; then
         diabolical_bench=$(echo "$diabolical_bench + $bench_time" | bc -l)
     fi
     d_cost+=($end_cost)
+    d_tries+=($tries)
 done
 mean=$(echo "$diabolical_bench / $NB_TRIES" | bc -l)
 printf "diabolical %.3f\n" "$mean" >> "$benchmark_file"
@@ -128,6 +197,12 @@ do
     echo -n "${m_cost[$i]} " >> "$cost_data"
     echo -n "${h_cost[$i]} " >> "$cost_data"
     echo "${d_cost[$i]}" >> "$cost_data"
+
+    echo -n "${e_tries[$i]} " >> "$tries_data"
+    echo -n "${m_tries[$i]} " >> "$tries_data"
+    echo -n "${h_tries[$i]} " >> "$tries_data"
+    echo "${d_tries[$i]}" >> "$tries_data"
 done
 ./bin/benchmark 4 "$benchmark_file"
 ./bin/benchmark 5 "$cost_data"
+./bin/benchmark 7 "$tries_data"

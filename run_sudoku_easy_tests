@@ -5,6 +5,7 @@ if [[ $# -lt 1 || $# -gt 1 ]] ; then
 	exit 1
 fi
 declare -a easy_sudoku_puzzles
+exec_file="sudoku_remake"
 input="./ressources/easy.txt"
 n_sudokus=$1
 n=0
@@ -25,7 +26,7 @@ stats_file="./benchmark/easy/stats-$$.txt"
 #try the easy puzzles
 for i in "${easy_sudoku_puzzles[@]}"
 do
-    result=$(./bin/main "easy.txt" "$i")
+    result=$(./bin/$exec_file "easy.txt" "$i")
     echo -e "$result"
     #get the execution time for the x axis and the final cost of the algorithm for the y axis
     exec_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')

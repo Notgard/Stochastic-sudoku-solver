@@ -11,9 +11,13 @@
 void sudoku_plot_stats(char *filename);
 
 /// @brief Plot multiple sudoku solving statistics from given file using the program arguments
+/// The argv parameters must follow a precise format where :
+///     - first give the name of the file 
+///     - second the caption of the graph
+/// @param plot_title the title of the plot
 /// @param argc number of arguments
 /// @param argv arrar of arguments
-void sudoku_plot_statistics(int argc, char *argv[]);
+void sudoku_plot_statistics(char * plot_title, int argc, char *argv[]);
 
 /// @brief Plot multiple sudoku solving statistics from the given file names
 /// @param format all the files to plot as line graph

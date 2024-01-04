@@ -19,8 +19,6 @@
 
 #define ESC '\e'
 
-#define COLORS 0
-
 void signal_handler(int signum)
 {
     if (unlink(PIPE_NAME) == -1)

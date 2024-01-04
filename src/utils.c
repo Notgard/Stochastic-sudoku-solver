@@ -1,4 +1,5 @@
 #include "utils.h"
+#include "omp.h"
 
 /// @brief Get a random double from 0 to 1 [0;1]
 /// @return
@@ -206,10 +207,12 @@ void sudoku_randomize(int ***sudoku_grid, int ** original_grid, unsigned int * s
 /// @param sudoku_grid the grid to modify the content of
 /// @param content the content to copy
 void sudoku_copy_content(int ***sudoku_grid, int **content) {
+    #pragma omp parallel for collapse(2)
     for (int line = 0; line < SUDOKU_SIZE; line++)
     {
         for (int col = 0; col < SUDOKU_SIZE; col++)
         {
+            #pragma omp atomic write
             (*sudoku_grid)[line][col] = content[line][col];
         }
     }

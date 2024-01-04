@@ -5,6 +5,7 @@ if [[ $# -lt 1 || $# -gt 1 ]] ; then
 	exit 1
 fi
 declare -a diabolical_sudoku_puzzles
+exec_file="sudoku_remake"
 input="./ressources/diabolical.txt"
 n_sudokus=$1
 n=0
@@ -26,7 +27,7 @@ n=0
 #try the diabolical puzzles
 for i in "${diabolical_sudoku_puzzles[@]}"
 do
-    result=$(./bin/main "diabolical.txt" "$i")
+    result=$(./bin/$exec_file "diabolical.txt" "$i")
     echo -e "$result"
     #get the execution time for the x axis and the final cost of the algorithm for the y axis
     exec_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')

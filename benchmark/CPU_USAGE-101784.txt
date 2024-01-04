@@ -1,0 +1,4 @@
+easy 0.000
+medium 0.000
+hard 0.000
+diabolical 0.000
