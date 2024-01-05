@@ -1,8 +1,14 @@
+test.c
+
 notes/
-bin/
 debug/
-fit.log
-test
 ressources/
+fit.log
+
+#ignore binary compilation folders
 obj/
-test2.*
+bin/
+
+# exception to the rule
+!obj/.gitkeep
+!bin/.gitkeep 
