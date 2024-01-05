@@ -3,7 +3,7 @@
 **Name:** Solveur de Sudoku par recuit simulé
 **Version:** 0.2
 
-...
+Algorithme de résolution de sudoku écrit en C qui utilise une méthode de recuit stochastique simulé avec parallélisation en OpenMP et MPI.
 
 ## Installation ##
 
@@ -13,7 +13,7 @@ git clone -b remake https://github.com/Notgard/Stochastic-sudoku-solver.git
 ```
 
 Pour obtenir les fichiers de tests utiliser dans le répertoire 'ressources', utiliser le script comme ceci pour les télécharger directement :
-```
+```console
 bash ./get_sudoku_files
 ```
 
@@ -69,6 +69,12 @@ De nombreuses options de configurations comme le nombre maximum d'essais de l'al
 Afin que les modifications faites dans ce fichier soient prises en compte, il est recommandé d'effectuer la commande **make clean** au préalable.
 
 Notamment, une visualisation de l'évolution du coût et de la température lors de l'exécution de l'algorithme est disponible en modifiant le paramètre **GET_STATS** à **true** dans le fichier de configuration config.h.
+
+## Execution ROMEO ##
+
+Pour une exécution sur le supercalculateur ROMEO, ajouter dans le Makefile le flag de compilation **-std=gnu99** à la suite de la variable CCFLAGS_STD (Makefile:46:34).
+
+Les scripts de soumissions sudoku_mpi_job.sh et sudoku_mpi_benchmark_job.sh permettent de tester respectivement la résolution d'un sudoku diabolique en MPI, et l'autre d'évaluer l'efficacité de la solution MPI en la testant sur un certains nombres de sudokus de différents niveaux de difficultés.
 
 ## Changelog ##
 

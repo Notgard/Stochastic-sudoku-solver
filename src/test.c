@@ -4,6 +4,10 @@
 #include <omp.h>
 #include <math.h>
 
+#include "config.h"
+
+#include "benchmark.h"
+
 #define ROWS 3
 #define COLS 4
 
@@ -170,7 +174,7 @@ int test2() {
 #define START_TEMPERATURE ((double)(1620 / 2))
 #define TEMPERATURE_CEILING 0.00273852
 
-int main(void) {
+int test3(void) {
     double delta = 0.1;
     double e_p = START_TEMPERATURE;
     double temperature = e_p;
@@ -187,5 +191,15 @@ int main(void) {
     end = omp_get_wtime();
     cpu = end - start;
     printf("%lf\n", cpu);
+    return 0;
+}
+
+int main(void) {
+    char * cost_file = "COST_PER_DIFFICULTY-46039.txt";
+    char * tries_file = "TRIES_PER_DIFFICULTY-46039.txt";
+    char * cpu_file = "CPU_USAGE-46039.txt";
+    sudoku_plot_performance(MAX_TRIES, cpu_file);
+    sudoku_plot_cost_per_difficulty(cost_file);
+    sudoku_plot_tries_per_difficulty(tries_file);
     return 0;
 }

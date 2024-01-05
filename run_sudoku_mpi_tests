@@ -1,26 +1,16 @@
 #!/usr/bin/bash
 #check for n_sudokus argument
-if [[ $# -lt 1 || $# -gt 1 ]] ; then
-	echo 'Wrong arguments provided, need number of testing sudokus'
+if [[ $# -lt 2 || $# -gt 2 ]] ; then
+	echo 'Wrong arguments provided, need number of testing sudokus and the number of MPI process'
 	exit 1
 fi
 declare -a easy_sudoku_puzzles
 declare -a medium_sudoku_puzzles
 declare -a hard_sudoku_puzzles
 declare -a diabolical_sudoku_puzzles
-#some easy puzzles to test
-#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0000183b305c"
-#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0001d5d6314e"
-#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="000212406270"
-#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="00023580f347"
-#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="00031006ebf1"
-#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0003af4e2943"
-#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004125f628d"
-#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004464633b4"
-#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004686971dc"
-#easy_sudoku_puzzles[${#easy_sudoku_puzzles[@]}]="0004bab224ce"
 #some easy puzzles (n_sudokus) to test from the file
 n_sudokus=$1
+n_process=$2
 n=0
 input="./ressources/easy.txt"
 while IFS= read -r line
@@ -33,16 +23,6 @@ do
   fi
 done < "$input"
 #some medium puzzles to test
-#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0000847b216e"
-#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0000c45fb232"
-#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0000fc7c6b96"
-#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00010f10503b"
-#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0001d8f677e4"
-#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="0001e494a5b8"
-#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00020ac6da1f"
-#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00021acb2bbe"
-#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="00024d60bdaf"
-#medium_sudoku_puzzles[${#medium_sudoku_puzzles[@]}]="000293df085f"
 n=0
 input="./ressources/medium.txt"
 while IFS= read -r line
@@ -55,16 +35,6 @@ do
   fi
 done < "$input"
 #some hard pzzules to test
-#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00005f662e09"
-#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00009e4900fa"
-#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0000b2c3fc62"
-#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0000d2fa4f03"
-#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00011fedd787"
-#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="00013f7e562a"
-#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="000160237251"
-#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="000175e5f83b"
-#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0001767b888a"
-#hard_sudoku_puzzles[${#hard_sudoku_puzzles[@]}]="0001786dfc8c"
 n=0
 input="./ressources/hard.txt"
 while IFS= read -r line
@@ -77,16 +47,6 @@ do
   fi
 done < "$input"
 #some diabolical puzzles to test
-#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="00015097c6c3"
-#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0001d2888928"
-#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="000274921f39"
-#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="00035f2db993"
-#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0003c85d91eb"
-#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0004477c8766"
-#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0004d942efa5"
-#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="00057d44a4af"
-#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="000673abbc89"
-#diabolical_sudoku_puzzles[${#diabolical_sudoku_puzzles[@]}]="0006756dc1bd"
 n=0
 input="./ressources/diabolical.txt"
 while IFS= read -r line
@@ -126,7 +86,7 @@ echo "# easy medium hard diabolical" > "$tries_data"
 #try the easy puzzles
 for i in "${easy_sudoku_puzzles[@]}"
 do
-    result=$(mpirun --oversubscribe -n 6 ./bin/$exec_file "easy.txt" "$i")
+    result=$(mpirun --oversubscribe -n $n_process ./bin/$exec_file "easy.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
@@ -143,7 +103,7 @@ echo -e "-----------------------------------------------------------------------
 #try the medium puzzles
 for i in "${medium_sudoku_puzzles[@]}"
 do
-    result=$(mpirun --oversubscribe -n 6 ./bin/$exec_file "medium.txt" "$i")
+    result=$(mpirun --oversubscribe -n $n_process ./bin/$exec_file "medium.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
@@ -160,7 +120,7 @@ echo -e "-----------------------------------------------------------------------
 #try the hard puzzles
 for i in "${hard_sudoku_puzzles[@]}"
 do
-    result=$(mpirun --oversubscribe -n 6 ./bin/$exec_file "hard.txt" "$i")
+    result=$(mpirun --oversubscribe -n $n_process ./bin/$exec_file "hard.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
@@ -177,7 +137,7 @@ echo -e "-----------------------------------------------------------------------
 #try the diabolical puzzles
 for i in "${diabolical_sudoku_puzzles[@]}"
 do
-    result=$(mpirun --oversubscribe -n 6 ./bin/$exec_file "diabolical.txt" "$i")
+    result=$(mpirun --oversubscribe -n $n_process ./bin/$exec_file "diabolical.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
