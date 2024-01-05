@@ -100,10 +100,10 @@ do
 done < "$input"
 #make compile main sudoku solving C program
 #make clean && make
-make clean && make parallel
+make clean && make mpi
 #prepare benchmark data
 NB_TRIES=${#easy_sudoku_puzzles[@]}
-exec_file="sudoku_remake"
+exec_file="sudoku_mpi"
 #get each cost distribution
 declare -a e_cost
 declare -a m_cost
@@ -126,7 +126,7 @@ echo "# easy medium hard diabolical" > "$tries_data"
 #try the easy puzzles
 for i in "${easy_sudoku_puzzles[@]}"
 do
-    result=$(OMP_NUM_THREADS=4 ./bin/$exec_file "easy.txt" "$i")
+    result=$(mpirun --oversubscribe -n 6 ./bin/$exec_file "easy.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
@@ -143,7 +143,7 @@ echo -e "-----------------------------------------------------------------------
 #try the medium puzzles
 for i in "${medium_sudoku_puzzles[@]}"
 do
-    result=$(OMP_NUM_THREADS=4 ./bin/$exec_file "medium.txt" "$i")
+    result=$(mpirun --oversubscribe -n 6 ./bin/$exec_file "medium.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
@@ -160,7 +160,7 @@ echo -e "-----------------------------------------------------------------------
 #try the hard puzzles
 for i in "${hard_sudoku_puzzles[@]}"
 do
-    result=$(OMP_NUM_THREADS=4 ./bin/$exec_file "hard.txt" "$i")
+    result=$(mpirun --oversubscribe -n 6 ./bin/$exec_file "hard.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
@@ -177,7 +177,7 @@ echo -e "-----------------------------------------------------------------------
 #try the diabolical puzzles
 for i in "${diabolical_sudoku_puzzles[@]}"
 do
-    result=$(OMP_NUM_THREADS=4 ./bin/$exec_file "diabolical.txt" "$i")
+    result=$(mpirun --oversubscribe -n 6 ./bin/$exec_file "diabolical.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')

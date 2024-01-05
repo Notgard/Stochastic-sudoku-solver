@@ -228,8 +228,7 @@ int sudoku_constraints_old(int **original_grid, int **lines, int ***columns, int
 {
     int i, j;
     int sum = 0;
-    int max_threads = omp_get_max_threads();
-    #pragma omp parallel for collapse(2), num_threads(max_threads), \
+    #pragma omp parallel for collapse(2), num_threads(N_THREADS), \
         reduction(+:sum), schedule(static, SUDOKU_GRID_SIZE), private(j)
     for (i = 0; i < SUDOKU_SIZE; i++)
     {
@@ -509,7 +508,7 @@ void parallel_simmulated_annealing_test(int **original_grid, int **lines, int **
     int total_cost = sudoku_constraints_old(original_grid, lines, columns, regions);
 
     int max_threads = omp_get_max_threads();
-    printf("N_THREADS : %d\n", max_threads);
+    printf("NB_THREADS : %d\n", max_threads);
 
     // Step 3: Start the recuit simulation algorithm
     while (temperature >= TEMPERATURE_CEILING)
@@ -543,11 +542,9 @@ void parallel_simmulated_annealing_test(int **original_grid, int **lines, int **
 
                 // Step 5: store the value in a temp variable and evaluate the cost of the random cell
                 temp = copy_lines[line][column];
-                //temp = lines[line][column];
 
                 //#pragma omp atomic write
                 cost1 = sudoku_cell_constraints(copy_lines[line][column], line, column, copy_lines, copy_columns, copy_regions);
-                //cost1 = sudoku_cell_constraints(lines[line][column], line, column, lines, columns, regions);
 
                 // Step 6: choose a new different value for the random cell
                 while ((new_val = get_bound_random(&seed, 1, 9)) == temp)
@@ -555,25 +552,20 @@ void parallel_simmulated_annealing_test(int **original_grid, int **lines, int **
 
                 //#pragma omp atomic write    
                 copy_lines[line][column] = new_val;
-                //lines[line][column] = new_val;
                     
                 // Step 7: evaluate the cost of the random cell with changed value
                 //#pragma omp atomic write
                 cost2 = sudoku_cell_constraints(copy_lines[line][column], line, column, copy_lines, copy_columns, copy_regions);
-                //cost2 = sudoku_cell_constraints(lines[line][column], line, column, lines, columns, regions);
 
                 // Step 8: choose random value in [0, 1]
                 u = get_random(&seed);
 
                 // Step 9: compare the cost between the two random cell values
                 diff_cost = local_cost - cost1 + cost2;
-                //diff_cost = total_cost - cost1 + cost2;
                 
                 // Step 10: probability acceptance
-                //if (diff_cost < total_cost && solved != true)
                 if (diff_cost < local_cost && solved != true)
                 { // acceptation
-                    //total_cost = diff_cost;
                     local_cost = diff_cost;
                 }
                 else if (u <= MIN(1, exp(-((diff_cost - local_cost) / temperature))) && solved != true)
@@ -584,9 +576,6 @@ void parallel_simmulated_annealing_test(int **original_grid, int **lines, int **
                 { // rejet
                     copy_lines[line][column] = temp;
                 }
-
-                //snprintf(debug_buffer, DEBUG_SIZE, "{cost: %d, cost_one: %d, cost_two: %d, cost_comp: %d, temperature: %f}", local_cost, cost1, cost2, diff_cost, temperature);
-                //sudoku_debug_output("debugging", debug_buffer, date_buffer);
 
                 if (local_cost == SOLUTION_COST && solved != true) {
                     printf("[THREAD #%d----------------------------------]\n", omp_get_thread_num());

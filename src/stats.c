@@ -168,7 +168,7 @@ int main(int argc, char *argv[])
     //char * file5 = "./data/0000183b305c-05-10-2023-(17-22-53).txt"; //without keep best strategy
 
     //char * title = "Evolution de la fonction de cout du recuit simmulé";
-    char * title = "Evolution du temps d'execution par nombre de processus";
+    char * title = "Evolution du temps d'execution par nombre de processus (avec 4 threads)";
 
     sudoku_plot_statistics(title, argc, argv);
     //sudoku_plot_multiple_stats("%s", file4, file5, NULL);
