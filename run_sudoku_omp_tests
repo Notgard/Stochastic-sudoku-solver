@@ -99,7 +99,8 @@ do
   fi
 done < "$input"
 #make compile main sudoku solving C program
-make clean && make
+#make clean && make
+make clean && make parallel
 #prepare benchmark data
 NB_TRIES=${#easy_sudoku_puzzles[@]}
 exec_file="sudoku_remake"
@@ -122,10 +123,12 @@ cost_data="./data/tests/COST_PER_DIFFICULTY-$$.txt"
 tries_data="./data/tests/TRIES_PER_DIFFICULTY-$$.txt"
 echo "# easy medium hard diabolical" > "$cost_data"
 echo "# easy medium hard diabolical" > "$tries_data"
+#set number of threads
+threads=3
 #try the easy puzzles
 for i in "${easy_sudoku_puzzles[@]}"
 do
-    result=$(./bin/$exec_file "easy.txt" "$i")
+    result=$(OMP_NUM_THREADS=$threads ./bin/$exec_file "easy.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
@@ -142,7 +145,7 @@ echo -e "-----------------------------------------------------------------------
 #try the medium puzzles
 for i in "${medium_sudoku_puzzles[@]}"
 do
-    result=$(./bin/$exec_file "medium.txt" "$i")
+    result=$(OMP_NUM_THREADS=$threads ./bin/$exec_file "medium.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
@@ -159,7 +162,7 @@ echo -e "-----------------------------------------------------------------------
 #try the hard puzzles
 for i in "${hard_sudoku_puzzles[@]}"
 do
-    result=$(./bin/$exec_file "hard.txt" "$i")
+    result=$(OMP_NUM_THREADS=$threads ./bin/$exec_file "hard.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
@@ -176,7 +179,7 @@ echo -e "-----------------------------------------------------------------------
 #try the diabolical puzzles
 for i in "${diabolical_sudoku_puzzles[@]}"
 do
-    result=$(./bin/$exec_file "diabolical.txt" "$i")
+    result=$(OMP_NUM_THREADS=$threads ./bin/$exec_file "diabolical.txt" "$i")
     echo -e "$result"
     bench_time=$(echo "$result" | grep ">> CPU Execution time of the sudoku solving simulation :" | awk 'NF>1{print $NF}')
     end_cost=$(echo "$result" | grep ">> Best solution (lowest cost) found during the execution of the simulation :" | awk 'NF>1{print $NF}')
