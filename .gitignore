@@ -6,8 +6,8 @@ ressources/
 fit.log
 
 #ignore binary compilation folders
-obj/
-bin/
+obj/*
+bin/*
 
 # exception to the rule
 !obj/.gitkeep
